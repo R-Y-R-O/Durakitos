@@ -1,4 +1,59 @@
-
 # Flutter build outputs
 build/
 .dart_tool/
+
+# Firebase sensitive files
+.firebaserc
+firebase-debug.log
+firebase-debug.*.log
+.env
+.env.local
+.env.*.local
+
+# Android specific
+android/.gradle
+android/.idea
+android/build
+android/local.properties
+android/key.properties
+**/*.keystore
+**/*.jks
+
+# iOS specific
+ios/Pods
+ios/Podfile.lock
+ios/.symlinks/
+ios/.flutter-plugins
+ios/.flutter-plugins-dependencies
+ios/Flutter/Flutter.framework
+ios/Flutter/Flutter.podspec
+
+# Generated files
+*.g.dart
+*.config.dart
+*.freezed.dart
+
+# IDE specific
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Credentials and secrets
+google-services.json
+GoogleService-Info.plist
+firebase_options.dart
+
+# Coverage
+coverage/
+
+# Test results
+test_results.json
+
+# Misc
+*.log
+*.pyc
+.env
+secrets/
