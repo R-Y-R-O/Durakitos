@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-variant": "#e0e2ea",
+                        "on-error-container": "#93000a",
+                        "on-primary-fixed-variant": "#5f00bf",
+                        "tertiary-container": "#b000a4",
+                        "tertiary": "#87007e",
+                        "on-tertiary-fixed-variant": "#83007a",
+                        "surface-bright": "#f8f9ff",
+                        "on-background": "#181c21",
+                        "on-error": "#ffffff",
+                        "inverse-surface": "#2d3136",
+                        "outline-variant": "#cdc2d8",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-fixed-variant": "#004f53",
+                        "on-primary-fixed": "#280057",
+                        "error-container": "#ffdad6",
+                        "error": "#ba1a1a",
+                        "primary": "#6200c5",
+                        "surface-container": "#ebeef5",
+                        "outline": "#7c7387",
+                        "surface-dim": "#d7dae1",
+                        "secondary-container": "#5ff4fc",
+                        "surface-container-highest": "#e0e2ea",
+                        "secondary-fixed-dim": "#3cdae2",
+                        "on-tertiary-fixed": "#390035",
+                        "surface": "#f8f9ff",
+                        "primary-fixed-dim": "#d6baff",
+                        "surface-tint": "#7b26e6",
+                        "inverse-primary": "#d6baff",
+                        "secondary": "#00696e",
+                        "on-secondary-fixed": "#002021",
+                        "on-secondary-container": "#006e72",
+                        "tertiary-fixed": "#ffd7f2",
+                        "on-primary-container": "#e7d5ff",
+                        "on-surface-variant": "#4b4455",
+                        "background": "#f8f9ff",
+                        "surface-container-low": "#f1f3fb",
+                        "on-surface": "#181c21",
+                        "on-primary": "#ffffff",
+                        "inverse-on-surface": "#eef1f8",
+                        "surface-container-high": "#e5e8ef",
+                        "on-tertiary-container": "#ffcef0",
+                        "primary-container": "#7d2ae8",
+                        "secondary-fixed": "#63f7ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xs": "4px",
+                        "lg": "40px",
+                        "base": "8px",
+                        "sm": "12px",
+                        "xl": "64px",
+                        "gutter": "16px",
+                        "margin-mobile": "20px",
+                        "md": "24px",
+                        "margin-desktop": "48px"
+                    },
+                    "fontFamily": {
+                        "title-md": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "display-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "title-md": ["18px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "label-sm": ["12px", {"lineHeight": "1", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                        "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "800"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background min-h-screen text-on-background selection:bg-primary-fixed-dim">
+<!-- Top App Bar (Shared Component Style) -->
+<header class="bg-gradient-to-r from-primary to-primary-container fixed top-0 left-0 w-full z-50 flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 shadow-xl">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-on-primary">arrow_back</span>
+<h1 class="text-headline-lg font-headline-lg font-extrabold text-on-primary tracking-tight">ConnectPro</h1>
+</div>
+<div class="w-10 h-10 rounded-full bg-primary-fixed overflow-hidden">
+<img alt="User avatar" data-alt="A stylized digital avatar of a young professional with a friendly expression. The avatar is set against a clean, modern circular background in a vibrant electric cyan color, following a bright and high-contrast modernist design language suitable for a professional networking application." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0ijrdtkf8FJuYq4gs0vxzyKFX5G0d4_VXt-z5kkzOO9eIiyoUjU0GcPA3cYuxfR11wYSv09bgdcaSsWL2v846-F9tRFVDg4_VnA1ZhIP-KUYwBo7sKQPBXibjqo43EftjqS-ute3nJMJOPcPiHEP1BJH-SooXFHMyEiuSks-BT4qsqOb49R4BaQn5IWjYu9tjygmDYeOzUYgD0sTQ1h9zuvZJwFKdkZ2biExpgMq5QVK6De29BInwGO8qDlVcz3HpkzxAbDLAGoM"/>
+</div>
+</header>
+<main class="pt-32 pb-xl px-margin-mobile md:px-margin-desktop max-w-4xl mx-auto">
+<section class="mb-lg">
+<h2 class="text-display-lg font-display-lg text-primary mb-2">Registro</h2>
+<p class="text-body-md text-on-surface-variant max-w-lg">Complete su perfil para unirse a la red profesional líder de Cuba. Conecte con expertos y expanda sus horizontes.</p>
+</section>
+<!-- Bento Grid Form Layout -->
+<form class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Personal Info Section -->
+<div class="md:col-span-8 glass-card p-md rounded-lg shadow-xl shadow-[#1A0B2E]/05 border border-white">
+<div class="flex items-center gap-2 mb-md">
+<span class="material-symbols-outlined text-primary">person</span>
+<h3 class="text-title-md font-title-md">Información Personal</h3>
+</div>
+<div class="space-y-md">
+<div class="flex flex-col gap-xs">
+<label class="text-label-sm font-label-sm text-outline px-1">Nombre y Apellidos</label>
+<input class="w-full h-[48px] px-md rounded-lg border border-outline-variant focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all outline-none text-body-md" placeholder="Ej. Juan Pérez" type="text"/>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<div class="flex flex-col gap-xs">
+<label class="text-label-sm font-label-sm text-outline px-1">Fecha de Nacimiento</label>
+<div class="relative">
+<input class="w-full h-[48px] px-md rounded-lg border border-outline-variant focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all outline-none text-body-md appearance-none" type="date"/>
+<span class="material-symbols-outlined absolute right-4 top-3 text-outline pointer-events-none">calendar_month</span>
+</div>
+</div>
+<div class="flex flex-col gap-xs">
+<label class="text-label-sm font-label-sm text-outline px-1">Número de teléfono</label>
+<div class="relative">
+<input class="w-full h-[48px] px-md rounded-lg border border-outline-variant focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all outline-none text-body-md" placeholder="+53 5 000 0000" type="tel"/>
+<span class="material-symbols-outlined absolute right-4 top-3 text-outline">call</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Gender Section (Segmented Control) -->
+<div class="md:col-span-4 glass-card p-md rounded-lg shadow-xl shadow-[#1A0B2E]/05 border border-white flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-2 mb-md">
+<span class="material-symbols-outlined text-primary">wc</span>
+<h3 class="text-title-md font-title-md">Sexo</h3>
+</div>
+<div class="bg-surface-container-low p-1.5 rounded-lg flex gap-1">
+<button class="flex-1 py-3 text-label-sm font-label-sm rounded-md bg-white shadow-sm text-primary transition-all" type="button">Hombre</button>
+<button class="flex-1 py-3 text-label-sm font-label-sm text-on-surface-variant hover:bg-white/50 transition-all" type="button">Mujer</button>
+<button class="flex-1 py-3 text-label-sm font-label-sm text-on-surface-variant hover:bg-white/50 transition-all" type="button">Otro</button>
+</div>
+</div>
+<div class="mt-lg">
+<p class="text-label-sm font-label-sm text-outline-variant italic">Utilizamos esto para mejorar la personalización de su feed.</p>
+</div>
+</div>
+<!-- Location Section -->
+<div class="md:col-span-6 glass-card p-md rounded-lg shadow-xl shadow-[#1A0B2E]/05 border border-white">
+<div class="flex items-center gap-2 mb-md">
+<span class="material-symbols-outlined text-primary">location_on</span>
+<h3 class="text-title-md font-title-md">Ubicación</h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<div class="flex flex-col gap-xs">
+<label class="text-label-sm font-label-sm text-outline px-1">Provincia</label>
+<select class="w-full h-[48px] px-md rounded-lg border border-outline-variant focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all outline-none text-body-md bg-white">
+<option>La Habana</option>
+<option>Matanzas</option>
+<option>Santiago de Cuba</option>
+<option>Pinar del Río</option>
+</select>
+</div>
+<div class="flex flex-col gap-xs">
+<label class="text-label-sm font-label-sm text-outline px-1">Municipio</label>
+<select class="w-full h-[48px] px-md rounded-lg border border-outline-variant focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all outline-none text-body-md bg-white">
+<option>Plaza de la Revolución</option>
+<option>Playa</option>
+<option>Centro Habana</option>
+<option>Marianao</option>
+</select>
+</div>
+</div>
+</div>
+<!-- Verification & Referral Section -->
+<div class="md:col-span-6 glass-card p-md rounded-lg shadow-xl shadow-[#1A0B2E]/05 border border-white">
+<div class="flex items-center gap-2 mb-md">
+<span class="material-symbols-outlined text-primary">verified_user</span>
+<h3 class="text-title-md font-title-md">Códigos de Acceso</h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<div class="flex flex-col gap-xs">
+<label class="text-label-sm font-label-sm text-outline px-1">Código de referido</label>
+<input class="w-full h-[48px] px-md rounded-lg border border-outline-variant focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all outline-none text-body-md" placeholder="Optional" type="text"/>
+</div>
+<div class="flex flex-col gap-xs">
+<div class="flex justify-between items-center">
+<label class="text-label-sm font-label-sm text-outline px-1">Verificación</label>
+<span class="bg-tertiary text-on-tertiary px-2 py-0.5 rounded-full text-[10px] font-bold tracking-wider uppercase">Requerido</span>
+</div>
+<div class="relative">
+<input class="w-full h-[48px] px-md rounded-lg border border-outline-variant border-tertiary focus:ring-2 focus:ring-tertiary/20 transition-all outline-none text-body-md pr-12" placeholder="Moderador" type="text"/>
+<span class="material-symbols-outlined absolute right-4 top-3 text-tertiary" style="font-variation-settings: 'FILL' 1;">shield_with_heart</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Submit Action -->
+<div class="md:col-span-12 mt-lg">
+<button class="w-full md:w-auto px-xl h-[56px] bg-gradient-to-r from-primary to-primary-container text-on-primary font-bold rounded-lg shadow-2xl hover:scale-[1.02] active:scale-95 transition-all duration-200 flex items-center justify-center gap-3" type="submit">
+                    Crear Cuenta
+                    <span class="material-symbols-outlined">rocket_launch</span>
+</button>
+<p class="text-label-sm font-label-sm text-outline text-center md:text-left mt-md">Al registrarte, aceptas nuestros Términos de Servicio y la Política de Privacidad de Cuba ConnectPro.</p>
+</div>
+</form>
+</main>
+<!-- Visual Accents (Background Blobs) -->
+<div class="fixed top-20 right-[-100px] w-96 h-96 bg-primary/10 rounded-full blur-[100px] -z-10"></div>
+<div class="fixed bottom-[-100px] left-[-100px] w-[500px] h-[500px] bg-secondary-container/20 rounded-full blur-[120px] -z-10"></div>
+<!-- Hidden Map Context (Data Store Simulation) -->
+<div class="hidden" data-location="Havana, Cuba" style=""></div>
+</body></html>

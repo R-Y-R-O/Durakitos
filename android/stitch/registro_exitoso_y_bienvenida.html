@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Registration Success - Velocity Admin</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 48;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-background": "#181c21",
+                      "primary-container": "#7d2ae8",
+                      "surface-container": "#ebeef5",
+                      "secondary-fixed-dim": "#3cdae2",
+                      "on-surface-variant": "#4b4455",
+                      "on-secondary": "#ffffff",
+                      "on-tertiary-container": "#ffcef0",
+                      "surface-container-high": "#e5e8ef",
+                      "surface-container-low": "#f1f3fb",
+                      "surface": "#f8f9ff",
+                      "secondary-container": "#5ff4fc",
+                      "on-primary-container": "#e7d5ff",
+                      "surface-variant": "#e0e2ea",
+                      "inverse-on-surface": "#eef1f8",
+                      "on-tertiary-fixed-variant": "#83007a",
+                      "surface-bright": "#f8f9ff",
+                      "tertiary-fixed": "#ffd7f2",
+                      "outline-variant": "#cdc2d8",
+                      "on-primary-fixed": "#280057",
+                      "surface-tint": "#7b26e6",
+                      "inverse-surface": "#2d3136",
+                      "secondary-fixed": "#63f7ff",
+                      "tertiary-container": "#b000a4",
+                      "on-secondary-container": "#006e72",
+                      "background": "#f8f9ff",
+                      "secondary": "#00696e",
+                      "primary-fixed": "#ecdcff",
+                      "inverse-primary": "#d6baff",
+                      "on-error-container": "#93000a",
+                      "on-tertiary": "#ffffff",
+                      "on-secondary-fixed-variant": "#004f53",
+                      "on-primary-fixed-variant": "#5f00bf",
+                      "on-secondary-fixed": "#002021",
+                      "on-primary": "#ffffff",
+                      "error-container": "#ffdad6",
+                      "error": "#ba1a1a",
+                      "outline": "#7c7387",
+                      "surface-dim": "#d7dae1",
+                      "primary": "#6200c5",
+                      "tertiary-fixed-dim": "#ffacec",
+                      "primary-fixed-dim": "#d6baff",
+                      "on-surface": "#181c21",
+                      "surface-container-lowest": "#ffffff",
+                      "surface-container-highest": "#e0e2ea",
+                      "on-error": "#ffffff",
+                      "tertiary": "#87007e",
+                      "on-tertiary-fixed": "#390035"
+              },
+              "borderRadius": {
+                      "DEFAULT": "1rem",
+                      "lg": "2rem",
+                      "xl": "3rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "margin-desktop": "48px",
+                      "md": "24px",
+                      "xs": "4px",
+                      "lg": "40px",
+                      "margin-mobile": "20px",
+                      "sm": "12px",
+                      "base": "8px",
+                      "xl": "64px",
+                      "gutter": "16px"
+              },
+              "fontFamily": {
+                      "title-md": ["Inter"],
+                      "headline-lg": ["Inter"],
+                      "headline-lg-mobile": ["Inter"],
+                      "display-lg": ["Inter"],
+                      "label-sm": ["Inter"],
+                      "body-md": ["Inter"]
+              },
+              "fontSize": {
+                      "title-md": ["18px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                      "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                      "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                      "label-sm": ["12px", {"lineHeight": "1", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                      "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface min-h-screen flex flex-col overflow-x-hidden">
+<!-- TopAppBar -->
+<header class="bg-surface dark:bg-on-background w-full top-0 sticky shadow-md z-50 flex justify-between items-center px-margin-desktop py-md">
+<div class="flex items-center gap-base">
+<span class="material-symbols-outlined text-primary" data-icon="menu">menu</span>
+<h1 class="font-headline-lg text-headline-lg font-black text-primary dark:text-primary-fixed">Velocity Admin</h1>
+</div>
+<div class="flex items-center gap-sm">
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+</div>
+</div>
+</header>
+<!-- Main Success Content -->
+<main class="flex-grow flex items-center justify-center px-margin-mobile py-xl bg-gradient-to-br from-surface to-surface-container-low">
+<div class="max-w-4xl w-full grid grid-cols-1 md:grid-cols-12 gap-lg items-center">
+<!-- Left Side: Success Graphic/Brand -->
+<div class="md:col-span-5 flex flex-col items-center md:items-start text-center md:text-left space-y-md">
+<div class="relative">
+<div class="w-32 h-32 rounded-full bg-secondary-fixed flex items-center justify-center shadow-[0_10px_40px_rgba(26,11,46,0.15)]">
+<span class="material-symbols-outlined text-[64px] text-on-secondary-container" data-icon="verified" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<!-- Badge -->
+<span class="absolute -top-2 -right-4 bg-tertiary text-on-tertiary px-sm py-xs rounded-full font-label-sm text-label-sm uppercase tracking-widest shadow-lg">VERIFIED</span>
+</div>
+<div class="space-y-sm">
+<h2 class="font-display-lg text-display-lg text-primary leading-tight">Welcome to the Network</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-sm">Your identity has been validated. You are now a core member of the Velocity ecosystem.</p>
+</div>
+</div>
+<!-- Right Side: Recommendation Card (Bento Style) -->
+<div class="md:col-span-7 flex flex-col space-y-md">
+<!-- Action Card -->
+<div class="bg-surface-container-lowest p-lg rounded-lg shadow-[0_30px_60px_rgba(26,11,46,0.08)] border border-outline-variant/30 relative overflow-hidden group">
+<div class="absolute top-0 right-0 w-32 h-32 bg-secondary-container/20 rounded-bl-full -mr-10 -mt-10 transition-transform group-hover:scale-110"></div>
+<div class="relative z-10 space-y-md">
+<div class="flex items-center gap-sm">
+<div class="w-12 h-12 rounded-full bg-tertiary-container flex items-center justify-center text-on-tertiary">
+<span class="material-symbols-outlined" data-icon="contact_page">contact_page</span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface">Optimize Your Experience</h3>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                            For professional contact management and seamless integration, we highly recommend creating a <span class="font-bold text-primary">dedicated Google Workspace account</span>. This ensures your project assets remain isolated and secure.
+                        </p>
+<div class="p-md bg-surface-container-low rounded-lg flex items-start gap-sm border-l-4 border-secondary">
+<span class="material-symbols-outlined text-secondary" data-icon="lightbulb">lightbulb</span>
+<div class="font-label-sm text-label-sm text-on-secondary-fixed-variant">
+                                Project Specification #204: "Dedicated administrative channels are required for high-volume diamond requests."
+                            </div>
+</div>
+</div>
+</div>
+<!-- Main CTA Area -->
+<div class="flex flex-col sm:flex-row gap-md items-center pt-md">
+<button class="w-full sm:w-auto px-xl py-4 bg-primary text-on-primary rounded-full font-headline-lg text-headline-lg flex items-center justify-center gap-sm hover:scale-105 active:scale-95 transition-all shadow-[0_20px_40px_rgba(98,0,197,0.3)]">
+                        Start Exploring
+                        <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</button>
+<a class="font-title-md text-title-md text-primary hover:underline px-md py-sm" href="#">Skip for now</a>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer Decoration -->
+<footer class="py-lg px-margin-desktop flex justify-between items-center bg-surface-container-low">
+<div class="flex gap-lg">
+<div class="flex items-center gap-xs">
+<div class="w-2 h-2 rounded-full bg-secondary"></div>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Network Active</span>
+</div>
+<div class="flex items-center gap-xs">
+<div class="w-2 h-2 rounded-full bg-tertiary"></div>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Diamond Ready</span>
+</div>
+</div>
+<p class="font-label-sm text-label-sm text-outline">Velocity Admin © 2024</p>
+</footer>
+<!-- Visual Element: Background Gradient Blobs -->
+<div class="fixed top-0 left-0 -z-10 w-full h-full pointer-events-none overflow-hidden">
+<div class="absolute top-[-10%] right-[-5%] w-[40vw] h-[40vw] bg-primary-container/10 blur-[100px] rounded-full"></div>
+<div class="absolute bottom-[-10%] left-[-5%] w-[30vw] h-[30vw] bg-secondary-container/10 blur-[100px] rounded-full"></div>
+</div>
+<!-- Image Placeholder for Aesthetic Context -->
+<div class="hidden">
+<img data-alt="A vibrant, high-energy digital background featuring flowing gradients of electric violet and deep indigo. Sharp, modernist geometric lines intersect with soft, ambient glowing orbs of teal light. The overall mood is sophisticated and technologically advanced, echoing a brutal-modernist aesthetic that feels both professional and creative. High-contrast lighting and clean negative space define the premium visual experience." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8Y9WmtJBAIR8Kag012i0CAT66wUfoZkIURQH9izr4_tbRbM2_FXNG_ZqnLoRPiPkuYcFNBTOnsrr0_AFnAeyan-uEbELtc74RVLF612Jipiay6pljDKbbtD5RV4V8wP8Z5zHxjx87DRtVPUUNII0soRKwfglFHntv990mz44lbxMivldKXe2fMUW20HG8lfrO2sDbRMp1zJW6B753qvim6qDmKY_L_-l4cZhA6r7KBw9OMRFnw5G7BmB64z4IefxEAnB9UUVZlRk"/>
+</div>
+</body></html>

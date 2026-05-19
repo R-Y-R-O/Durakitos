@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Administrator Dashboard - ConnectPro</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f9ff;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-variant": "#e0e2ea",
+                        "on-error-container": "#93000a",
+                        "on-primary-fixed-variant": "#5f00bf",
+                        "tertiary-container": "#b000a4",
+                        "tertiary": "#87007e",
+                        "on-tertiary-fixed-variant": "#83007a",
+                        "surface-bright": "#f8f9ff",
+                        "on-background": "#181c21",
+                        "on-error": "#ffffff",
+                        "inverse-surface": "#2d3136",
+                        "outline-variant": "#cdc2d8",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-fixed-variant": "#004f53",
+                        "on-primary-fixed": "#280057",
+                        "error-container": "#ffdad6",
+                        "error": "#ba1a1a",
+                        "primary": "#6200c5",
+                        "surface-container": "#ebeef5",
+                        "outline": "#7c7387",
+                        "surface-dim": "#d7dae1",
+                        "secondary-container": "#5ff4fc",
+                        "surface-container-highest": "#e0e2ea",
+                        "secondary-fixed-dim": "#3cdae2",
+                        "on-tertiary-fixed": "#390035",
+                        "primary-fixed": "#ecdcff",
+                        "tertiary-fixed-dim": "#ffacec",
+                        "surface": "#f8f9ff",
+                        "primary-fixed-dim": "#d6baff",
+                        "surface-tint": "#7b26e6",
+                        "inverse-primary": "#d6baff",
+                        "secondary": "#00696e",
+                        "on-secondary-fixed": "#002021",
+                        "on-secondary-container": "#006e72",
+                        "tertiary-fixed": "#ffd7f2",
+                        "on-primary-container": "#e7d5ff",
+                        "on-surface-variant": "#4b4455",
+                        "background": "#f8f9ff",
+                        "surface-container-low": "#f1f3fb",
+                        "on-surface": "#181c21",
+                        "on-primary": "#ffffff",
+                        "inverse-on-surface": "#eef1f8",
+                        "surface-container-high": "#e5e8ef",
+                        "on-tertiary-container": "#ffcef0",
+                        "primary-container": "#7d2ae8",
+                        "secondary-fixed": "#63f7ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xs": "4px",
+                        "lg": "40px",
+                        "base": "8px",
+                        "sm": "12px",
+                        "xl": "64px",
+                        "gutter": "16px",
+                        "margin-mobile": "20px",
+                        "md": "24px",
+                        "margin-desktop": "48px"
+                    },
+                    "fontFamily": {
+                        "title-md": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "display-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "title-md": ["18px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "label-sm": ["12px", {"lineHeight": "1", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                        "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "800"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background overflow-x-hidden pb-32">
+<!-- TopAppBar -->
+<header class="bg-gradient-to-r from-primary to-primary-container docked full-width top-0 shadow-lg shadow-[#1A0B2E]/10 z-50 sticky transition-all duration-200">
+<div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-4">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container overflow-hidden border-2 border-on-primary/20">
+<img alt="User profile photo" data-alt="A professional headshot of a young, stylish male administrator with short dark hair and a confident smile. He is set against a clean, softly lit studio background with hints of deep purple and cyan ambient light. The image quality is crisp, mirroring a premium professional dashboard environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3XMh0r78CiQtDB4JSymMP4S0uv4acfdnQbedeAwhltxJKKcm8KyFUqnbzLL6xNhxRTNEkIezzQJuDapcc7poHOMBAfU9kaSe7FYgNKNJ785lHhHJrmL-5j4ys_hrnZOSRYnwvfSCvbitNMa32gysfVZhY4qy28MvauaJYt--TCypCzkabx2mYcWMaXjTt9P0VfQxh-XG2Gliu9gL3Bpb-PTV8jfwxyzMxDbjgwTZDU56sgVoF5JgR57U88-KmAxVeWDeG55V_JeA"/>
+</div>
+<h1 class="text-headline-lg font-headline-lg font-extrabold text-on-primary tracking-tight">ConnectPro</h1>
+</div>
+<div class="flex items-center gap-sm">
+<button class="text-on-primary hover:scale-105 transition-transform duration-200">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+</div>
+</div>
+</header>
+<main class="max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop mt-lg">
+<!-- Welcome Section -->
+<section class="mb-lg">
+<div class="flex flex-col md:flex-row justify-between items-end md:items-center gap-md">
+<div>
+<span class="bg-tertiary text-on-tertiary px-3 py-1 rounded-full text-label-sm font-label-sm tracking-wider uppercase mb-2 inline-block">MODO ADMIN</span>
+<h2 class="text-display-lg font-display-lg text-primary">Control Center</h2>
+<p class="text-body-md text-on-surface-variant max-w-lg">Bienvenido de nuevo, Admin. Revisa las métricas críticas y gestiona el acceso de tu equipo en tiempo real.</p>
+</div>
+<button class="bg-primary text-on-primary h-12 px-8 rounded-full font-bold shadow-xl shadow-[#1A0B2E]/20 hover:scale-105 transition-all flex items-center gap-2">
+<span class="material-symbols-outlined" data-icon="add_moderator">add_moderator</span>
+                    Generar códigos de verificación
+                </button>
+</div>
+</section>
+<!-- Stats Grid -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-md mb-xl">
+<!-- Stat 1 -->
+<div class="bg-gradient-to-br from-primary-container to-primary p-md rounded-lg shadow-2xl shadow-[#1A0B2E]/10 relative overflow-hidden group">
+<div class="absolute -right-4 -top-4 opacity-10 group-hover:scale-125 transition-transform duration-500">
+<span class="material-symbols-outlined text-[120px]" data-icon="shield_person">shield_person</span>
+</div>
+<p class="text-on-primary/80 font-label-sm text-label-sm mb-1 uppercase tracking-widest">Moderadores Activos</p>
+<div class="flex items-baseline gap-2">
+<span class="text-on-primary text-display-lg font-display-lg">24</span>
+<span class="text-secondary-container font-bold text-title-md">+3 hoy</span>
+</div>
+</div>
+<!-- Stat 2 -->
+<div class="bg-gradient-to-br from-tertiary-container to-tertiary p-md rounded-lg shadow-2xl shadow-[#1A0B2E]/10 relative overflow-hidden group">
+<div class="absolute -right-4 -top-4 opacity-10 group-hover:scale-125 transition-transform duration-500">
+<span class="material-symbols-outlined text-[120px]" data-icon="key">key</span>
+</div>
+<p class="text-on-tertiary/80 font-label-sm text-label-sm mb-1 uppercase tracking-widest">Códigos Entregados</p>
+<div class="flex items-baseline gap-2">
+<span class="text-on-tertiary text-display-lg font-display-lg">1,402</span>
+<span class="text-tertiary-fixed font-bold text-title-md">98% tasa</span>
+</div>
+</div>
+<!-- Stat 3 -->
+<div class="bg-gradient-to-br from-secondary to-[#004f53] p-md rounded-lg shadow-2xl shadow-[#1A0B2E]/10 relative overflow-hidden group">
+<div class="absolute -right-4 -top-4 opacity-10 group-hover:scale-125 transition-transform duration-500">
+<span class="material-symbols-outlined text-[120px]" data-icon="group_add">group_add</span>
+</div>
+<p class="text-on-secondary/80 font-label-sm text-label-sm mb-1 uppercase tracking-widest">Nuevos Registros</p>
+<div class="flex items-baseline gap-2">
+<span class="text-on-secondary text-display-lg font-display-lg">156</span>
+<span class="text-secondary-fixed font-bold text-title-md">Semana</span>
+</div>
+</div>
+</section>
+<!-- Main Layout Split -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-xl">
+<!-- Team Section (Left) -->
+<div class="lg:col-span-8">
+<div class="flex items-center justify-between mb-md">
+<h3 class="text-headline-lg font-headline-lg text-on-surface">Equipo de Moderación</h3>
+<button class="text-primary font-bold hover:underline flex items-center gap-1">
+                        Ver todos <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+<div class="grid grid-cols-1 gap-sm">
+<!-- Mod Card -->
+<div class="bg-surface-container-low p-md rounded-lg flex items-center justify-between hover:translate-x-2 transition-transform duration-300 shadow-sm">
+<div class="flex items-center gap-md">
+<div class="w-14 h-14 rounded-full bg-primary-fixed flex items-center justify-center border-4 border-surface shadow-md">
+<img alt="Moderator Avatar" class="rounded-full" data-alt="A clean portrait icon of a female moderator with professional attire, soft focused background in a bright high-key lighting style. The color palette is composed of soft purples and whites to match the modern corporate aesthetic of the application." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBUA5SMdPMD-1ZwOp8lXvMC9gggC6N1y7rZqSEz0fahvNkF3EwbTf2sFL2FZhch0OD5Z17oi85cY-72z_ywVrpn--dzRsD0bLAG2M_Nc_3C63gbjg77bF-xibfiayGvnLRJzakcKmBr1ioQHgCNUm0yhok72XcoBW8acdzn75B-rDm-IfINGAtEo4-O4qg1loCnqhu8UUTAfPxG6ckJsxwLZv5tsyNO7-GcOFylqXMzRYrJkW_Vsl9l7y1xLGhR_BrLigR2bnPBVIM"/>
+</div>
+<div>
+<h4 class="font-title-md text-title-md text-on-surface">Ana Martínez</h4>
+<p class="text-label-sm text-on-surface-variant font-label-sm uppercase">Senior Moderator</p>
+</div>
+</div>
+<div class="flex gap-lg items-center">
+<div class="text-center hidden md:block">
+<p class="text-label-sm text-outline uppercase font-label-sm">Códigos</p>
+<p class="font-bold text-primary">432</p>
+</div>
+<div class="text-center hidden md:block">
+<p class="text-label-sm text-outline uppercase font-label-sm">Rating</p>
+<p class="font-bold text-secondary">4.9/5</p>
+</div>
+<button class="w-10 h-10 rounded-full bg-surface border border-outline-variant flex items-center justify-center hover:bg-primary-container hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
+</button>
+</div>
+</div>
+<!-- Mod Card -->
+<div class="bg-surface-container-low p-md rounded-lg flex items-center justify-between hover:translate-x-2 transition-transform duration-300 shadow-sm">
+<div class="flex items-center gap-md">
+<div class="w-14 h-14 rounded-full bg-secondary-fixed flex items-center justify-center border-4 border-surface shadow-md">
+<img alt="Moderator Avatar" class="rounded-full" data-alt="A high-quality digital portrait of a male moderator in his late 20s, wearing casual modern workwear. The setting is a minimalist tech office with vibrant neon purple lighting reflections. The overall look is professional yet dynamic, reflecting a high-energy modernist design style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAOscWRWdBoEj12ETAEo2kB_vY2K1XhxLMkDHVYhpWMtRblOGaxGc8c4GGGXmgxtQEOGD1mHnSxA1iYPhnP4p36dMhRkg2AvC9iNAcKpLhBMS5khZJF8OhzDIUpCsZ9_SfrcjphTI1ogSjmlGGVVsd6lRmlajuqALcPnU_hihMklbvQ6OjovaNCs3h3MEMTFq9amh6-yW6wWREBQXwthOrXv-HdxCxV-5ywMcW6Y777XiDHJ5xBBTgksGvQycrnoqRrxQj_amzdoGE"/>
+</div>
+<div>
+<h4 class="font-title-md text-title-md text-on-surface">Carlos Ruiz</h4>
+<p class="text-label-sm text-on-surface-variant font-label-sm uppercase">Junior Moderator</p>
+</div>
+</div>
+<div class="flex gap-lg items-center">
+<div class="text-center hidden md:block">
+<p class="text-label-sm text-outline uppercase font-label-sm">Códigos</p>
+<p class="font-bold text-primary">128</p>
+</div>
+<div class="text-center hidden md:block">
+<p class="text-label-sm text-outline uppercase font-label-sm">Rating</p>
+<p class="font-bold text-secondary">4.7/5</p>
+</div>
+<button class="w-10 h-10 rounded-full bg-surface border border-outline-variant flex items-center justify-center hover:bg-primary-container hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
+</button>
+</div>
+</div>
+<!-- Mod Card -->
+<div class="bg-surface-container-low p-md rounded-lg flex items-center justify-between hover:translate-x-2 transition-transform duration-300 shadow-sm">
+<div class="flex items-center gap-md">
+<div class="w-14 h-14 rounded-full bg-tertiary-fixed flex items-center justify-center border-4 border-surface shadow-md">
+<img alt="Moderator Avatar" class="rounded-full" data-alt="A detailed profile photograph of a diverse female moderator with a focus on a friendly expression. Lighting is bright and clean, emphasizing a modern light-mode interface look. The background features blurred abstract geometric patterns in teal and magenta, maintaining a brutal-modernist aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAidNMhebXhYO7CnfMu3OVX6ey-oj50dZ-GnZ8x4ySmxUBAFZItQGZ0LqyayEB5B6X4jtxy7C1TxU6T8_BNPA0Xtlv4ic3eqW2r9Kn5hF2VwDNefsBcnqEE8E9If3jPng_2c3Ru85RA6s94DFClvdAWQRTRVojD5yuvcOZRpDSl0Io10orRYpwNDUKQy2sKPNgXltqs-thpXJvIJMYnPmJqB8NurJnADginsJ0BKCyc0I2MzhtAy_-s5aW0y1aO4goYJW64R0Rxirc"/>
+</div>
+<div>
+<h4 class="font-title-md text-title-md text-on-surface">Elena López</h4>
+<p class="text-label-sm text-on-surface-variant font-label-sm uppercase">Support Lead</p>
+</div>
+</div>
+<div class="flex gap-lg items-center">
+<div class="text-center hidden md:block">
+<p class="text-label-sm text-outline uppercase font-label-sm">Códigos</p>
+<p class="font-bold text-primary">567</p>
+</div>
+<div class="text-center hidden md:block">
+<p class="text-label-sm text-outline uppercase font-label-sm">Rating</p>
+<p class="font-bold text-secondary">5.0/5</p>
+</div>
+<button class="w-10 h-10 rounded-full bg-surface border border-outline-variant flex items-center justify-center hover:bg-primary-container hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Chat & Actions (Right) -->
+<div class="lg:col-span-4 flex flex-col gap-xl">
+<!-- Chat Shortcut -->
+<div class="bg-inverse-surface text-inverse-on-surface rounded-lg p-md shadow-2xl shadow-[#1A0B2E]/30 relative overflow-hidden group">
+<div class="absolute right-[-10%] bottom-[-10%] opacity-10 group-hover:scale-110 transition-transform duration-700">
+<span class="material-symbols-outlined text-[160px]" data-icon="chat_bubble">chat_bubble</span>
+</div>
+<div class="relative z-10">
+<h3 class="font-headline-lg text-title-md mb-2">Chat de Equipo</h3>
+<p class="text-body-md opacity-80 mb-6">6 moderadores conectados ahora en el canal principal.</p>
+<div class="flex -space-x-3 mb-6">
+<div class="w-10 h-10 rounded-full border-2 border-inverse-surface bg-primary shadow-lg"></div>
+<div class="w-10 h-10 rounded-full border-2 border-inverse-surface bg-secondary shadow-lg"></div>
+<div class="w-10 h-10 rounded-full border-2 border-inverse-surface bg-tertiary shadow-lg"></div>
+<div class="w-10 h-10 rounded-full border-2 border-inverse-surface bg-surface-variant flex items-center justify-center text-on-surface-variant text-xs font-bold">+3</div>
+</div>
+<button class="w-full bg-secondary-container text-on-secondary-container font-bold py-3 rounded-full hover:scale-105 transition-transform flex items-center justify-center gap-2">
+<span class="material-symbols-outlined" data-icon="forum">forum</span>
+                            Entrar al Chat
+                        </button>
+</div>
+</div>
+<!-- Quick Action Card -->
+<div class="bg-surface-container-high rounded-lg p-md shadow-lg">
+<h3 class="font-title-md text-title-md text-on-surface mb-4">Mantenimiento Rápido</h3>
+<ul class="flex flex-col gap-sm">
+<li>
+<button class="w-full flex items-center gap-md p-3 hover:bg-surface-bright rounded-xl transition-colors group">
+<div class="w-10 h-10 rounded-full bg-error-container text-error flex items-center justify-center group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined" data-icon="cleaning_services">cleaning_services</span>
+</div>
+<span class="font-bold text-on-surface">Limpiar Trash</span>
+</button>
+</li>
+<li>
+<button class="w-full flex items-center gap-md p-3 hover:bg-surface-bright rounded-xl transition-colors group">
+<div class="w-10 h-10 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined" data-icon="archive">archive</span>
+</div>
+<span class="font-bold text-on-surface">Archivar Mensuales</span>
+</button>
+</li>
+<li>
+<button class="w-full flex items-center gap-md p-3 hover:bg-surface-bright rounded-xl transition-colors group">
+<div class="w-10 h-10 rounded-full bg-primary-fixed-dim text-primary flex items-center justify-center group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</div>
+<span class="font-bold text-on-surface">Configurar Alertas</span>
+</button>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-safe pt-2 bg-surface dark:bg-surface-container-highest shadow-[0_-10px_30px_rgba(26,11,46,0.08)] rounded-t-lg md:hidden">
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline p-2 hover:bg-surface-variant/50 rounded-xl" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="text-label-sm font-label-sm">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-primary-container text-primary rounded-xl px-4 py-1.5 transition-all duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="person_book" style="font-variation-settings: 'FILL' 1;">person_book</span>
+<span class="text-label-sm font-label-sm">Contacts</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline p-2 hover:bg-surface-variant/50 rounded-xl" href="#">
+<span class="material-symbols-outlined" data-icon="grid_view">grid_view</span>
+<span class="text-label-sm font-label-sm">Templates</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline p-2 hover:bg-surface-variant/50 rounded-xl" href="#">
+<span class="material-symbols-outlined" data-icon="workspace_premium">workspace_premium</span>
+<span class="text-label-sm font-label-sm">VIP</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline p-2 hover:bg-surface-variant/50 rounded-xl" href="#">
+<span class="material-symbols-outlined" data-icon="more_horiz">more_horiz</span>
+<span class="text-label-sm font-label-sm">More</span>
+</a>
+</nav>
+<!-- Sidebar (Desktop NavigationDrawer Hybrid) -->
+<aside class="fixed left-0 top-0 h-full w-20 md:w-80 bg-surface-bright hidden md:flex flex-col py-8 shadow-2xl shadow-[#1A0B2E]/12 z-40">
+<div class="px-8 mb-xl">
+<div class="flex items-center gap-4 mb-2">
+<div class="w-12 h-12 rounded-lg bg-primary flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-3xl" data-icon="hub">hub</span>
+</div>
+<div>
+<p class="text-title-md font-title-md text-on-surface">Admin Dashboard</p>
+<p class="text-body-md text-on-surface-variant">Pro Member</p>
+</div>
+</div>
+<div class="inline-block bg-secondary-container text-on-secondary-container px-2 py-0.5 rounded text-[10px] font-bold tracking-tighter uppercase">Verified</div>
+</div>
+<nav class="flex flex-col gap-2">
+<a class="bg-secondary-container text-on-secondary-container font-bold rounded-full mx-2 px-4 py-3 flex items-center gap-4 hover:translate-x-2 transition-transform duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="person" style="font-variation-settings: 'FILL' 1;">person</span>
+<span class="text-body-md font-body-md">Personal Contacts</span>
+</a>
+<a class="text-on-surface-variant hover:bg-surface-variant rounded-full mx-2 px-4 py-3 flex items-center gap-4 hover:translate-x-2 transition-transform duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="hub">hub</span>
+<span class="text-body-md font-body-md">Business Network</span>
+</a>
+<a class="text-on-surface-variant hover:bg-surface-variant rounded-full mx-2 px-4 py-3 flex items-center gap-4 hover:translate-x-2 transition-transform duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="archive">archive</span>
+<span class="text-body-md font-body-md">Archived</span>
+</a>
+<a class="text-on-surface-variant hover:bg-surface-variant rounded-full mx-2 px-4 py-3 flex items-center gap-4 hover:translate-x-2 transition-transform duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="delete">delete</span>
+<span class="text-body-md font-body-md">Trash</span>
+</a>
+</nav>
+<div class="mt-auto px-8">
+<div class="p-4 bg-surface-container rounded-lg">
+<p class="text-label-sm font-label-sm text-outline mb-2">STORAGE USAGE</p>
+<div class="w-full bg-outline-variant h-2 rounded-full overflow-hidden mb-2">
+<div class="bg-primary w-3/4 h-full"></div>
+</div>
+<p class="text-[10px] font-bold text-on-surface-variant">75% of 10GB used</p>
+</div>
+</div>
+</aside>
+</body></html>

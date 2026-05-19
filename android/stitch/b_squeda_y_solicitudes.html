@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary-fixed-variant": "#0040a2",
+                    "on-background": "#191b23",
+                    "on-secondary": "#ffffff",
+                    "surface-variant": "#e1e2ec",
+                    "surface-tint": "#0c56d0",
+                    "secondary-container": "#d6e3f7",
+                    "on-tertiary-fixed": "#002113",
+                    "primary": "#003d9b",
+                    "tertiary-fixed": "#82f9be",
+                    "on-secondary-container": "#596576",
+                    "on-secondary-fixed": "#101c2b",
+                    "outline-variant": "#c3c6d6",
+                    "on-primary-container": "#c4d2ff",
+                    "tertiary": "#004e32",
+                    "inverse-surface": "#2e3038",
+                    "on-error-container": "#93000a",
+                    "tertiary-fixed-dim": "#65dca4",
+                    "secondary-fixed": "#d6e3f7",
+                    "primary-fixed": "#dae2ff",
+                    "inverse-primary": "#b2c5ff",
+                    "inverse-on-surface": "#f0f0fb",
+                    "primary-fixed-dim": "#b2c5ff",
+                    "on-tertiary-container": "#72e9af",
+                    "surface": "#faf8ff",
+                    "surface-bright": "#faf8ff",
+                    "surface-container-highest": "#e1e2ec",
+                    "surface-dim": "#d9d9e4",
+                    "on-surface": "#191b23",
+                    "on-tertiary": "#ffffff",
+                    "tertiary-container": "#006844",
+                    "error-container": "#ffdad6",
+                    "on-tertiary-fixed-variant": "#005235",
+                    "on-primary-fixed": "#001848",
+                    "primary-container": "#0052cc",
+                    "on-surface-variant": "#434654",
+                    "surface-container": "#ededf8",
+                    "on-error": "#ffffff",
+                    "surface-container-lowest": "#ffffff",
+                    "outline": "#737685",
+                    "secondary-fixed-dim": "#bbc7db",
+                    "secondary": "#535f70",
+                    "on-secondary-fixed-variant": "#3b4858",
+                    "on-primary": "#ffffff",
+                    "error": "#ba1a1a",
+                    "background": "#faf8ff",
+                    "surface-container-high": "#e7e7f2",
+                    "surface-container-low": "#f3f3fd"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "xl": "64px",
+                    "container-max": "1280px",
+                    "md": "24px",
+                    "lg": "40px",
+                    "gutter": "24px",
+                    "sm": "12px",
+                    "base": "8px",
+                    "xs": "4px"
+            },
+            "fontFamily": {
+                    "body-md": ["Inter"],
+                    "label-md": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "headline-md": ["Inter"],
+                    "headline-lg-mobile": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "headline-sm": ["Inter"]
+            },
+            "fontSize": {
+                    "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["26px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "500"}]
+            }
+          },
+        },
+      }
+    </script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen pb-20 md:pb-0">
+<!-- TopAppBar -->
+<header class="bg-surface dark:bg-background shadow-sm w-full top-0 sticky z-40">
+<div class="flex justify-between items-center px-md py-sm w-full">
+<div class="flex items-center gap-md">
+<button class="hover:bg-surface-container-high transition-colors active:scale-95 duration-100 p-2 rounded-full">
+<span class="material-symbols-outlined text-primary dark:text-primary-fixed-dim">menu</span>
+</button>
+<h1 class="font-headline-sm text-headline-sm font-bold text-primary dark:text-primary-fixed-dim">Contacts</h1>
+</div>
+<div class="flex items-center gap-md">
+<div class="hidden md:flex gap-sm">
+<button class="text-primary font-bold px-4 py-2 rounded-lg hover:bg-surface-container-high transition-colors">Search</button>
+<button class="text-on-surface-variant px-4 py-2 rounded-lg hover:bg-surface-container-high transition-colors">Requests</button>
+</div>
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary-container shadow-sm">
+<img alt="User profile" class="w-full h-full object-cover" data-alt="A professional close-up portrait of a woman with a friendly expression, set against a softly blurred office background. The lighting is bright and natural, reflecting a clean light-mode aesthetic. The image features high-quality skin textures and a professional corporate minimalism style with soft blue and white tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDc_rDiiD6ZVDQwkw-7DCftCJnrCehLMMJ9B4mAQD57qLGu2KWiuRwcR4gVsBfG87KOVw3a58jtqy-Qnb4N4tG0OM-hzULOXDFwCP1OEnff0b7Bukt21sUOd5JkyPwWSx1_6mLC_KUf5Nx2hQuhm0ZeE37SMON5Sv3iNb4dDMYnScKBWx1AmW0t4YpHuaew_MYA-gfJa6OHy_XZ-Ld1QOP_7oWflt3nERvTUkhwaZHmwLWbFbF2VN2F1Lwo9-4q0kdfm3zekgvvfTA"/>
+</div>
+</div>
+</div>
+</header>
+<main class="max-w-container-max mx-auto px-gutter py-lg">
+<!-- Search Bar Section -->
+<div class="mb-lg">
+<div class="relative w-full max-w-2xl mx-auto">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="w-full pl-12 pr-4 py-4 bg-surface-container-lowest border border-outline-variant rounded-xl shadow-sm focus:outline-none focus:border-primary transition-all text-body-lg font-body-lg" placeholder="Search for new people, colleagues, or teams..." type="text"/>
+</div>
+</div>
+<!-- Tabs Navigation -->
+<div class="flex justify-center mb-lg">
+<div class="inline-flex p-1 bg-surface-container rounded-xl shadow-inner">
+<button class="px-md py-base rounded-lg font-label-md text-label-md bg-surface-container-lowest text-primary shadow-sm transition-all">Search</button>
+<button class="px-md py-base rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-all">Pending Requests</button>
+</div>
+</div>
+<!-- Content Grid: Asymmetric Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-lg">
+<!-- Main Results Column -->
+<div class="lg:col-span-8 space-y-md">
+<h2 class="font-headline-md text-headline-md text-on-surface flex items-center gap-sm mb-sm">
+                    Global Results
+                    <span class="bg-secondary-container text-on-secondary-container text-label-md font-label-md px-2 py-0.5 rounded-full">124</span>
+</h2>
+<!-- Search Results (Bento Grid Style for first few) -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<!-- User Card 1 -->
+<div class="bg-surface-container-lowest border border-outline-variant p-md rounded-xl shadow-[0px_2px_4px_rgba(0,0,0,0.05)] hover:shadow-[0px_10px_20px_rgba(0,0,0,0.08)] transition-all group">
+<div class="flex items-start justify-between">
+<div class="flex gap-md">
+<div class="relative">
+<img class="w-16 h-16 rounded-full object-cover" data-alt="A professional headshot of a smiling man in his 30s with short hair, wearing a navy blazer and light shirt. The background is a minimalist studio setting with soft grey tones. The mood is reliable and corporate, illuminated by gentle daylight. The style is consistent with high-end professional contact management software." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCIutcxgZH4fmvKENoTg7CrIsIxnH2HuzKd5eRKhnf9b2N9F-Vn61bcdsDXutvBnduFE0XkmN0UUcQe6bjKExgXD1JPLev4pl9CuWevf-hANy3BwvUiBhVRLgvlVsMq6cJqcMLJT_pPSz9OO60o2H7ztg86wTq57Zh3LZm2V4btWsA2rJIoo-gtxSDwEnlMCB9XkNWvG09UjOgGxQP0k5yKQszfHTMEhFHBgvlql_oojfmPseGvKiH7FY-9DfVxwZafq4-AVeFNgvo"/>
+<div class="absolute bottom-0 right-0 w-4 h-4 bg-tertiary-fixed rounded-full border-2 border-surface-container-lowest"></div>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Alex Rivera</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Senior Product Designer</p>
+<div class="mt-2 flex gap-xs">
+<span class="bg-surface-container-high text-on-surface-variant text-label-md font-label-md px-2 py-0.5 rounded-full">Design</span>
+<span class="bg-surface-container-high text-on-surface-variant text-label-md font-label-md px-2 py-0.5 rounded-full">Tech</span>
+</div>
+</div>
+</div>
+<button class="bg-primary-container text-on-primary-container p-2 rounded-full hover:scale-110 active:scale-90 transition-all shadow-sm">
+<span class="material-symbols-outlined">person_add</span>
+</button>
+</div>
+</div>
+<!-- User Card 2 -->
+<div class="bg-surface-container-lowest border border-outline-variant p-md rounded-xl shadow-[0px_2px_4px_rgba(0,0,0,0.05)] hover:shadow-[0px_10px_20px_rgba(0,0,0,0.08)] transition-all">
+<div class="flex items-start justify-between">
+<div class="flex gap-md">
+<img class="w-16 h-16 rounded-full object-cover" data-alt="A portrait of a confident female executive with glasses, wearing a tailored black suit. She is standing against a modern architectural background with clean lines and glass. The lighting is sophisticated and directional, highlighting professional competence. The palette is dominated by whites, grays, and professional navy blues." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMIcZ8LWqNxM1ozs1pT2URZAYFeq9NXAXW6QHj0iu5_f4Jv-BqKXbERoQep71Znmi8_M_8hnjda-d85Iaae8i0yrHbb5_4D_AX35MFl3v-5ibeidGaMdvrZNod9vQx5I9lhdKVcACsKOrKSzQ5CEZu8srT__Bgj0RfB53TTPQ4wdAXLY414AcFKQdnhfPTXds9hmXiI3uPRBCFPV8zBO2lzgqseEwsQOEtPttR8darr2Nb1awQF25JT5bmJdaF8mQSNLyonkO9Nok"/>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Sarah Jenkins</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Marketing Director</p>
+<div class="mt-2 flex gap-xs">
+<span class="bg-surface-container-high text-on-surface-variant text-label-md font-label-md px-2 py-0.5 rounded-full">Leadership</span>
+</div>
+</div>
+</div>
+<button class="bg-primary-container text-on-primary-container p-2 rounded-full hover:scale-110 active:scale-90 transition-all shadow-sm">
+<span class="material-symbols-outlined">person_add</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Horizontal List Results -->
+<div class="space-y-sm mt-md">
+<div class="bg-surface-container-lowest border border-outline-variant px-md py-sm rounded-xl flex items-center justify-between hover:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-md">
+<img class="w-12 h-12 rounded-full object-cover" data-alt="A focused close-up of a man in professional attire looking directly at the camera. The background is a blurred office window during sunset, casting warm, golden-hour light on his features. The image conveys a sense of reliability and seasoned experience, styled with sharp clarity and a minimalist color scheme." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB14kVDU7cNRNKwZbnylxBm2bxi2WjrkGruAMCnY3NVcHQSC8D0tY9vKqDMUvO2TD5qsZlXHDvTu9eqKMAbK3GCqAYv42C380Ko6xDCjERUTjshNYPobkzOyAfsZPf54e4BdAEW-WzXM00jxeiukHmDDILN3DSj1DJh9RgXI385Jjo8nEb1nqlHGn_8qeKq1KGG5ISaWVF3vjrLMjC1Mor9TAQWfnjYrjeGLsTnoW8N-EdJLAMsU-CxxB0K7sqEJJomsBc1v58dRnA"/>
+<div>
+<h4 class="font-body-lg text-body-lg text-on-surface font-semibold">David Chen</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Full-stack Developer at Google</p>
+</div>
+</div>
+<button class="text-primary hover:bg-secondary-container p-2 rounded-full transition-colors">
+<span class="material-symbols-outlined">person_add</span>
+</button>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant px-md py-sm rounded-xl flex items-center justify-between hover:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-md">
+<img class="w-12 h-12 rounded-full object-cover" data-alt="A high-key, bright portrait of a young creative woman with artistic flair. She is in a minimalist loft space with plants in the background. The lighting is diffused and soft, accentuating a clean, modern aesthetic. The visual style is breezy, open, and professional with a touch of personal warmth." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAojJQQwO8fJ496EP8yN6WnedxCXSEhGpiVcUCKITmzSwHSJQV1J2210VAyJMdkt8tomJzzWzfo22kqpymUcQPZ6HubAbfSvcsDuUw4EftM02ISh6YF5ZmnEgtpv8ThbOu_A85b-tMlSirUKvs2ULFBm_FDwyDcgIrfAwtTQ4X-Hh42xwct2EOCkLepz6RUQM0AuyqFsD6njJEPhD2YkRuDLckIBNilBrSUx6fDxbTYeCSvRjpu0VoogLjGsrl5_eD6TGahViU9qGE"/>
+<div>
+<h4 class="font-body-lg text-body-lg text-on-surface font-semibold">Elena Rodriguez</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Illustrator &amp; Visual Artist</p>
+</div>
+</div>
+<button class="text-primary hover:bg-secondary-container p-2 rounded-full transition-colors">
+<span class="material-symbols-outlined">person_add</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Sidebar Column: Requests -->
+<div class="lg:col-span-4 space-y-md">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-sm">Pending Requests</h2>
+<div class="bg-surface-container p-md rounded-xl space-y-md border border-outline-variant">
+<div class="flex items-center justify-between mb-sm">
+<span class="text-label-md font-label-md text-on-surface-variant uppercase tracking-wider">Incoming (2)</span>
+</div>
+<!-- Request Item 1 -->
+<div class="bg-surface-container-lowest p-sm rounded-lg shadow-sm border border-outline-variant">
+<div class="flex gap-sm items-center">
+<img class="w-10 h-10 rounded-full object-cover" data-alt="A portrait of a male tech professional in a high-tech lab setting. Subtle blue LED lights are visible in the background, creating a futuristic yet grounded atmosphere. The lighting is sharp and clear, focusing on the individual's intelligent and approachable gaze. The overall aesthetic is one of innovation and enterprise software precision." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB41_Kx_K2egPOGDDe9ujjVLwjwueLac9yTV6DfSrXTwP6NBko_P5-m3egXipj17NJASATKrtwFUI9EgiN1pw6kH7UpjnU4MCdO_bYLaD2fkEoWWrYeAwlAvnm1tnvtWUwXIUVGvbyxjfSf3dd1oJYidu_QD_9hlKEIEjTg2YWJVTs4NkKrTw7McsyWJkZRgEs-7qHcTLN63lmGDM6tEmhYd4_h-fJDLiyAEGelCCZNIHC2zwpJbW-otmiqmBnEdtzEiYP9p5v07ks"/>
+<div class="flex-1">
+<h4 class="font-label-md text-label-md text-on-surface">Mark Thompson</h4>
+<p class="text-[11px] text-on-surface-variant">Wants to connect</p>
+</div>
+</div>
+<div class="flex gap-sm mt-sm">
+<button class="flex-1 bg-tertiary-container text-on-tertiary-container font-label-md text-label-md py-2 rounded-lg hover:brightness-110 active:scale-95 transition-all">Accept</button>
+<button class="flex-1 bg-surface-container-highest text-on-surface-variant font-label-md text-label-md py-2 rounded-lg hover:bg-outline-variant active:scale-95 transition-all">Ignore</button>
+</div>
+</div>
+<!-- Request Item 2 -->
+<div class="bg-surface-container-lowest p-sm rounded-lg shadow-sm border border-outline-variant">
+<div class="flex gap-sm items-center">
+<img class="w-10 h-10 rounded-full object-cover" data-alt="A candid, high-quality photograph of a woman working in a collaborative space. Soft morning light streams through large windows, creating a bright and airy light-mode feel. The style is professional and uncluttered, emphasizing human connection and productivity in a modern, breezy corporate environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAK2661BDqWrF15ydQhVlbLUAeyJn3C6XfaRd4EnUH_V6oo8A8d1zsVtKDAQxn32mQLDrSq8c2z3jyVptKyVHQxRQOKxLHOpEfdKZdCAKcHi6_ZffkSu3PT2MOqMJtLsNGWgooqj4Dcs8NahlTKv04EkBjPJTcid9UvG7oxFN4X7WEM_HkM4_Te2MIxYkzyeim3xCzkcAr2fhPVNPblgu5OSpeEVWn7lR9VwttHWzPKgtV9Qxa6U_8KKpi-PnK8o6v6nhFSlILRszA"/>
+<div class="flex-1">
+<h4 class="font-label-md text-label-md text-on-surface">Jessica Wu</h4>
+<p class="text-[11px] text-on-surface-variant">Mutual friend: Sarah Jenkins</p>
+</div>
+</div>
+<div class="flex gap-sm mt-sm">
+<button class="flex-1 bg-tertiary-container text-on-tertiary-container font-label-md text-label-md py-2 rounded-lg hover:brightness-110 active:scale-95 transition-all">Accept</button>
+<button class="flex-1 bg-surface-container-highest text-on-surface-variant font-label-md text-label-md py-2 rounded-lg hover:bg-outline-variant active:scale-95 transition-all">Ignore</button>
+</div>
+</div>
+<div class="pt-md border-t border-outline-variant">
+<span class="text-label-md font-label-md text-on-surface-variant uppercase tracking-wider mb-sm block">Outgoing (1)</span>
+<div class="flex items-center justify-between opacity-70">
+<div class="flex items-center gap-sm">
+<div class="w-8 h-8 rounded-full bg-secondary-fixed flex items-center justify-center font-bold text-on-secondary-fixed text-xs">KM</div>
+<span class="font-label-md text-label-md">Kevin Miller</span>
+</div>
+<span class="text-[10px] bg-surface-container-high px-2 py-0.5 rounded text-on-surface-variant">Pending</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 w-full z-50 bg-surface dark:bg-surface-container shadow-[0_-2px_10px_rgba(0,0,0,0.05)] border-t border-outline-variant dark:border-none">
+<div class="flex justify-around items-center h-16 w-full px-gutter pb-safe">
+<div class="flex flex-col items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-all active:scale-90 duration-150">
+<span class="material-symbols-outlined">contacts</span>
+<span class="font-label-md text-label-md">Agenda</span>
+</div>
+<div class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-full px-4 py-1 active:scale-90 duration-150">
+<span class="material-symbols-outlined">search</span>
+<span class="font-label-md text-label-md">Search</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-all active:scale-90 duration-150">
+<span class="material-symbols-outlined">group_add</span>
+<span class="font-label-md text-label-md">Requests</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-all active:scale-90 duration-150">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-md text-label-md">Profile</span>
+</div>
+</div>
+</nav>
+<!-- Contextual FAB (Hidden on this screen as per relevance check) -->
+</body></html>

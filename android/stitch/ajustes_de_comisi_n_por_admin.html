@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Ajustes de Comisión - Velocity Admin</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-background": "#181c21",
+                        "background": "#f8f9ff",
+                        "primary-container": "#7d2ae8",
+                        "on-primary-fixed": "#280057",
+                        "surface": "#f8f9ff",
+                        "on-secondary-fixed-variant": "#004f53",
+                        "error": "#ba1a1a",
+                        "surface-bright": "#f8f9ff",
+                        "tertiary-container": "#b000a4",
+                        "on-tertiary": "#ffffff",
+                        "surface-dim": "#d7dae1",
+                        "on-surface": "#181c21",
+                        "secondary-container": "#5ff4fc",
+                        "on-error": "#ffffff",
+                        "on-tertiary-fixed": "#390035",
+                        "on-tertiary-container": "#ffcef0",
+                        "primary": "#6200c5",
+                        "secondary-fixed-dim": "#3cdae2",
+                        "secondary-fixed": "#63f7ff",
+                        "inverse-on-surface": "#eef1f8",
+                        "secondary": "#00696e",
+                        "error-container": "#ffdad6",
+                        "tertiary-fixed-dim": "#ffacec",
+                        "on-primary": "#ffffff",
+                        "on-surface-variant": "#4b4455",
+                        "outline": "#7c7387",
+                        "surface-container-highest": "#e0e2ea",
+                        "surface-container-high": "#e5e8ef",
+                        "outline-variant": "#cdc2d8",
+                        "on-secondary-fixed": "#002021",
+                        "on-tertiary-fixed-variant": "#83007a",
+                        "on-primary-container": "#e7d5ff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "inverse-primary": "#d6baff",
+                        "surface-variant": "#e0e2ea",
+                        "inverse-surface": "#2d3136",
+                        "primary-fixed-dim": "#d6baff",
+                        "primary-fixed": "#ecdcff",
+                        "on-primary-fixed-variant": "#5f00bf",
+                        "tertiary": "#87007e",
+                        "on-secondary-container": "#006e72",
+                        "on-secondary": "#ffffff",
+                        "tertiary-fixed": "#ffd7f2",
+                        "surface-tint": "#7b26e6",
+                        "surface-container": "#ebeef5",
+                        "surface-container-low": "#f1f3fb"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "lg": "40px",
+                        "sm": "12px",
+                        "margin-mobile": "20px",
+                        "margin-desktop": "48px",
+                        "gutter": "16px",
+                        "xl": "64px",
+                        "xs": "4px",
+                        "md": "24px",
+                        "base": "8px"
+                    },
+                    "fontFamily": {
+                        "title-md": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "label-sm": ["Inter"]
+                    },
+                    "fontSize": {
+                        "title-md": ["18px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "label-sm": ["12px", {"lineHeight": "1", "letterSpacing": "0.02em", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f9ff;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .shadow-indigo {
+            box-shadow: 0 10px 40px -10px rgba(26, 11, 46, 0.12);
+        }
+        .custom-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 24px;
+            height: 24px;
+            background: #6200c5;
+            cursor: pointer;
+            border-radius: 50%;
+            border: 4px solid #ffffff;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface">
+<!-- TopAppBar -->
+<header class="w-full top-0 sticky z-40 bg-surface shadow-md flex justify-between items-center px-6 md:px-margin-desktop py-md">
+<div class="flex items-center gap-sm">
+<button class="material-symbols-outlined text-primary text-headline-lg active:scale-95 duration-200">menu</button>
+<h1 class="font-headline-lg text-headline-lg font-black text-primary">Velocity Admin</h1>
+</div>
+<div class="flex items-center gap-sm">
+<div class="hidden md:flex gap-md mr-base">
+<span class="text-on-surface-variant font-medium hover:bg-surface-container-high transition-colors px-4 py-2 rounded-full cursor-pointer">Panel</span>
+<span class="text-primary font-bold hover:bg-surface-container-high transition-colors px-4 py-2 rounded-full cursor-pointer">Configuración</span>
+</div>
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary">
+<img alt="Profile Photo" class="w-full h-full object-cover" data-alt="Close-up professional portrait of a tech executive with a confident smile, wearing a modern minimalist suit. The lighting is bright and high-contrast, typical of a high-end corporate lifestyle shoot, set against a clean, out-of-focus modern office background with soft purple and blue ambient light leaks." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9nbN8znsq0e0aP4aNFL8K9C8dvEsvtcuhzh8QEIPwfm_kfMHy871yVrYDAVRAkhkz6ui72VJnmK7cXbfMW0tI7TX43AtpxaCFAfKkNxeEvFMthWydnrYPm4BkgM5IF29CN-9k6VIBZJHlpiKdoALyoFZ12iNADvynBKX_NLpVXzg6wkLF-PhJHUWRXO2hyTHeHJFKD259-z0IM21elezD8L-MnCTQ17Wt2DxJBrWxlAs21jG15R84fZm3H5aa3Tl579AFkWwdzMA"/>
+</div>
+</div>
+</header>
+<main class="max-w-5xl mx-auto px-margin-mobile md:px-margin-desktop py-lg pb-32">
+<!-- Screen Header -->
+<div class="mb-lg">
+<h2 class="font-display-lg text-display-lg text-on-background mb-base">Ajustes de Comisión</h2>
+<p class="font-body-md text-on-surface-variant">Configura los incentivos personalizados para tus colaboradores estratégicos.</p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-lg">
+<!-- Left Column: Settings & Admin Profile -->
+<div class="lg:col-span-7 space-y-gutter">
+<!-- Administrator Profile Summary -->
+<div class="bg-surface-container-lowest p-md rounded-lg shadow-indigo flex items-center gap-md border border-outline-variant/30">
+<div class="w-16 h-16 rounded-full overflow-hidden bg-primary-fixed flex-shrink-0">
+<img alt="Marcus Aurelius" data-alt="A professional studio portrait of a mature man with classic features and a dignified expression, Marcus Aurelius style. The lighting is warm and directional, creating a sense of wisdom and authority. The color palette is composed of soft earth tones with a subtle electric violet rim light on his shoulder, keeping it within the modern brand aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuByIueGRyvjHOde6opLM3hh6-1vjiqdKTB4kJ4FYzirG3JV8UoIv-Bye50CWMFUfGFSUXFl7ERmjEEuA7sotd1EjHs_kFak6TpUirKzwFzJ8KJOqtz-ovZ6HLXk869ZCz9utdc9kkj_LWIiu5Ho4iPRRU5y9tmw4g3fT_VzPnhVD53flKjDxWXIGEr-KisytHZ6gOI8i31yuiwnlKZJ10CTO7mLO1UxaHNVix-jmf3S5XqUtZpyTG597UBfa_YfZkVea2RGt2BNxhI"/>
+</div>
+<div class="flex-grow">
+<div class="flex items-center justify-between">
+<h3 class="font-title-md text-title-md text-on-surface">Marcus Aurelius</h3>
+<span class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full text-label-sm font-bold">NIVEL DIAMANTE</span>
+</div>
+<div class="flex items-center gap-md mt-xs">
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-primary text-[18px]">trending_up</span>
+<span class="text-label-sm text-on-surface-variant font-bold">Rendimiento: +12%</span>
+</div>
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-tertiary text-[18px]">groups</span>
+<span class="text-label-sm text-on-surface-variant">42 Moderadores</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Commission Controls Card -->
+<div class="bg-surface-container-lowest p-lg rounded-lg shadow-indigo space-y-lg">
+<!-- Control 1 -->
+<div class="space-y-md">
+<div class="flex justify-between items-end">
+<div>
+<h4 class="font-title-md text-title-md text-on-background">Comisión de Admin</h4>
+<p class="text-label-sm text-on-surface-variant">Sobre el volumen directo generado</p>
+</div>
+<div class="bg-primary-container text-on-primary-container px-4 py-2 rounded-lg font-bold text-headline-lg">
+                                3.0%
+                            </div>
+</div>
+<div class="relative pt-4">
+<input class="w-full h-2 bg-surface-container-high rounded-full appearance-none cursor-pointer custom-slider" max="10" min="0" step="0.5" type="range" value="3"/>
+<div class="flex justify-between mt-base text-label-sm text-on-surface-variant font-medium">
+<span>0%</span>
+<span>5%</span>
+<span>10%</span>
+</div>
+</div>
+</div>
+<div class="h-px bg-outline-variant/30"></div>
+<!-- Control 2 -->
+<div class="space-y-md">
+<div class="flex justify-between items-end">
+<div>
+<h4 class="font-title-md text-title-md text-on-background">Comisión de Red</h4>
+<p class="text-label-sm text-on-surface-variant">Sobre el volumen de su equipo de moderadores</p>
+</div>
+<div class="bg-secondary-container text-on-secondary-container px-4 py-2 rounded-lg font-bold text-headline-lg">
+                                1.0%
+                            </div>
+</div>
+<div class="relative pt-4">
+<input class="w-full h-2 bg-surface-container-high rounded-full appearance-none cursor-pointer custom-slider" max="5" min="0" step="0.1" type="range" value="1"/>
+<div class="flex justify-between mt-base text-label-sm text-on-surface-variant font-medium">
+<span>0%</span>
+<span>2.5%</span>
+<span>5%</span>
+</div>
+</div>
+</div>
+<!-- Global Override -->
+<div class="flex items-center justify-between p-md bg-surface-container-low rounded-lg">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-primary">public</span>
+<div>
+<p class="font-title-md text-on-background text-[16px]">Aplicar a todos los Admins</p>
+<p class="text-label-sm text-on-surface-variant">Sincroniza estos valores globalmente</p>
+</div>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only peer" type="checkbox"/>
+<div class="w-14 h-8 bg-surface-dim peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[4px] after:start-[4px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-6 after:w-6 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="flex flex-col sm:flex-row gap-base">
+<button class="flex-1 bg-primary text-on-primary font-bold py-md px-lg rounded-full text-title-md shadow-lg active:scale-95 transition-all hover:bg-primary-container">
+                        Guardar Cambios
+                    </button>
+<button class="flex-1 bg-surface-container-lowest border-2 border-outline-variant text-on-surface-variant font-bold py-md px-lg rounded-full text-title-md active:scale-95 transition-all hover:bg-surface-container-high">
+                        Restablecer Valores
+                    </button>
+</div>
+</div>
+<!-- Right Column: Projections & Insights -->
+<div class="lg:col-span-5 space-y-gutter">
+<!-- Revenue Projection Card -->
+<div class="bg-gradient-to-br from-primary-container to-primary p-lg rounded-lg shadow-indigo text-on-primary-container relative overflow-hidden h-full lg:h-auto">
+<div class="relative z-10">
+<div class="flex items-center gap-xs mb-base opacity-80">
+<span class="material-symbols-outlined text-[20px]">analytics</span>
+<span class="font-label-sm uppercase tracking-wider">Proyección de Ingresos</span>
+</div>
+<h4 class="text-headline-lg font-bold mb-xs">Ingreso Mensual Estimado</h4>
+<div class="flex items-baseline gap-xs">
+<span class="text-[48px] font-black leading-none">$12,450</span>
+<span class="text-title-md opacity-70">USD</span>
+</div>
+<div class="mt-lg pt-lg border-t border-white/20 space-y-md">
+<div class="flex justify-between items-center">
+<span class="font-body-md opacity-90">De Volumen Directo</span>
+<span class="font-bold">$4,200</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="font-body-md opacity-90">De Red de Moderadores</span>
+<span class="font-bold">$8,250</span>
+</div>
+</div>
+<div class="mt-xl p-md bg-white/10 rounded-lg backdrop-blur-md">
+<div class="flex items-center gap-sm">
+<div class="w-2 h-10 bg-secondary-container rounded-full"></div>
+<p class="text-label-sm leading-relaxed">Basado en el volumen promedio histórico de Marcus Aurelius de los últimos 90 días.</p>
+</div>
+</div>
+</div>
+<!-- Decorative Background Element -->
+<div class="absolute -bottom-10 -right-10 w-48 h-48 bg-secondary-container/20 rounded-full blur-3xl"></div>
+</div>
+<!-- Quick Stats Bento Item -->
+<div class="bg-tertiary-container p-lg rounded-lg shadow-indigo text-on-tertiary-container flex items-center justify-between">
+<div>
+<p class="text-label-sm font-bold opacity-80 mb-xs">STATUS DE CUENTA</p>
+<p class="text-headline-lg font-black italic">VERIFICADA</p>
+</div>
+<span class="material-symbols-outlined text-[64px] opacity-30" data-weight="fill">verified</span>
+</div>
+<!-- Small Info Tile -->
+<div class="bg-surface-container-high p-md rounded-lg flex items-start gap-md">
+<div class="w-12 h-12 rounded-full bg-white flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-primary">info</span>
+</div>
+<p class="text-label-sm text-on-surface-variant leading-normal">
+                        Cualquier cambio realizado se aplicará a partir del próximo ciclo de facturación (Día 1 del próximo mes).
+                    </p>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-margin-mobile py-sm bg-surface shadow-[0_-4px_30px_0_rgba(26,11,46,0.12)] md:hidden">
+<div class="flex flex-col items-center justify-center text-on-surface-variant hover:opacity-80 transition-transform active:scale-90">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-sm text-label-sm">Home</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant hover:opacity-80 transition-transform active:scale-90">
+<span class="material-symbols-outlined">account_tree</span>
+<span class="font-label-sm text-label-sm">Network</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant hover:opacity-80 transition-transform active:scale-90">
+<span class="material-symbols-outlined">payments</span>
+<span class="font-label-sm text-label-sm">Diamonds</span>
+</div>
+<div class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-2xl px-4 py-1 scale-98 active:scale-90 transition-transform">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">settings</span>
+<span class="font-label-sm text-label-sm">Account</span>
+</div>
+</nav>
+</body></html>

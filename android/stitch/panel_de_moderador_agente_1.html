@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-fixed": "#ffd7f2",
+                    "surface-dim": "#d7dae1",
+                    "secondary-fixed": "#63f7ff",
+                    "on-tertiary-container": "#ffcef0",
+                    "on-secondary-fixed-variant": "#004f53",
+                    "on-primary-fixed-variant": "#5f00bf",
+                    "surface-tint": "#7b26e6",
+                    "on-surface-variant": "#4b4455",
+                    "error": "#ba1a1a",
+                    "on-tertiary-fixed-variant": "#83007a",
+                    "on-secondary-fixed": "#002021",
+                    "on-primary-fixed": "#280057",
+                    "on-secondary": "#ffffff",
+                    "surface-bright": "#f8f9ff",
+                    "primary-container": "#7d2ae8",
+                    "primary": "#6200c5",
+                    "inverse-surface": "#2d3136",
+                    "on-secondary-container": "#006e72",
+                    "surface-container-low": "#f1f3fb",
+                    "on-primary-container": "#e7d5ff",
+                    "tertiary-fixed-dim": "#ffacec",
+                    "surface": "#f8f9ff",
+                    "on-error-container": "#93000a",
+                    "on-background": "#181c21",
+                    "inverse-primary": "#d6baff",
+                    "on-error": "#ffffff",
+                    "surface-container-lowest": "#ffffff",
+                    "tertiary": "#87007e",
+                    "primary-fixed-dim": "#d6baff",
+                    "surface-variant": "#e0e2ea",
+                    "primary-fixed": "#ecdcff",
+                    "outline-variant": "#cdc2d8",
+                    "secondary": "#00696e",
+                    "tertiary-container": "#b000a4",
+                    "on-primary": "#ffffff",
+                    "secondary-fixed-dim": "#3cdae2",
+                    "background": "#f8f9ff",
+                    "on-tertiary-fixed": "#390035",
+                    "inverse-on-surface": "#eef1f8",
+                    "surface-container-high": "#e5e8ef",
+                    "secondary-container": "#5ff4fc",
+                    "on-tertiary": "#ffffff",
+                    "surface-container": "#ebeef5",
+                    "error-container": "#ffdad6",
+                    "outline": "#7c7387",
+                    "on-surface": "#181c21",
+                    "surface-container-highest": "#e0e2ea"
+            },
+            "borderRadius": {
+                    "DEFAULT": "1rem",
+                    "lg": "2rem",
+                    "xl": "3rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "lg": "40px",
+                    "xs": "4px",
+                    "md": "24px",
+                    "margin-desktop": "48px",
+                    "xl": "64px",
+                    "base": "8px",
+                    "gutter": "16px",
+                    "sm": "12px",
+                    "margin-mobile": "20px"
+            },
+            "fontFamily": {
+                    "label-sm": ["Inter"],
+                    "body-md": ["Inter"],
+                    "display-lg": ["Inter"],
+                    "headline-lg-mobile": ["Inter"],
+                    "title-md": ["Inter"],
+                    "headline-lg": ["Inter"]
+            },
+            "fontSize": {
+                    "label-sm": ["12px", {"lineHeight": "1", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "title-md": ["18px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .shadow-indigo {
+            box-shadow: 0 10px 40px -10px rgba(26, 11, 46, 0.12);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen">
+<!-- Top Navigation -->
+<header class="bg-surface dark:bg-on-background w-full top-0 sticky z-50 shadow-md flex justify-between items-center px-margin-desktop py-md w-full">
+<div class="flex items-center gap-base">
+<span class="material-symbols-outlined text-primary" data-icon="menu">menu</span>
+<h1 class="font-headline-lg text-headline-lg font-black text-primary dark:text-primary-fixed">Velocity Admin</h1>
+</div>
+<div class="flex items-center gap-md">
+<div class="hidden md:flex gap-gutter">
+<a class="text-primary font-bold font-title-md text-title-md" href="#">Dashboard</a>
+<a class="text-on-surface-variant font-medium font-title-md text-title-md hover:bg-surface-container-high transition-colors px-base rounded-lg" href="#">Referrals</a>
+<a class="text-on-surface-variant font-medium font-title-md text-title-md hover:bg-surface-container-high transition-colors px-base rounded-lg" href="#">Diamond Requests</a>
+</div>
+<div class="w-10 h-10 rounded-full overflow-hidden bg-primary-fixed border-2 border-primary">
+<img class="w-full h-full object-cover" data-alt="A professional headshot of a system moderator in a high-key studio environment. The subject has a confident expression and is framed centrally against a soft-focus office background with purple ambient lighting. The visual style is crisp and professional, using a modern light-mode palette with deep indigo contrast and subtle cyan highlights." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA0K4P7peAtbLPwR5XR_qdt3zpQnsh38fG-OULRFMEI0X07fHlg1AWqjuNdl1OJrjbOteSLYXAwkc7owuR9i_wk6507F5J-VeG2OF931l2svak7pI7PHWNlnRgZcn6jp_daah4fS8cEnNsWM9f5jXL0akDIwvmGolnw2EBoYzZMuao0OGkMaLQ1s0xlnwQrDCtXnKG2GVKGgQRosV-jVPTt1uxTnBurM1UfDGMNfyKRSeYbxpa7moC2oxLEHuoPeVK-GKtlKPIMdM4"/>
+</div>
+</div>
+</header>
+<div class="flex">
+<!-- Sidebar for Desktop -->
+<aside class="hidden lg:flex flex-col p-md gap-base h-screen w-80 fixed left-0 top-0 bg-surface-container-lowest dark:bg-inverse-surface shadow-xl z-40 pt-32">
+<div class="flex flex-col gap-sm mb-lg px-base">
+<h3 class="font-headline-lg text-primary">System Owner</h3>
+<p class="font-body-md text-on-surface-variant">Creator Level 3</p>
+</div>
+<nav class="flex flex-col gap-base">
+<a class="flex items-center gap-md p-md bg-primary-container text-on-primary-container rounded-full transition-all duration-300 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-title-md text-title-md">Dashboard</span>
+</a>
+<a class="flex items-center gap-md p-md text-on-surface-variant hover:bg-primary-fixed-dim/20 rounded-full transition-all duration-300 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-icon="share">share</span>
+<span class="font-title-md text-title-md">Referrals</span>
+</a>
+<a class="flex items-center gap-md p-md text-on-surface-variant hover:bg-primary-fixed-dim/20 rounded-full transition-all duration-300 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-icon="diamond">diamond</span>
+<span class="font-title-md text-title-md">Diamond Requests</span>
+</a>
+<a class="flex items-center gap-md p-md text-on-surface-variant hover:bg-primary-fixed-dim/20 rounded-full transition-all duration-300 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="font-title-md text-title-md">Team Members</span>
+</a>
+<a class="flex items-center gap-md p-md text-on-surface-variant hover:bg-primary-fixed-dim/20 rounded-full transition-all duration-300 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-title-md text-title-md">Settings</span>
+</a>
+</nav>
+</aside>
+<!-- Main Content Canvas -->
+<main class="w-full lg:pl-80 p-margin-mobile md:p-margin-desktop bg-background min-h-screen">
+<div class="max-w-7xl mx-auto space-y-lg">
+<!-- Hero Section: Stats & Quick Actions -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-md">
+<!-- Diamond Wallet Card -->
+<div class="md:col-span-1 p-md rounded-lg bg-primary text-on-primary shadow-indigo flex flex-col justify-between min-h-[200px] relative overflow-hidden">
+<div class="relative z-10">
+<p class="font-label-sm text-label-sm opacity-80 uppercase">Personal Diamond Balance</p>
+<h2 class="font-display-lg text-display-lg mt-sm flex items-center gap-sm">
+                                4,820 <span class="material-symbols-outlined text-4xl" data-icon="payments" style="font-variation-settings: 'FILL' 1;">payments</span>
+</h2>
+</div>
+<button class="relative z-10 w-fit mt-md px-md py-sm bg-secondary-container text-on-secondary-container rounded-full font-label-sm text-label-sm hover:opacity-90 active:scale-95 transition-all">
+                            Manage Wallet
+                        </button>
+<div class="absolute -right-10 -bottom-10 w-40 h-40 bg-primary-container rounded-full opacity-30 blur-2xl"></div>
+</div>
+<!-- Referral Generator Card -->
+<div class="md:col-span-2 p-md rounded-lg bg-surface-container-lowest shadow-indigo flex flex-col justify-between border-l-8 border-secondary">
+<div>
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-headline-lg text-on-surface">Code Generator</h3>
+<p class="font-body-md text-on-surface-variant">Create unique trackable links for new users.</p>
+</div>
+<span class="px-sm py-xs bg-tertiary-fixed text-on-tertiary-fixed rounded-full font-label-sm text-label-sm">LEVEL 3 TOOL</span>
+</div>
+<div class="mt-md flex gap-sm">
+<div class="flex-grow relative">
+<input class="w-full pl-md pr-xl py-sm bg-surface-container border-none rounded-lg font-title-md text-title-md text-primary font-bold" readonly="" type="text" value="VELOCITY-MOD-9921"/>
+<button class="absolute right-2 top-1/2 -translate-y-1/2 p-sm text-primary hover:bg-primary-fixed-dim/20 rounded-full">
+<span class="material-symbols-outlined" data-icon="content_copy">content_copy</span>
+</button>
+</div>
+<button class="px-md bg-primary text-on-primary rounded-full font-title-md text-title-md font-bold hover:shadow-lg transition-shadow">
+                                    Generate
+                                </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Main Layout Grid -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-lg">
+<!-- Pending Requests (Bento Layout) -->
+<div class="lg:col-span-8 space-y-md">
+<div class="flex items-center justify-between">
+<h3 class="font-headline-lg text-on-surface">Pending Requests</h3>
+<button class="text-primary font-label-sm text-label-sm flex items-center gap-xs">
+                                VIEW ALL <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<!-- Request Item -->
+<div class="p-md rounded-lg bg-surface-container-lowest shadow-indigo flex flex-col gap-md border border-outline-variant hover:border-primary transition-colors group">
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 rounded-full overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A close-up portrait of a new user applicant for a digital platform. The person has a friendly, eager expression and is illuminated by natural, warm light from a side window. The overall aesthetic is professional yet approachable, following a light-mode color scheme with soft shadows and clean composition." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJTT96_vJQhHFeZXMaecmqr4Saj53lfzgDwC92YV5oiuMxfZNWK9kFGwv0bsEPG3b2EUFtbtBiYSnQAmlvKAs-qjSGrYmhKFfNQCOtv4msiZZSzf_3KQtCxIA_dFJviMrdJoiky3AdSxJUT3j-nPYqVhTrTWUgJW77Biy91sdGwuy_T8T0vhxPyRJKdyXl5GZgJYowJd5Dqm1AY1hkHgtGCJPE75QfnmUxvpyhDdssd3gQ9hTPyLMvDldRhyffDefZX22gsrbVvfs"/>
+</div>
+<div>
+<h4 class="font-title-md text-on-surface">Alex Rivera</h4>
+<p class="font-label-sm text-on-surface-variant">Waiting 2h • Ref: MOD-001</p>
+</div>
+</div>
+<div class="mb-xs">
+<p class="font-label-sm text-on-surface font-bold">Cost to validate: 13 GEM</p>
+<p class="text-[10px] leading-tight text-on-surface-variant opacity-70">Base: 10 GEM + 30% Platform Fee (3 GEM)</p>
+</div><div class="flex gap-base">
+<button class="flex-1 py-sm bg-primary text-on-primary rounded-lg font-label-sm text-label-sm active:scale-95 transition-transform">Validate Account</button>
+<button class="px-md py-sm bg-surface-container text-on-surface-variant rounded-lg hover:bg-error-container hover:text-on-error-container transition-colors">
+<span class="material-symbols-outlined" data-icon="close">close</span>
+</button>
+</div>
+</div>
+<!-- Request Item -->
+<div class="p-md rounded-lg bg-surface-container-lowest shadow-indigo flex flex-col gap-md border border-outline-variant hover:border-primary transition-colors group">
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 rounded-full overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A portrait of a young woman with a vibrant personality, looking directly at the camera with a confident smile. The scene is brightly lit with a clean, minimalist background that complements the modern light-mode UI. The color palette includes soft purples and whites, creating a high-end corporate social aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDIF0Llqh4tyGoK89-BrskxP61ZHJSvLd9Sxz8gcFasdnyQilU05aBOo-iVvL_gVDxHeuLZkyxwNFa3RI24TXMb-ghWVEJYWK-DjazRwZOncihB8fyFuOqfLtI_EX0-mZUSsI_En8o3L81QcVwKoD5vDPAYnmgeg1kow1qAnEMigWQqHZcfnOLy2Bw77GAkVYPWBOFaWPZa8wc4VOiBWCL4RDHeP-r_Oskvr-p7xm4ooch1n_8Ix2A-j3tIGqurjgdvLPQSYvO8Bfk"/>
+</div>
+<div>
+<h4 class="font-title-md text-on-surface">Sarah Chen</h4>
+<p class="font-label-sm text-on-surface-variant">Waiting 5h • Ref: MOD-001</p>
+</div>
+</div>
+<div class="mb-xs">
+<p class="font-label-sm text-on-surface font-bold">Cost to validate: 13 GEM</p>
+<p class="text-[10px] leading-tight text-on-surface-variant opacity-70">Base: 10 GEM + 30% Platform Fee (3 GEM)</p>
+</div><div class="flex gap-base">
+<button class="flex-1 py-sm bg-primary text-on-primary rounded-lg font-label-sm text-label-sm active:scale-95 transition-transform">Validate Account</button>
+<button class="px-md py-sm bg-surface-container text-on-surface-variant rounded-lg hover:bg-error-container hover:text-on-error-container transition-colors">
+<span class="material-symbols-outlined" data-icon="close">close</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Asymmetric Feature Card -->
+<div class="bg-surface-container rounded-lg p-xl flex flex-col md:flex-row items-center gap-xl">
+<div class="md:w-1/2 space-y-md text-center md:text-left">
+<h3 class="font-display-lg text-headline-lg text-primary">Need help validating?</h3>
+<p class="font-body-md text-on-surface-variant">Access the Level 3 handbook for verification protocols and user standards.</p>
+<button class="px-xl py-md bg-on-background text-on-primary rounded-full font-title-md text-title-md hover:bg-primary transition-colors">
+                                    Open Handbook
+                                </button>
+</div>
+<div class="md:w-1/2 flex justify-center">
+<div class="grid grid-cols-2 gap-sm">
+<div class="w-32 h-32 rounded-lg bg-secondary-container flex items-center justify-center rotate-3">
+<span class="material-symbols-outlined text-4xl text-on-secondary-container" data-icon="verified_user">verified_user</span>
+</div>
+<div class="w-32 h-32 rounded-lg bg-tertiary-fixed flex items-center justify-center -rotate-6">
+<span class="material-symbols-outlined text-4xl text-on-tertiary-fixed" data-icon="gavel">gavel</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Support Chat Shortcuts (Side Rail) -->
+<div class="lg:col-span-4 space-y-md">
+<h3 class="font-headline-lg text-on-surface">Support Shortcuts</h3>
+<div class="space-y-sm">
+<!-- Shortcut Item -->
+<div class="p-md bg-surface-container-lowest rounded-lg shadow-indigo flex items-center justify-between hover:translate-x-2 transition-transform cursor-pointer">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-full bg-secondary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-on-secondary-fixed" data-icon="support_agent">support_agent</span>
+</div>
+<div>
+<h5 class="font-title-md text-title-md">Global Chat</h5>
+<p class="font-label-sm text-on-surface-variant">3 unread messages</p>
+</div>
+</div>
+<div class="w-3 h-3 bg-error rounded-full"></div>
+</div>
+<!-- Shortcut Item -->
+<div class="p-md bg-surface-container-lowest rounded-lg shadow-indigo flex items-center justify-between hover:translate-x-2 transition-transform cursor-pointer">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary-fixed" data-icon="forum">forum</span>
+</div>
+<div>
+<h5 class="font-title-md text-title-md">Direct Support</h5>
+<p class="font-label-sm text-on-surface-variant">Active now</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline" data-icon="chevron_right">chevron_right</span>
+</div>
+<!-- Shortcut Item -->
+<div class="p-md bg-surface-container-lowest rounded-lg shadow-indigo flex items-center justify-between hover:translate-x-2 transition-transform cursor-pointer">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-full bg-tertiary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-on-tertiary-fixed" data-icon="alternate_email">alternate_email</span>
+</div>
+<div>
+<h5 class="font-title-md text-title-md">Email Queue</h5>
+<p class="font-label-sm text-on-surface-variant">12 tickets pending</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline" data-icon="chevron_right">chevron_right</span>
+</div>
+</div>
+<!-- Mini Map / Network Status -->
+<div class="p-md rounded-lg bg-on-background text-surface-bright space-y-md">
+<h4 class="font-title-md">Network Activity</h4>
+<div class="aspect-video w-full rounded-lg bg-surface-dim overflow-hidden relative">
+<img class="w-full h-full object-cover opacity-50 grayscale hover:grayscale-0 transition-all duration-500" data-alt="A stylized digital map representation of New York City, showing data connection points and glowing network nodes in a high-tech interface style. The lighting is low-key with neon purple and cyan accents highlighting the active data streams. The overall mood is sophisticated and suggests real-time global monitoring in a professional command center environment." data-location="New York" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJIAsI-57qAGbo4G4nMvjIChQT1dhVMCA9MwCmiFTzxsLBvVowJv8EZ9T4OjoMM96Gl97TVjcEHUQ-ykQXvjjIzY_ZxqrkS6LIUzfekkGR8s_FrfrE-NkK9DNWvqxWlZC8nwYhpMmMzA4fAPgzunV02a573V0hcHKo3KFDrQyR7OmIQgs4KH-QM5YcFckkyp_0djvVTEsTOu5mkTlfbKeY7QGJA9bkmqMQLWMpBdeWVO8OGF-Zk-j-TyNS0HITAcZBu1FYlVzdfc4"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<span class="px-md py-sm bg-primary/80 backdrop-blur-md rounded-full font-label-sm uppercase tracking-widest">Live Monitoring</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<div class="h-32"></div> <!-- Spacer for mobile nav -->
+</main>
+</div>
+<!-- Mobile Bottom Navigation -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-margin-mobile py-sm md:hidden bg-surface dark:bg-on-background shadow-[0_-4px_30px_0_rgba(26,11,46,0.12)] rounded-t-lg">
+<div class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-2xl px-4 py-1">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-label-sm text-label-sm">Home</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant hover:opacity-80 transition-transform active:scale-90">
+<span class="material-symbols-outlined" data-icon="account_tree">account_tree</span>
+<span class="font-label-sm text-label-sm">Network</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant hover:opacity-80 transition-transform active:scale-90">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+<span class="font-label-sm text-label-sm">Diamonds</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant hover:opacity-80 transition-transform active:scale-90">
+<span class="material-symbols-outlined" data-icon="person_filled" style="font-variation-settings: 'FILL' 1;">person_filled</span>
+<span class="font-label-sm text-label-sm">Account</span>
+</div>
+</nav>
+<!-- Floating Action Button -->
+<button class="fixed bottom-24 right-6 w-14 h-14 bg-primary text-on-primary rounded-full shadow-xl flex items-center justify-center z-50 hover:scale-110 active:scale-95 transition-all md:bottom-12 md:right-12">
+<span class="material-symbols-outlined text-3xl" data-icon="add">add</span>
+</button>
+</body></html>

@@ -1,0 +1,13 @@
+
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- El nombre de tu aplicación -->
+    <string name="app_name">Conecta</string>
+
+    <!--
+      Estos valores serán reemplazados por los reales que obtendrás
+      del portal de Facebook for Developers.
+    -->
+    <string name="facebook_app_id">REEMPLAZAR_CON_APP_ID</string>
+    <string name="facebook_client_token">REEMPLAZAR_CON_CLIENT_TOKEN</string>
+</resources>

@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary-fixed": "#280057",
+                    "secondary": "#00696e",
+                    "tertiary-fixed": "#ffd7f2",
+                    "surface-container": "#ebeef5",
+                    "secondary-fixed": "#63f7ff",
+                    "on-tertiary": "#ffffff",
+                    "primary-container": "#7d2ae8",
+                    "secondary-container": "#5ff4fc",
+                    "on-tertiary-fixed": "#390035",
+                    "primary-fixed-dim": "#d6baff",
+                    "surface-bright": "#f8f9ff",
+                    "on-surface": "#181c21",
+                    "tertiary": "#87007e",
+                    "tertiary-fixed-dim": "#ffacec",
+                    "error-container": "#ffdad6",
+                    "tertiary-container": "#b000a4",
+                    "surface-container-high": "#e5e8ef",
+                    "on-secondary-fixed": "#002021",
+                    "on-primary-fixed-variant": "#5f00bf",
+                    "surface-variant": "#e0e2ea",
+                    "surface-container-lowest": "#ffffff",
+                    "on-primary-container": "#e7d5ff",
+                    "on-error-container": "#93000a",
+                    "on-tertiary-fixed-variant": "#83007a",
+                    "surface-dim": "#d7dae1",
+                    "secondary-fixed-dim": "#3cdae2",
+                    "inverse-primary": "#d6baff",
+                    "surface-container-highest": "#e0e2ea",
+                    "surface": "#f8f9ff",
+                    "primary-fixed": "#ecdcff",
+                    "on-tertiary-container": "#ffcef0",
+                    "on-surface-variant": "#4b4455",
+                    "outline-variant": "#cdc2d8",
+                    "on-secondary-fixed-variant": "#004f53",
+                    "on-secondary-container": "#006e72",
+                    "outline": "#7c7387",
+                    "inverse-surface": "#2d3136",
+                    "inverse-on-surface": "#eef1f8",
+                    "primary": "#6200c5",
+                    "background": "#f8f9ff",
+                    "on-error": "#ffffff",
+                    "on-background": "#181c21",
+                    "error": "#ba1a1a",
+                    "surface-tint": "#7b26e6",
+                    "surface-container-low": "#f1f3fb",
+                    "on-secondary": "#ffffff",
+                    "on-primary": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "1rem",
+                    "lg": "2rem",
+                    "xl": "3rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "md": "24px",
+                    "sm": "12px",
+                    "xl": "64px",
+                    "gutter": "16px",
+                    "margin-mobile": "20px",
+                    "base": "8px",
+                    "lg": "40px",
+                    "xs": "4px",
+                    "margin-desktop": "48px"
+            },
+            "fontFamily": {
+                    "body-md": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "headline-lg-mobile": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "title-md": ["Inter"],
+                    "display-lg": ["Inter"]
+            },
+            "fontSize": {
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "label-sm": ["12px", {"lineHeight": "1", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "title-md": ["18px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                    "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "800"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .chat-gradient {
+            background: linear-gradient(135deg, #6200c5 0%, #7b26e6 50%, #b000a4 100%);
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background font-body-md text-on-background min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface dark:bg-inverse-surface shadow-md">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop h-16 w-full max-w-7xl mx-auto">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary dark:text-primary-fixed-dim" data-icon="diamond">diamond</span>
+<h1 class="text-title-md font-display-lg text-primary dark:text-primary-fixed-dim tracking-tight">VIP Cuba</h1>
+</div>
+<div class="flex items-center gap-4">
+<div class="hidden md:flex flex-col items-end">
+<span class="font-label-sm text-label-sm text-on-surface">Admin VIP</span>
+<span class="text-[10px] text-secondary font-bold uppercase tracking-wider">Estatus: En línea</span>
+</div>
+<img alt="User profile" class="w-10 h-10 rounded-full border-2 border-primary-fixed-dim shadow-sm hover:opacity-80 transition-opacity" data-alt="A professional studio portrait of a confident male executive in a sleek, modern office setting. The lighting is bright and airy, following a high-key light mode aesthetic. The color palette features soft purples and clean whites, reflecting a premium corporate identity. The background is blurred to focus on the person's friendly yet authoritative expression." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAfmgTBbvR3Ekt7fZo3P2_giBMd31Kk62cXopsaEAYxM7oG71X0tjFZmHvKlrBlFRQEO-uw2n-bDb-3M1cgtOwEl2gkoy8RMDf9bEgg-c4rrIRZDgqFban6PIj5rcK1lfwWTP1RAe44iCeO07DD3A4lMtgBEvl_OCMi81kDGdrOjLqI48PC5L2-vHAMzAj0c9LHtOpMEclF0redb_Dy3ficZsrPdOijum8Dsv_2SGA9KaPasHC2y84T37Ex0tKB2KzkKtsmWL6-G_E"/>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow pt-16 pb-20 md:pb-0 md:pl-0 flex flex-col max-w-7xl mx-auto w-full h-[884px]">
+<!-- Online Status Indicator & Rapid Actions -->
+<section class="px-margin-mobile py-4 flex flex-col gap-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2 bg-primary-container/10 px-4 py-2 rounded-full border border-primary-fixed-dim/20">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-secondary"></span>
+</span>
+<span class="font-label-sm text-label-sm text-primary">12 Miembros en línea</span>
+</div>
+<div class="flex gap-2">
+<button class="p-2 rounded-full bg-surface-container-high text-on-surface-variant hover:bg-primary-container hover:text-on-primary-container transition-all active:scale-95 duration-200">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+<button class="p-2 rounded-full bg-surface-container-high text-on-surface-variant hover:bg-primary-container hover:text-on-primary-container transition-all active:scale-95 duration-200">
+<span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
+</button>
+</div>
+</div>
+<!-- Quick Access Toolbar (Bento Style) -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+<button class="flex items-center gap-3 p-3 bg-surface-container-lowest border border-outline-variant rounded-lg hover:shadow-md transition-shadow active:scale-95">
+<div class="w-10 h-10 rounded-full bg-tertiary-container flex items-center justify-center text-on-tertiary-container">
+<span class="material-symbols-outlined" data-icon="notifications_active">notifications_active</span>
+</div>
+<div class="text-left">
+<p class="font-label-sm text-label-sm text-on-surface">Solicitudes</p>
+<p class="text-[10px] text-tertiary font-bold">5 PENDIENTES</p>
+</div>
+</button>
+<button class="flex items-center gap-3 p-3 bg-surface-container-lowest border border-outline-variant rounded-lg hover:shadow-md transition-shadow active:scale-95">
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container">
+<span class="material-symbols-outlined" data-icon="groups">groups</span>
+</div>
+<div class="text-left">
+<p class="font-label-sm text-label-sm text-on-surface">Estatus Equipo</p>
+<p class="text-[10px] text-primary font-bold">VER LISTA</p>
+</div>
+</button>
+<button class="hidden md:flex items-center gap-3 p-3 bg-surface-container-lowest border border-outline-variant rounded-lg hover:shadow-md transition-shadow active:scale-95">
+<div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined" data-icon="gavel">gavel</span>
+</div>
+<div class="text-left">
+<p class="font-label-sm text-label-sm text-on-surface">Moderación</p>
+<p class="text-[10px] text-secondary font-bold">HISTORIAL</p>
+</div>
+</button>
+<button class="hidden md:flex items-center gap-3 p-3 bg-surface-container-lowest border border-outline-variant rounded-lg hover:shadow-md transition-shadow active:scale-95">
+<div class="w-10 h-10 rounded-full bg-surface-variant flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+</div>
+<div class="text-left">
+<p class="font-label-sm text-label-sm text-on-surface">Reportes</p>
+<p class="text-[10px] text-on-surface-variant font-bold">DIARIOS</p>
+</div>
+</button>
+</div>
+</section>
+<!-- Chat Area -->
+<section class="flex-grow flex flex-col bg-surface-container-low mx-margin-mobile mb-4 rounded-lg shadow-sm border border-outline-variant/30 overflow-hidden">
+<!-- Messages Container -->
+<div class="flex-grow overflow-y-auto p-4 flex flex-col gap-6">
+<!-- System Timestamp -->
+<div class="flex justify-center">
+<span class="bg-outline-variant/20 px-3 py-1 rounded-full text-[10px] font-bold text-outline uppercase tracking-widest">Hoy</span>
+</div>
+<!-- Message: Other User (Moderador) -->
+<div class="flex items-start gap-3 max-w-[85%]">
+<img alt="Moderator avatar" class="w-8 h-8 rounded-full" data-alt="A close-up portrait of a cheerful young woman with a creative, modern look. She is in a high-tech studio with soft, ambient purple lighting that complements the VIP Cuba brand aesthetic. The photography style is sharp and professional, highlighting her friendly and approachable demeanor in a bright light-mode environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1NwjOHgsPOZlSdL8brusB7OUXNDlWzvQ7jgIi1hJJxKVJKbvLkBSlCbmSAJzBiwH50WCSeyZzL_VZ5hmFY7PgaiymMx27xLruENufnBJ9QbzHvBORYFvk62tw3UDYNhooySvQ8DX03xYnR7RbGnRQtww1_ICKH4BCZQpdiDevJ_DakgbUrViTN-_xOz3rkbPUDr4P8iXVGlKVHwBYOkON5JhOz-fP9JQo7wWdsBeK9FO96Xi5zeiH_PzaBujq2StOuFcOSAhFYoY"/>
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm text-on-surface">Elena R.</span>
+<span class="px-2 py-0.5 bg-secondary-container text-on-secondary-container text-[10px] font-extrabold rounded-md uppercase tracking-tighter">Moderador</span>
+</div>
+<div class="bg-surface-container-lowest p-3 rounded-2xl rounded-tl-none shadow-sm border border-outline-variant/20">
+<p class="text-body-md font-body-md text-on-surface">He revisado las 5 solicitudes pendientes de la Bóveda. Todas parecen cumplir con los requisitos VIP.</p>
+</div>
+<div class="flex items-center gap-1 mt-1">
+<span class="text-[10px] text-outline">10:45 AM</span>
+</div>
+</div>
+</div>
+<!-- Message: Other User (Admin) -->
+<div class="flex items-start gap-3 max-w-[85%]">
+<img alt="Admin avatar" class="w-8 h-8 rounded-full" data-alt="A professional headshot of a middle-aged man with a confident, welcoming smile. He is set against a clean, minimalist architectural background with bright, natural lighting. The color palette is modern and professional with hints of deep indigo in the shadows, aligning perfectly with the corporate yet high-energy design system." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0wYxqY-Ki1b4vyyaYXgdAl4I4UdoLJESLhP8uDxJ_UyaLdJihx5S-SFc8eeczpcVySHVo4prsEd6xiH8MAENglVFQJkCeg1OIvt6QH0Hs9jdnaAi0SoYzL9SKSSdGIP0V5H22nCpzgXAJGpD1oAQA28eGQ0rd4TryR8tPj8EhHTkDbZ77bAVvQW7FKWK3aCfFfwcMDnDmK3gFp_z1r5YWbLRHC0FVafRg3Of7hGywK7erT_GyyJmnuNi30zJ1LlCh8FD7KnLRkcY"/>
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm text-on-surface">Carlos M.</span>
+<span class="px-2 py-0.5 bg-primary-container text-on-primary-container text-[10px] font-extrabold rounded-md uppercase tracking-tighter">Admin</span>
+</div>
+<div class="bg-surface-container-lowest p-3 rounded-2xl rounded-tl-none shadow-sm border border-outline-variant/20">
+<p class="text-body-md font-body-md text-on-surface">Excelente trabajo Elena. Procederé a la aprobación final en 10 minutos. ¿Alguien ha verificado el estatus del servidor de diamantes?</p>
+</div>
+<div class="flex items-center gap-1 mt-1">
+<span class="text-[10px] text-outline">10:48 AM</span>
+</div>
+</div>
+</div>
+<!-- Message: Self (Owner/Admin) -->
+<div class="flex flex-col items-end gap-1 ml-auto max-w-[85%]">
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 bg-tertiary-container text-on-tertiary-container text-[10px] font-extrabold rounded-md uppercase tracking-tighter">Dueño</span>
+<span class="font-label-sm text-label-sm text-on-surface">Tú</span>
+</div>
+<div class="chat-gradient text-on-primary-container p-3 rounded-2xl rounded-tr-none shadow-md">
+<p class="text-body-md font-body-md">Servidor verificado. Todo operando al 100%. He adjuntado el log de hoy para que lo revisen.</p>
+</div>
+<div class="flex items-center gap-1 mt-1">
+<span class="text-[10px] text-outline">10:52 AM</span>
+<span class="material-symbols-outlined text-[14px] text-primary" data-icon="done_all" style="font-variation-settings: 'FILL' 0;">done_all</span>
+</div>
+</div>
+<!-- Attachment Preview (Self) -->
+<div class="flex flex-col items-end gap-1 ml-auto max-w-[85%]">
+<div class="bg-surface-container-highest p-2 rounded-xl border border-primary/20 flex items-center gap-3">
+<div class="w-10 h-10 bg-primary-container rounded-lg flex items-center justify-center text-on-primary-container">
+<span class="material-symbols-outlined" data-icon="description">description</span>
+</div>
+<div class="pr-2">
+<p class="text-[12px] font-bold text-on-surface">Log_Server_Diamantes.pdf</p>
+<p class="text-[10px] text-on-surface-variant">2.4 MB</p>
+</div>
+</div>
+<div class="flex items-center gap-1 mt-1">
+<span class="text-[10px] text-outline">10:53 AM</span>
+<span class="material-symbols-outlined text-[14px] text-primary" data-icon="done_all" style="font-variation-settings: 'FILL' 0;">done_all</span>
+</div>
+</div>
+</div>
+<!-- Input Area -->
+<div class="p-4 bg-surface border-t border-outline-variant/30">
+<div class="flex items-center gap-3">
+<button class="p-2 text-primary hover:bg-primary-container/10 rounded-full transition-colors active:scale-90">
+<span class="material-symbols-outlined" data-icon="add_circle">add_circle</span>
+</button>
+<div class="flex-grow relative">
+<input class="w-full bg-surface-container-low border border-outline-variant rounded-full py-3 px-6 text-body-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent placeholder:text-on-surface-variant/50" placeholder="Escribe un mensaje al equipo..." type="text"/>
+</div>
+<button class="w-12 h-12 flex items-center justify-center bg-primary text-on-primary rounded-full shadow-lg hover:shadow-xl hover:opacity-90 active:scale-95 transition-all">
+<span class="material-symbols-outlined" data-icon="send" style="font-variation-settings: 'FILL' 1;">send</span>
+</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Navigation Components -->
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full h-20 bg-surface dark:bg-inverse-surface shadow-[0_-10px_40px_rgba(26,11,46,0.08)] z-50 flex justify-around items-center px-4 pb-safe rounded-t-lg">
+<div class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant hover:bg-surface-container-high transition-colors p-2 rounded-2xl">
+<span class="material-symbols-outlined" data-icon="contact_page">contact_page</span>
+<span class="font-label-sm text-label-sm">Contactos</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant hover:bg-surface-container-high transition-colors p-2 rounded-2xl">
+<span class="material-symbols-outlined" data-icon="public">public</span>
+<span class="font-label-sm text-label-sm">Red</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant hover:bg-surface-container-high transition-colors p-2 rounded-2xl">
+<span class="material-symbols-outlined" data-icon="token">token</span>
+<span class="font-label-sm text-label-sm">Diamantes</span>
+</div>
+<div class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-2xl px-4 py-1.5 transition-all">
+<span class="material-symbols-outlined" data-icon="admin_panel_settings" style="font-variation-settings: 'FILL' 1;">admin_panel_settings</span>
+<span class="font-label-sm text-label-sm">Chat Admin</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant hover:bg-surface-container-high transition-colors p-2 rounded-2xl">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+<span class="font-label-sm text-label-sm">Perfil</span>
+</div>
+</nav>
+<!-- Sidebar (Desktop Navigation Replacement Mock) -->
+<aside class="hidden md:flex fixed left-0 top-16 bottom-0 w-20 bg-surface-container-lowest border-r border-outline-variant flex-col items-center py-6 gap-8 z-40">
+<div class="w-12 h-12 flex items-center justify-center text-on-surface-variant hover:bg-primary-container hover:text-on-primary-container rounded-xl transition-all cursor-pointer">
+<span class="material-symbols-outlined" data-icon="contact_page">contact_page</span>
+</div>
+<div class="w-12 h-12 flex items-center justify-center text-on-surface-variant hover:bg-primary-container hover:text-on-primary-container rounded-xl transition-all cursor-pointer">
+<span class="material-symbols-outlined" data-icon="public">public</span>
+</div>
+<div class="w-12 h-12 flex items-center justify-center text-on-surface-variant hover:bg-primary-container hover:text-on-primary-container rounded-xl transition-all cursor-pointer">
+<span class="material-symbols-outlined" data-icon="token">token</span>
+</div>
+<div class="w-12 h-12 flex items-center justify-center bg-primary-container text-on-primary-container rounded-xl shadow-md cursor-pointer">
+<span class="material-symbols-outlined" data-icon="admin_panel_settings" style="font-variation-settings: 'FILL' 1;">admin_panel_settings</span>
+</div>
+<div class="mt-auto w-12 h-12 flex items-center justify-center text-on-surface-variant hover:bg-primary-container hover:text-on-primary-container rounded-xl transition-all cursor-pointer">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</div>
+</aside>
+</body></html>

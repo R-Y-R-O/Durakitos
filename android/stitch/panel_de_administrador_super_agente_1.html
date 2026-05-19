@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 48;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f9ff;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed": "#ffd7f2",
+                        "surface-dim": "#d7dae1",
+                        "secondary-fixed": "#63f7ff",
+                        "on-tertiary-container": "#ffcef0",
+                        "on-secondary-fixed-variant": "#004f53",
+                        "on-primary-fixed-variant": "#5f00bf",
+                        "surface-tint": "#7b26e6",
+                        "on-surface-variant": "#4b4455",
+                        "error": "#ba1a1a",
+                        "on-tertiary-fixed-variant": "#83007a",
+                        "on-secondary-fixed": "#002021",
+                        "on-primary-fixed": "#280057",
+                        "on-secondary": "#ffffff",
+                        "surface-bright": "#f8f9ff",
+                        "primary-container": "#7d2ae8",
+                        "primary": "#6200c5",
+                        "inverse-surface": "#2d3136",
+                        "on-secondary-container": "#006e72",
+                        "surface-container-low": "#f1f3fb",
+                        "on-primary-container": "#e7d5ff",
+                        "tertiary-fixed-dim": "#ffacec",
+                        "surface": "#f8f9ff",
+                        "on-error-container": "#93000a",
+                        "on-background": "#181c21",
+                        "inverse-primary": "#d6baff",
+                        "on-error": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary": "#87007e",
+                        "primary-fixed-dim": "#d6baff",
+                        "surface-variant": "#e0e2ea",
+                        "primary-fixed": "#ecdcff",
+                        "outline-variant": "#cdc2d8",
+                        "secondary": "#00696e",
+                        "tertiary-container": "#b000a4",
+                        "on-primary": "#ffffff",
+                        "secondary-fixed-dim": "#3cdae2",
+                        "background": "#f8f9ff",
+                        "on-tertiary-fixed": "#390035",
+                        "inverse-on-surface": "#eef1f8",
+                        "surface-container-high": "#e5e8ef",
+                        "secondary-container": "#5ff4fc",
+                        "on-tertiary": "#ffffff",
+                        "surface-container": "#ebeef5",
+                        "error-container": "#ffdad6",
+                        "outline": "#7c7387",
+                        "on-surface": "#181c21",
+                        "surface-container-highest": "#e0e2ea"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "lg": "40px",
+                        "xs": "4px",
+                        "md": "24px",
+                        "margin-desktop": "48px",
+                        "xl": "64px",
+                        "base": "8px",
+                        "gutter": "16px",
+                        "sm": "12px",
+                        "margin-mobile": "20px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["Inter"],
+                        "body-md": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "title-md": ["Inter"],
+                        "headline-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["12px", {"lineHeight": "1", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "title-md": ["18px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen">
+<!-- Sidebar (Desktop Only) -->
+<aside class="hidden md:flex h-screen w-80 fixed left-0 top-0 bg-surface-container-lowest shadow-xl flex-col p-md gap-base z-30">
+<div class="mb-xl px-sm">
+<span class="font-headline-lg text-headline-lg text-primary">Velocity Admin</span>
+</div>
+<div class="flex items-center gap-sm p-sm mb-lg bg-surface-container-low rounded-lg">
+<div class="w-12 h-12 rounded-full overflow-hidden bg-primary-container flex items-center justify-center">
+<img alt="User Avatar" class="w-full h-full object-cover" data-alt="A high-quality professional portrait of a modern tech administrator in a bright, clean office environment. The lighting is soft and high-key, emphasizing a light-mode aesthetic. The subject is confident and friendly, wearing professional attire. The background is slightly blurred with hints of glass partitions and vibrant purple accents consistent with the brand colors." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDKw5viDY0Oi2Z3yxizrXH4V6L3vG9Qvm3QqnGAGct0d7gVbDsVebAMcBF2sufKq-YMnBJTwgLC_ZeuyOqozA4HFZLMI2GF2uRt-K5pNRxgXNcYpQ1idDSeHIONmlWl3CeW8a5OyVH3fHlT7fPItImHcwaGI_Oynanpt6qfr-gCGlnSSI_tn9IGVYYD2jd_-WsqSMPgLtGXv5I426rHmOFGUvsEgC7yBk-MKKOApRXIKNE3qRR-8XABQKQ7RMLen8fxkkQOGI_mbcA"/>
+</div>
+<div>
+<div class="font-title-md text-title-md text-on-surface">System Owner</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Creator Level</div>
+</div>
+</div>
+<nav class="flex flex-col gap-xs">
+<a class="flex items-center gap-base px-md py-sm bg-primary-container text-on-primary-container rounded-full transition-all duration-300 ease-in-out" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-title-md text-title-md">Dashboard</span>
+</a>
+<a class="flex items-center gap-base px-md py-sm text-on-surface-variant hover:bg-surface-container-high rounded-full transition-all duration-300 ease-in-out" href="#">
+<span class="material-symbols-outlined">share</span>
+<span class="font-title-md text-title-md">Referrals</span>
+</a>
+<a class="flex items-center gap-base px-md py-sm text-on-surface-variant hover:bg-surface-container-high rounded-full transition-all duration-300 ease-in-out" href="#">
+<span class="material-symbols-outlined">diamond</span>
+<span class="font-title-md text-title-md">Diamond Requests</span>
+</a>
+<a class="flex items-center gap-base px-md py-sm text-on-surface-variant hover:bg-surface-container-high rounded-full transition-all duration-300 ease-in-out" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="font-title-md text-title-md">Team Members</span>
+</a>
+<a class="flex items-center gap-base px-md py-sm text-on-surface-variant hover:bg-surface-container-high rounded-full transition-all duration-300 ease-in-out" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-title-md text-title-md">Settings</span>
+</a>
+</nav>
+</aside>
+<!-- Header (TopAppBar) -->
+<header class="w-full top-0 sticky z-20 flex justify-between items-center px-margin-mobile md:px-margin-desktop py-md bg-surface shadow-md">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined md:hidden text-primary">menu</span>
+<span class="font-headline-lg text-headline-lg font-black text-primary">Velocity Admin</span>
+</div>
+<div class="flex items-center gap-md">
+<div class="hidden md:flex gap-gutter">
+<span class="text-primary font-bold transition-colors">Overview</span>
+<span class="text-on-surface-variant font-medium hover:bg-surface-container-high transition-colors px-2 rounded">Analytics</span>
+</div>
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary-container">
+<img alt="Profile" class="w-full h-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuClKMZZbIaXOUglQo4fXOsGaz8dCnzDRA6lmCs8Yhn2MlHy1Yy7VN3GVucinBarwMN4HildcJsOSY7Xslnnl79C5FFVJQt5EaiE1LBBbuHokEQOozm6FeQgHPkQ5fjZugA9o7TkqnvdzTXCWADL0mCcHo15TW-qe9-fQTfiVxBTX4fkUS4GWAjXmJm4frG6YEteqCN52KVLrKPOMptcDEV0ru4F9nngThiVvEnuc8W24fKposspYK3QwZ_5buAlaMekr56DVTddGFI"/>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="md:ml-80 p-margin-mobile md:p-margin-desktop pb-32">
+<!-- Hero / Summary Section -->
+<section class="grid grid-cols-1 lg:grid-cols-3 gap-md mb-xl">
+<!-- Diamond Inventory Card -->
+<div class="lg:col-span-1 bg-surface-container-lowest p-md rounded-lg shadow-[0_30px_50px_0_rgba(26,11,46,0.08)] flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start mb-md">
+<span class="font-label-sm text-label-sm text-on-surface-variant">DIAMOND INVENTORY</span>
+<div class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">payments</span>
+</div>
+</div>
+<div class="flex items-baseline gap-xs mb-md">
+<span class="font-display-lg text-display-lg text-primary">14,250</span>
+<span class="font-title-md text-title-md text-on-surface-variant">💎</span>
+</div>
+</div>
+<button class="w-full py-md bg-primary text-on-primary font-bold rounded-full active:scale-95 transition-all shadow-lg shadow-indigo-900/10">
+                    Request Diamonds from Creator
+                </button>
+</div>
+<!-- Network Growth Bento Card -->
+<div class="lg:col-span-2 bg-gradient-to-br from-primary to-surface-tint p-md rounded-lg text-on-primary relative overflow-hidden flex flex-col justify-between">
+<div class="relative z-10">
+<span class="font-label-sm text-label-sm opacity-80">TOTAL NETWORK GROWTH</span>
+<div class="font-display-lg text-display-lg mt-sm">2,842 Users</div>
+<p class="font-body-md text-body-md mt-sm max-w-md opacity-90">Your hierarchy has grown by 12% this month. Keep supporting your Moderators to reach Level 3.</p>
+</div>
+<div class="relative z-10 mt-md flex gap-md">
+<div class="bg-white/10 backdrop-blur-md p-sm rounded-lg flex-1">
+<div class="font-label-sm text-label-sm">Active Today</div>
+<div class="font-headline-lg text-headline-lg">1,104</div>
+</div>
+<div class="bg-white/10 backdrop-blur-md p-sm rounded-lg flex-1">
+<div class="font-label-sm text-label-sm">New This Week</div>
+<div class="font-headline-lg text-headline-lg">+142</div>
+</div>
+</div>
+<!-- Abstract shape -->
+<div class="absolute -right-10 -bottom-10 w-64 h-64 bg-secondary-container/20 rounded-full blur-3xl"></div>
+</div>
+</section>
+<!-- My Team Section -->
+<section class="mb-xl">
+<div class="flex justify-between items-center mb-md">
+<h2 class="font-headline-lg text-headline-lg text-on-background">My Team (Moderators)</h2>
+<div class="flex items-center gap-sm bg-white px-md py-sm rounded-full border border-outline-variant shadow-sm">
+<span class="material-symbols-outlined text-on-surface-variant">search</span>
+<input class="bg-transparent border-none focus:ring-0 font-body-md text-body-md" placeholder="Search moderators..." type="text"/>
+</div>
+</div>
+<!-- Team List Table-like Layout -->
+<div class="bg-surface-container-lowest rounded-lg shadow-xl overflow-hidden">
+<div class="grid grid-cols-12 gap-gutter p-md border-b border-surface-variant font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">
+<div class="col-span-5">Moderator Name</div>
+<div class="col-span-3 text-center">Referrals</div>
+<div class="col-span-3 text-center">Diamond Balance</div>
+<div class="col-span-1"></div>
+</div>
+<!-- Team Row 1 -->
+<div class="grid grid-cols-12 gap-gutter p-md items-center hover:bg-surface-container transition-colors cursor-pointer group">
+<div class="col-span-5 flex items-center gap-md">
+<div class="w-12 h-12 rounded-full overflow-hidden bg-tertiary-fixed flex items-center justify-center">
+<img alt="Team Member" class="w-full h-full object-cover" data-alt="A close-up studio portrait of a friendly professional moderator. The person is smiling, exuding a sense of trustworthiness and competence. The lighting is crisp and modern with a gentle blue and purple background glow that aligns with the Velocity brand's modernist aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVjyufTQ_3AkXtaYuCa0s2oSCZOBoG8kGcaVngXKB81SBhW2SQcwDi0YNw5TgiRfrAfI7Qn78OAkJ0aSW_XQ1Xd0pjtmI74fpjuurc2M6fEWnGIkpqgImqY3dyUocZ90HTi291VWTmMp2V2lTy3BO2gjMQX1CVOxkxv6Qhm34jvvtXOKIBzS9UggITl4WqmFbWpL8dSA-MGnv-27zYugL7is3KCr2tlnqD0A3NeCzpj_P3Ohy2HCVSa_4mjPkFieA-Ggr3Wjt249o"/>
+</div>
+<div>
+<div class="font-title-md text-title-md text-on-surface">Alex Morgan</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Joined 2 months ago</div>
+</div>
+</div>
+<div class="col-span-3 text-center">
+<div class="font-headline-lg text-headline-lg text-on-background">342</div>
+<div class="font-label-sm text-label-sm text-primary">+12 today</div>
+</div>
+<div class="col-span-3 text-center">
+<div class="font-title-md text-title-md text-secondary-fixed-dim bg-secondary/10 px-md py-xs rounded-full inline-block">2,400 💎</div>
+</div>
+<div class="col-span-1 text-right">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors">chevron_right</span>
+</div>
+</div>
+<!-- Team Row 2 -->
+<div class="grid grid-cols-12 gap-gutter p-md items-center hover:bg-surface-container transition-colors cursor-pointer group border-t border-surface-container">
+<div class="col-span-5 flex items-center gap-md">
+<div class="w-12 h-12 rounded-full overflow-hidden bg-secondary-fixed flex items-center justify-center">
+<img alt="Team Member" class="w-full h-full object-cover" data-alt="A professional headshot of a female moderator with a sleek, minimalist style. She has a bright, approachable expression. The lighting is high-key, creating a clean white-on-white aesthetic with subtle vibrant pink accents in the bokeh background, matching the tertiary brand color." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAe0Ck6ONRs8tz8XJb8P1GNvBKEKnAaMIu1dHOF2axaVh67S-S4yU4-VSAjM88eTaVleFuoGEIF1NkoTW6ODsCEw_BGhBz1Nlj-Ep_ASB4QUcIKmUDT65ntjpxSbcJcBLS9muNQjibyiZWgWC1Q9zo6BPU4KQvysOwlU2simECBb7dIXc0nAZkG1Ed9mbSUXHKF0w8DEaaukAabrqgR27wjlCzISSSpCs1TFZRAJI0-O0HCg0u-3dMC3rKj3n0i2rMetAyX2g1B7lU"/>
+</div>
+<div>
+<div class="font-title-md text-title-md text-on-surface">Sarah Chen</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Joined 3 weeks ago</div>
+</div>
+</div>
+<div class="col-span-3 text-center">
+<div class="font-headline-lg text-headline-lg text-on-background">158</div>
+<div class="font-label-sm text-label-sm text-primary">+4 today</div>
+</div>
+<div class="col-span-3 text-center">
+<div class="font-title-md text-title-md text-secondary-fixed-dim bg-secondary/10 px-md py-xs rounded-full inline-block">850 💎</div>
+</div>
+<div class="col-span-1 text-right">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors">chevron_right</span>
+</div>
+</div>
+<!-- Team Row 3 -->
+<div class="grid grid-cols-12 gap-gutter p-md items-center hover:bg-surface-container transition-colors cursor-pointer group border-t border-surface-container">
+<div class="col-span-5 flex items-center gap-md">
+<div class="w-12 h-12 rounded-full overflow-hidden bg-primary-fixed flex items-center justify-center">
+<img alt="Team Member" class="w-full h-full object-cover" data-alt="A sharp, professional portrait of a young male moderator in a creative workspace. The background shows hints of a digital dashboard on a screen. The color scheme is dominated by cool blues and purples with high contrast lighting that makes the subject stand out as a key team member in a digital ecosystem." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCESWkRF5YC3CRDjPldqdTgMfdsqjrLrrZHfn-Y1QTvUnbEEIrG4tY5YAt_JHtCyu2lQZCpYcyhM0NgHcN2RupZRewTorSHH5HX32kfAF5bMTMqfm1hW0LQ-Nlu9avWvcz8jqkMPhCXCOCaBizMfs28n_7XgwFmTpcua6QqnWgZDsLDrtI510y4RV22Hnywbl0hFRXHhSSoeaoGWnKzMRGW17LGMH36axk4T-6Sx54bXQO7WcBxQTRw-Y8EfFllU1QnW4xWEC25VR4"/>
+</div>
+<div>
+<div class="font-title-md text-title-md text-on-surface">Jordan Rivers</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Joined 4 months ago</div>
+</div>
+</div>
+<div class="col-span-3 text-center">
+<div class="font-headline-lg text-headline-lg text-on-background">512</div>
+<div class="font-label-sm text-label-sm text-primary">+28 today</div>
+</div>
+<div class="col-span-3 text-center">
+<div class="font-title-md text-title-md text-secondary-fixed-dim bg-secondary/10 px-md py-xs rounded-full inline-block">4,120 💎</div>
+</div>
+<div class="col-span-1 text-right">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors">chevron_right</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Quick Actions & Stats -->
+<section class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<div class="bg-surface-container-high p-md rounded-lg flex flex-col justify-between items-start">
+<div>
+<h3 class="font-title-md text-title-md mb-xs text-on-surface">Reward Best Performers</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-md">Top performing moderators are eligible for bonus diamond distributions.</p>
+</div>
+<button class="bg-on-surface text-surface px-xl py-md rounded-full font-bold hover:opacity-90 transition-opacity">
+                    Transfer Diamonds
+                </button>
+</div>
+<div class="bg-tertiary-fixed p-md rounded-lg flex items-center gap-md">
+<div class="w-16 h-16 rounded-full bg-tertiary text-on-tertiary flex items-center justify-center">
+<span class="material-symbols-outlined text-[32px]">trending_up</span>
+</div>
+<div>
+<div class="font-label-sm text-label-sm text-on-tertiary-fixed-variant uppercase">Network Velocity</div>
+<div class="font-headline-lg text-headline-lg text-on-tertiary-fixed">High Impact</div>
+<div class="font-body-md text-body-md text-on-tertiary-fixed-variant opacity-80">98th Percentile in growth rates.</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation (Mobile Only) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-margin-mobile py-sm md:hidden bg-surface shadow-[0_-4px_30px_0_rgba(26,11,46,0.12)] rounded-t-lg">
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-2xl px-4 py-1 transition-transform active:scale-90" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-label-sm text-label-sm">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:opacity-80 transition-transform active:scale-90" href="#">
+<span class="material-symbols-outlined">account_tree</span>
+<span class="font-label-sm text-label-sm">Network</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:opacity-80 transition-transform active:scale-90" href="#">
+<span class="material-symbols-outlined">payments</span>
+<span class="font-label-sm text-label-sm">Diamonds</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:opacity-80 transition-transform active:scale-90" href="#">
+<span class="material-symbols-outlined">person_filled</span>
+<span class="font-label-sm text-label-sm">Account</span>
+</a>
+</nav>
+<!-- Floating Action Button (Only on Dashboard) -->
+<button class="fixed bottom-24 right-margin-mobile md:bottom-lg md:right-margin-desktop w-16 h-16 bg-primary text-on-primary rounded-full shadow-2xl flex items-center justify-center z-40 active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-[32px]">add</span>
+</button>
+</body></html>

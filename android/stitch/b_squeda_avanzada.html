@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary": "#ffffff",
+                    "on-primary-fixed": "#280057",
+                    "inverse-primary": "#d6baff",
+                    "surface-tint": "#7b26e6",
+                    "inverse-surface": "#2d3136",
+                    "background": "#f8f9ff",
+                    "on-error-container": "#93000a",
+                    "inverse-on-surface": "#eef1f8",
+                    "surface-variant": "#e0e2ea",
+                    "on-tertiary-fixed": "#390035",
+                    "surface-container": "#ebeef5",
+                    "outline-variant": "#cdc2d8",
+                    "surface-container-high": "#e5e8ef",
+                    "primary-fixed": "#ecdcff",
+                    "secondary-fixed-dim": "#3cdae2",
+                    "outline": "#7c7387",
+                    "error-container": "#ffdad6",
+                    "on-tertiary-container": "#ffcef0",
+                    "on-surface": "#181c21",
+                    "on-primary-container": "#e7d5ff",
+                    "on-surface-variant": "#4b4455",
+                    "secondary": "#00696e",
+                    "primary-container": "#7d2ae8",
+                    "surface": "#f8f9ff",
+                    "tertiary-fixed-dim": "#ffacec",
+                    "tertiary": "#87007e",
+                    "on-secondary-fixed": "#002021",
+                    "error": "#ba1a1a",
+                    "surface-container-highest": "#e0e2ea",
+                    "primary": "#6200c5",
+                    "primary-fixed-dim": "#d6baff",
+                    "on-error": "#ffffff",
+                    "on-primary": "#ffffff",
+                    "surface-container-lowest": "#ffffff",
+                    "on-secondary-container": "#006e72",
+                    "on-primary-fixed-variant": "#5f00bf",
+                    "on-tertiary": "#ffffff",
+                    "surface-dim": "#d7dae1",
+                    "secondary-fixed": "#63f7ff",
+                    "on-secondary-fixed-variant": "#004f53",
+                    "surface-bright": "#f8f9ff",
+                    "on-tertiary-fixed-variant": "#83007a",
+                    "tertiary-container": "#b000a4",
+                    "surface-container-low": "#f1f3fb",
+                    "tertiary-fixed": "#ffd7f2",
+                    "secondary-container": "#5ff4fc",
+                    "on-background": "#181c21"
+            },
+            "borderRadius": {
+                    "DEFAULT": "1rem",
+                    "lg": "2rem",
+                    "xl": "3rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "gutter": "16px",
+                    "xs": "4px",
+                    "lg": "40px",
+                    "base": "8px",
+                    "md": "24px",
+                    "margin-desktop": "48px",
+                    "sm": "12px",
+                    "margin-mobile": "20px",
+                    "xl": "64px"
+            },
+            "fontFamily": {
+                    "headline-lg": ["Inter"],
+                    "title-md": ["Inter"],
+                    "display-lg": ["Inter"],
+                    "body-md": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "headline-lg-mobile": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "title-md": ["18px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                    "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "label-sm": ["12px", {"lineHeight": "1", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen pb-24">
+<!-- Top AppBar -->
+<header class="bg-surface dark:bg-inverse-surface shadow-[0_30px_50px_-12px_rgba(26,11,46,0.12)] sticky top-0 z-50 flex justify-between items-center w-full px-margin-mobile py-4">
+<div class="flex items-center gap-4">
+<button class="text-primary dark:text-primary-fixed-dim active:scale-95 transition-transform duration-200">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h1 class="font-headline-lg text-headline-lg-mobile text-primary dark:text-primary-fixed-dim">Buscar Contactos</h1>
+</div>
+<button class="text-primary dark:text-primary-fixed-dim hover:bg-surface-container-high transition-colors p-2 rounded-full">
+<span class="material-symbols-outlined">settings</span>
+</button>
+</header>
+<main class="px-margin-mobile md:px-margin-desktop py-base">
+<!-- Quick Search Bar -->
+<div class="mt-md mb-lg">
+<div class="relative group">
+<input class="w-full h-12 pl-12 pr-4 bg-surface-container-lowest border border-outline-variant rounded-full focus:ring-2 focus:ring-primary focus:border-transparent shadow-sm transition-all text-body-md font-body-md outline-none" placeholder="Buscar por nombre..." type="text"/>
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline">search</span>
+</div>
+</div>
+<!-- Filter Tabs -->
+<div class="flex gap-xs mb-lg overflow-x-auto pb-2 no-scrollbar">
+<button class="flex items-center justify-center bg-primary-container text-on-primary-container rounded-full px-6 py-2 whitespace-nowrap font-label-sm text-label-sm shadow-md active:scale-95 transition-all">
+                Resultados Globales
+            </button>
+<button class="flex items-center justify-center bg-surface-container-high text-on-surface-variant rounded-full px-6 py-2 whitespace-nowrap font-label-sm text-label-sm hover:bg-surface-container-highest active:scale-95 transition-all">
+                Solicitudes Pendientes
+            </button>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-lg">
+<!-- Filter Sidebar -->
+<aside class="lg:col-span-4 space-y-md">
+<div class="bg-surface-container-lowest p-md rounded-lg shadow-[0_30px_50px_-12px_rgba(26,11,46,0.08)]">
+<h2 class="font-title-md text-title-md mb-md text-primary">Filtros Avanzados</h2>
+<div class="space-y-sm">
+<!-- Location Cuba -->
+<div>
+<label class="block font-label-sm text-label-sm text-on-surface-variant mb-xs">Provincia</label>
+<select class="w-full bg-surface-container-low border border-outline-variant rounded-md px-4 py-2 font-body-md text-body-md">
+<option>La Habana</option>
+<option>Matanzas</option>
+<option>Santiago de Cuba</option>
+<option>Villa Clara</option>
+</select>
+</div>
+<div>
+<label class="block font-label-sm text-label-sm text-on-surface-variant mb-xs">Municipio</label>
+<select class="w-full bg-surface-container-low border border-outline-variant rounded-md px-4 py-2 font-body-md text-body-md">
+<option>Playa</option>
+<option>Plaza de la Revolución</option>
+<option>Centro Habana</option>
+</select>
+</div>
+<hr class="border-outline-variant my-md"/>
+<!-- Gender -->
+<div>
+<span class="block font-label-sm text-label-sm text-on-surface-variant mb-sm">Género</span>
+<div class="flex flex-wrap gap-xs">
+<label class="cursor-pointer">
+<input class="hidden peer" name="gender" type="radio"/>
+<span class="px-4 py-2 rounded-full border border-outline-variant peer-checked:bg-secondary-container peer-checked:text-on-secondary-container peer-checked:border-secondary transition-all font-label-sm text-label-sm block">Masculino</span>
+</label>
+<label class="cursor-pointer">
+<input checked="" class="hidden peer" name="gender" type="radio"/>
+<span class="px-4 py-2 rounded-full border border-outline-variant peer-checked:bg-secondary-container peer-checked:text-on-secondary-container peer-checked:border-secondary transition-all font-label-sm text-label-sm block">Femenino</span>
+</label>
+<label class="cursor-pointer">
+<input class="hidden peer" name="gender" type="radio"/>
+<span class="px-4 py-2 rounded-full border border-outline-variant peer-checked:bg-secondary-container peer-checked:text-on-secondary-container peer-checked:border-secondary transition-all font-label-sm text-label-sm block">Otro</span>
+</label>
+</div>
+</div>
+<!-- Categories -->
+<div class="pt-sm">
+<span class="block font-label-sm text-label-sm text-on-surface-variant mb-sm">Categorías</span>
+<div class="flex flex-wrap gap-xs">
+<span class="bg-surface-container-highest text-on-surface-variant px-3 py-1 rounded-full font-label-sm text-label-sm hover:bg-primary-container hover:text-white cursor-pointer transition-colors">Modelo</span>
+<span class="bg-primary-container text-white px-3 py-1 rounded-full font-label-sm text-label-sm cursor-pointer shadow-sm">Cantante</span>
+<span class="bg-surface-container-highest text-on-surface-variant px-3 py-1 rounded-full font-label-sm text-label-sm hover:bg-primary-container hover:text-white cursor-pointer transition-colors">Creador Digital</span>
+<span class="bg-surface-container-highest text-on-surface-variant px-3 py-1 rounded-full font-label-sm text-label-sm hover:bg-primary-container hover:text-white cursor-pointer transition-colors">Fotógrafo</span>
+</div>
+</div>
+<hr class="border-outline-variant my-md"/>
+<!-- Status & Sorting -->
+<div class="space-y-sm">
+<label class="flex items-center gap-base cursor-pointer group">
+<div class="w-5 h-5 border-2 border-primary rounded flex items-center justify-center group-active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-primary text-[16px] font-bold">check</span>
+</div>
+<span class="font-body-md text-body-md">Solo Admins/Moderadores</span>
+</label>
+<div>
+<label class="block font-label-sm text-label-sm text-on-surface-variant mb-xs">Ordenar por</label>
+<div class="flex gap-base">
+<button class="flex-1 py-2 border-b-2 border-primary text-primary font-label-sm text-label-sm">Populares</button>
+<button class="flex-1 py-2 border-b-2 border-transparent text-outline font-label-sm text-label-sm hover:text-on-surface transition-colors">Recientes</button>
+</div>
+</div>
+</div>
+<button class="w-full mt-lg bg-primary text-on-primary py-3 rounded-full font-title-md text-title-md shadow-lg active:scale-95 transition-transform">
+                            Aplicar Filtros
+                        </button>
+</div>
+</div>
+</aside>
+<!-- Results Grid -->
+<section class="lg:col-span-8">
+<div class="flex justify-between items-center mb-md">
+<p class="font-label-sm text-label-sm text-on-surface-variant">Se encontraron 24 resultados</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<!-- Result Card 1 -->
+<div class="bg-surface-container-lowest rounded-lg shadow-[0_30px_50px_-12px_rgba(26,11,46,0.08)] overflow-hidden flex flex-col group hover:shadow-xl transition-all duration-300">
+<div class="relative h-48 overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="A professional studio portrait of a confident young Cuban fashion model with curly hair, wearing a vibrant turquoise outfit. The lighting is high-end commercial style with soft shadows, creating a high-energy and modern visual. The background is a clean, minimal white studio setting that emphasizes the saturated colors and vibrant lifestyle aesthetic of the brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDe3vohxAa2ebpeUyXg8Dv7Yt8hwfn7jlbJ18w6GhdNt_Uwie7_vJpOy504UMDh7qzNN69Iyi1Ckutz0dN3jC4QdOMJ2dy6jQQkASS900Hr0T4yb9RKmlodSxdu4d5qK98vTTdTmTnqwxwMF9Sr6JbXiUbiQt4lNgFcDXXxEKQ8PwMvy4lG5S8v6eN7RLbzoZbijTH6Hj8JWEDkT83RFz0b_fzuEscx9iNZiIeU08pFHcKVL-Se48n0ssj-ptfHoKL7EcZ138SKYqg"/>
+<div class="absolute top-4 right-4 bg-tertiary-container text-white px-3 py-1 rounded-full font-label-sm text-[10px] tracking-widest flex items-center gap-1 shadow-lg">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">workspace_premium</span>
+                                VIP
+                            </div>
+</div>
+<div class="p-md flex-1 flex flex-col">
+<div class="mb-sm">
+<h3 class="font-title-md text-title-md text-on-surface">Elena Rodriguez</h3>
+<div class="flex items-center gap-xs text-on-surface-variant mt-xs">
+<span class="material-symbols-outlined text-[18px]">location_on</span>
+<span class="font-label-sm text-label-sm">Vedado, La Habana</span>
+</div>
+</div>
+<div class="flex items-center gap-base mb-lg">
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container rounded-full font-label-sm text-[11px]">CANTANTE</span>
+<span class="px-3 py-1 bg-surface-container-high text-on-surface-variant rounded-full font-label-sm text-[11px]">MODELO</span>
+</div>
+<button class="mt-auto w-full flex items-center justify-center gap-base bg-secondary text-on-secondary py-3 rounded-full font-label-sm text-label-sm hover:opacity-90 active:scale-95 transition-all">
+<span class="material-symbols-outlined">person_add</span>
+                                Enviar Solicitud
+                            </button>
+</div>
+</div>
+<!-- Result Card 2 -->
+<div class="bg-surface-container-lowest rounded-lg shadow-[0_30px_50px_-12px_rgba(26,11,46,0.08)] overflow-hidden flex flex-col group hover:shadow-xl transition-all duration-300">
+<div class="relative h-48 overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="A portrait of a male content creator in an urban setting in Old Havana. He is wearing stylish street wear with a bright yellow accent. The photo is captured with natural, warm sunlight casting dramatic but soft shadows. The overall mood is vibrant and professional, fitting a high-contrast modern UI with a clean light-mode aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBy-HEAyASMmZurIgOJWHfFMOo3FLB12n0q3zzI4qiIGDcCE-E7TyuT3wOW3I2ciJpS5_TN-ehz-kUi93zISAC5ChKOEB4qZUasGzx1WuvRuxk8QZVcXD2NVx_h5BcK1El3K_BtY-n92NDf3RAPNmWnBXossNPjorhjf6Rg_Aa4_U-OoHpBB-xlj5ceHhrPpqnBbBP4k6NvxRdvzbIk1UtBs_jyzIXpW3ZQUuZs4UDuijykYEOArxD0I7wcp-0lPQm2ZSseYiaq23g"/>
+</div>
+<div class="p-md flex-1 flex flex-col">
+<div class="mb-sm">
+<h3 class="font-title-md text-title-md text-on-surface">Marco Polo</h3>
+<div class="flex items-center gap-xs text-on-surface-variant mt-xs">
+<span class="material-symbols-outlined text-[18px]">location_on</span>
+<span class="font-label-sm text-label-sm">Centro, Matanzas</span>
+</div>
+</div>
+<div class="flex items-center gap-base mb-lg">
+<span class="px-3 py-1 bg-surface-container-high text-on-surface-variant rounded-full font-label-sm text-[11px]">CREADOR DIGITAL</span>
+</div>
+<button class="mt-auto w-full flex items-center justify-center gap-base border-2 border-secondary text-secondary py-2.5 rounded-full font-label-sm text-label-sm hover:bg-secondary-container active:scale-95 transition-all">
+<span class="material-symbols-outlined">person_add</span>
+                                Enviar Solicitud
+                            </button>
+</div>
+</div>
+<!-- Result Card 3 -->
+<div class="bg-surface-container-lowest rounded-lg shadow-[0_30px_50px_-12px_rgba(26,11,46,0.08)] overflow-hidden flex flex-col group hover:shadow-xl transition-all duration-300">
+<div class="relative h-48 overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="A vibrant professional headshot of a smiling female digital artist with colorful accessories. The setting is a bright, modern creative workspace with soft neon magenta and electric cyan lighting accents. The style is bold and expressive, using a clean background to make the subject pop, perfectly aligning with a brutal-modernist UI design system." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCrisqLEiW77EpTmkh9_xVVy6KRGrTUEXJJcEDLl4SKXx2rfJlJFql76avYGBnVeItHmhyMEwJYMX0_28Nx-oPvf6eoHnrf4_ICRp4GtmYvxYYJU4t1V5bRQtgYtdOvoJCtHqwc0LlIHTAIF3qZAZY5ABXUPeuEeqQfC1XKxvGd6z8U3fj01lBTxe1geUApFK7MJab3ZjK5HiA01qpUcejz1VeoMiyh-Oh-4ofaVzk_U9vlREwaLbhMIzQrg2r4mzCRAbhQyCfjVbM"/>
+<div class="absolute top-4 right-4 bg-tertiary-container text-white px-3 py-1 rounded-full font-label-sm text-[10px] tracking-widest flex items-center gap-1 shadow-lg">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">workspace_premium</span>
+                                VIP
+                            </div>
+</div>
+<div class="p-md flex-1 flex flex-col">
+<div class="mb-sm">
+<h3 class="font-title-md text-title-md text-on-surface">Sofia Hernandez</h3>
+<div class="flex items-center gap-xs text-on-surface-variant mt-xs">
+<span class="material-symbols-outlined text-[18px]">location_on</span>
+<span class="font-label-sm text-label-sm">Santa Clara, V. Clara</span>
+</div>
+</div>
+<div class="flex items-center gap-base mb-lg">
+<span class="px-3 py-1 bg-surface-container-high text-on-surface-variant rounded-full font-label-sm text-[11px]">FOTÓGRAFA</span>
+<span class="px-3 py-1 bg-surface-container-high text-on-surface-variant rounded-full font-label-sm text-[11px]">DISERTANTE</span>
+</div>
+<button class="mt-auto w-full flex items-center justify-center gap-base bg-secondary text-on-secondary py-3 rounded-full font-label-sm text-label-sm hover:opacity-90 active:scale-95 transition-all">
+<span class="material-symbols-outlined">person_add</span>
+                                Enviar Solicitud
+                            </button>
+</div>
+</div>
+<!-- Result Card 4 -->
+<div class="bg-surface-container-lowest rounded-lg shadow-[0_30px_50px_-12px_rgba(26,11,46,0.08)] overflow-hidden flex flex-col group hover:shadow-xl transition-all duration-300">
+<div class="relative h-48 overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="A portrait of a male moderator in a professional office environment. He is wearing a clean, crisp light blue shirt. The lighting is bright and even, conveying trust and reliability. The color palette is composed of cool blues and clean whites, fitting the high-contrast professional corporate hybrid style of the application." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGar0QwB-l1gFa0cEuaLbtzuVF3qs2Um9yjC4rNMrRt6wM54vp9NEsyJZ0mEVWhecVI3p3EZIC2lrIYNc8uTDLhLL5mvI_VbOEn9ohHC50mUAe8zta6ZO95W2MY8a8aJFrQd-nYeOd3vHhDkhhnDlaA1ZTHmMSPTVTzYdbj2Yw4cyvg_rojO3r6uPmz2uE82xSrCb6PspjsP7LnhLP2ad7uE5rOcF5iqG6rfCtK8t151bfzT25YsyTgrGtjsnY3-Dh-3WF3lP3xTI"/>
+</div>
+<div class="p-md flex-1 flex flex-col">
+<div class="mb-sm">
+<h3 class="font-title-md text-title-md text-on-surface">Alex Rivera</h3>
+<div class="flex items-center gap-xs text-on-surface-variant mt-xs">
+<span class="material-symbols-outlined text-[18px]">location_on</span>
+<span class="font-label-sm text-label-sm">Santiago, S. de Cuba</span>
+</div>
+</div>
+<div class="flex items-center gap-base mb-lg">
+<span class="px-3 py-1 bg-primary-container text-white rounded-full font-label-sm text-[11px]">MODERADOR</span>
+</div>
+<button class="mt-auto w-full flex items-center justify-center gap-base border-2 border-secondary text-secondary py-2.5 rounded-full font-label-sm text-label-sm hover:bg-secondary-container active:scale-95 transition-all">
+<span class="material-symbols-outlined">person_add</span>
+                                Enviar Solicitud
+                            </button>
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- Bottom Navigation -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-2 bg-surface-container-lowest dark:bg-inverse-surface shadow-[0_-10px_40px_rgba(26,11,46,0.08)] rounded-t-lg">
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant hover:opacity-80 transition-opacity active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-sm text-label-sm">Inicio</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant hover:opacity-80 transition-opacity active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined">contacts</span>
+<span class="font-label-sm text-label-sm">Contactos</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-primary-container dark:bg-primary-fixed-variant text-on-primary-container dark:text-on-primary-fixed-variant rounded-full px-4 py-1 active:scale-90 transition-transform duration-150 shadow-md" href="#">
+<span class="material-symbols-outlined">search</span>
+<span class="font-label-sm text-label-sm">Buscar</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant hover:opacity-80 transition-opacity active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-sm text-label-sm">Perfil</span>
+</a>
+</nav>
+</body></html>

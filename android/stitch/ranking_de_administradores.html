@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-fixed": "#63f7ff",
+                        "secondary": "#00696e",
+                        "on-secondary-fixed": "#002021",
+                        "inverse-primary": "#d6baff",
+                        "surface-container": "#ebeef5",
+                        "surface": "#f8f9ff",
+                        "primary-fixed": "#ecdcff",
+                        "tertiary-fixed-dim": "#ffacec",
+                        "on-primary-fixed-variant": "#5f00bf",
+                        "background": "#f8f9ff",
+                        "inverse-surface": "#2d3136",
+                        "inverse-on-surface": "#eef1f8",
+                        "on-primary-container": "#e7d5ff",
+                        "primary-container": "#7d2ae8",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-high": "#e5e8ef",
+                        "on-secondary-fixed-variant": "#004f53",
+                        "on-error": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary-container": "#ffcef0",
+                        "surface-dim": "#d7dae1",
+                        "primary-fixed-dim": "#d6baff",
+                        "on-tertiary-fixed-variant": "#83007a",
+                        "on-primary-fixed": "#280057",
+                        "secondary-fixed-dim": "#3cdae2",
+                        "on-surface": "#181c21",
+                        "surface-container-low": "#f1f3fb",
+                        "surface-container-highest": "#e0e2ea",
+                        "on-background": "#181c21",
+                        "error": "#ba1a1a",
+                        "on-primary": "#ffffff",
+                        "secondary-container": "#5ff4fc",
+                        "outline-variant": "#cdc2d8",
+                        "outline": "#7c7387",
+                        "surface-variant": "#e0e2ea",
+                        "on-secondary-container": "#006e72",
+                        "on-tertiary-container": "#ffcef0",
+                        "tertiary-container": "#b000a4",
+                        "on-tertiary-fixed": "#390035",
+                        "error-container": "#ffdad6",
+                        "tertiary": "#87007e",
+                        "surface-bright": "#f8f9ff",
+                        "primary": "#6200c5",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-fixed": "#ffd7f2",
+                        "surface-tint": "#7b26e6"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "sm": "12px",
+                        "gutter": "16px",
+                        "xl": "64px",
+                        "xs": "4px",
+                        "base": "8px",
+                        "margin-desktop": "48px",
+                        "md": "24px",
+                        "margin-mobile": "20px",
+                        "lg": "40px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "title-md": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                        "label-sm": ["12px", {"lineHeight": "1", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                        "title-md": ["18px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .podium-gradient-1 { background: linear-gradient(180deg, #7b26e6 0%, #6200c5 100%); }
+        .podium-gradient-2 { background: linear-gradient(180deg, #00696e 0%, #004f53 100%); }
+        .podium-gradient-3 { background: linear-gradient(180deg, #87007e 0%, #390035 100%); }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md min-h-screen">
+<!-- TopAppBar -->
+<header class="w-full top-0 sticky z-50 flex justify-between items-center px-margin-desktop py-md bg-surface shadow-md">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary text-headline-lg">menu</span>
+<h1 class="font-headline-lg text-headline-lg font-black text-primary">Velocity Admin</h1>
+</div>
+<div class="flex items-center gap-md">
+<div class="hidden md:flex gap-gutter items-center">
+<span class="text-primary font-bold transition-colors">Dashboard</span>
+<span class="text-on-surface-variant font-medium hover:bg-surface-container-high transition-colors px-4 py-2 rounded-full cursor-pointer">Referrals</span>
+<span class="text-on-surface-variant font-medium hover:bg-surface-container-high transition-colors px-4 py-2 rounded-full cursor-pointer">Settings</span>
+</div>
+<div class="h-10 w-10 rounded-full overflow-hidden border-2 border-primary">
+<img alt="Profile Photo" data-alt="A professional close-up portrait of a tech executive in a brightly lit, modern office environment. The subject is wearing a sleek charcoal suit and has a confident, welcoming expression. The background is softly blurred, showing hints of vibrant purple and teal lighting that align with a high-energy corporate design system." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJG27tfcPaY_qhVY-0AcBU8YKCxM_em1Kk73g7JcGvjybxpO5dK91RtMQ3UGn_hCBFubO4GaFqDBFhNoMqKnVgVsU9xT9MeJv5nzUEVKBVmlDj4EC1Tt4Eg-ykwuOcqH-uQ2qIpKz3IzE9Mj48FGufZWgwQUds2xi4uzHMNcD4GZTqK9NtBFh_D8OBNDesDSNUoIQwGweeiOIS43fdHOUer9uKGYtss5aESaFqDBXhjqOxx7KwO1DKzBOxglxw35aByVe0c9-mLIo"/>
+</div>
+</div>
+</header>
+<div class="flex">
+<!-- NavigationDrawer (Desktop Only) -->
+<aside class="hidden lg:flex h-screen w-80 sticky top-16 flex-col p-md gap-base bg-surface-container-lowest shadow-xl border-r border-surface-container">
+<div class="flex items-center gap-md p-md mb-base">
+<div class="w-12 h-12 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container">
+<span class="material-symbols-outlined">shield_person</span>
+</div>
+<div>
+<p class="font-title-md text-title-md text-on-surface">System Owner</p>
+<p class="text-label-sm text-on-surface-variant">Creator Level</p>
+</div>
+</div>
+<nav class="flex flex-col gap-xs">
+<a class="flex items-center gap-md p-md bg-primary-container text-on-primary-container rounded-full transition-all duration-300" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-title-md">Dashboard</span>
+</a>
+<a class="flex items-center gap-md p-md text-on-surface-variant hover:bg-surface-container-high rounded-full transition-all duration-300" href="#">
+<span class="material-symbols-outlined">share</span>
+<span class="font-title-md text-title-md">Referrals</span>
+</a>
+<a class="flex items-center gap-md p-md text-on-surface-variant hover:bg-surface-container-high rounded-full transition-all duration-300" href="#">
+<span class="material-symbols-outlined">diamond</span>
+<span class="font-title-md text-title-md">Diamond Requests</span>
+</a>
+<a class="flex items-center gap-md p-md text-on-surface-variant hover:bg-surface-container-high rounded-full transition-all duration-300" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="font-title-md text-title-md">Team Members</span>
+</a>
+<a class="flex items-center gap-md p-md text-on-surface-variant hover:bg-surface-container-high rounded-full transition-all duration-300" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-title-md text-title-md">Settings</span>
+</a>
+</nav>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 px-margin-mobile md:px-xl py-lg pb-32">
+<!-- Header & Period Toggle -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-md mb-xl">
+<div>
+<h2 class="font-display-lg text-display-lg text-primary mb-xs">Leaderboard</h2>
+<p class="text-on-surface-variant">Top performing Super Agents ranking by commission</p>
+</div>
+<div class="bg-surface-container p-1 rounded-full flex gap-1">
+<button class="px-6 py-2 rounded-full text-label-sm font-label-sm bg-primary text-on-primary shadow-md">Today</button>
+<button class="px-6 py-2 rounded-full text-label-sm font-label-sm text-on-surface-variant hover:bg-surface-container-high">Weekly</button>
+<button class="px-6 py-2 rounded-full text-label-sm font-label-sm text-on-surface-variant hover:bg-surface-container-high">Monthly</button>
+<button class="px-6 py-2 rounded-full text-label-sm font-label-sm text-on-surface-variant hover:bg-surface-container-high">All-time</button>
+</div>
+</div>
+<!-- Podium Visualization -->
+<div class="flex items-end justify-center gap-4 md:gap-gutter mb-xl pt-12 overflow-x-auto">
+<!-- Rank 2 -->
+<div class="flex flex-col items-center group w-32 md:w-48">
+<div class="relative mb-4">
+<div class="w-16 h-16 md:w-24 md:h-24 rounded-full border-4 border-secondary-fixed overflow-hidden shadow-xl">
+<img alt="Super Agent 2" data-alt="A detailed headshot of a professional administrator working in a vibrant creative studio. The person has a friendly and focused demeanor, wearing modern eyeglasses. The lighting is dynamic, with electric cyan highlights that reflect the high-contrast design system, creating a sense of digital expertness." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBztCCX5rb-FN_kpDSGs3ssE0WG-BBaEoP0VZ2SNiUpbxSirLW4sTnZKhbJChlWnHrlU3OJXBihXcgLOPBWufN52ySrpfysUSqTGQr1hN9rtOy0gopPw0Unn8ebllEawF-qQ1LmLg39c6YV1qMGPyZ428i-fgB4hmEEIucUFtfP6hfYhl-h9sw0K8hb5TKkNybpCEx2elnXebKbpg0I6vH1O6jdQYjvIqRmVff7fYVPuQkrUFJxDNIvruU2mPXQrE3L7O2P3J-xjBo"/>
+</div>
+<div class="absolute -bottom-2 -right-2 bg-secondary text-on-secondary w-8 h-8 rounded-full flex items-center justify-center font-bold shadow-lg">2</div>
+</div>
+<div class="podium-gradient-2 w-full h-32 md:h-40 rounded-t-lg flex flex-col items-center justify-center p-md text-white shadow-2xl transition-transform hover:-translate-y-1">
+<span class="font-title-md text-center text-secondary-fixed">Alex Rivers</span>
+<span class="text-label-sm opacity-80 uppercase tracking-widest mt-1">Gems processed</span>
+<div class="flex items-center gap-1 mt-1 font-bold text-headline-lg-mobile">
+<span class="material-symbols-outlined text-secondary-fixed">diamond</span>
+                            14.2k
+                        </div>
+</div>
+</div>
+<!-- Rank 1 -->
+<div class="flex flex-col items-center group w-40 md:w-56 z-10">
+<div class="relative mb-6">
+<div class="w-20 h-20 md:w-32 md:h-32 rounded-full border-4 border-primary-fixed overflow-hidden shadow-[0_0_40px_rgba(123,38,230,0.4)]">
+<img alt="Super Agent 1" data-alt="A professional close-up of a high-performing system administrator against a backdrop of glowing digital data visualizations. The subject's face is illuminated with warm purple and cool magenta tones, emphasizing a modern 'Velocity' aesthetic. The composition is clean, centered, and exudes leadership and high-tech efficiency." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJflm7Y_j5UaUTbUGgIqZNabswGgeVq-5MSUuxTDPJEfwmOnOjvQ3gCWJf57pOlbVEQgEScXgJ3sfVLgRr4oqPVkfVT3TmvBtkrOLlnwsx2w0XRA820oQhelPnNocBKU7WZLBUahfrjANvSLtrFLys9uunR3syvCj92TWow98j9s3YVJaHDDl6HrM9BdYN7r4WZFLJtxkZKc3W5ynrTmgEjWaMjh35bSyKeH-lRFIXagI9UPyaOBgZfLzRoDNiVa2ULnrazrcWUBM"/>
+</div>
+<div class="absolute -bottom-2 -right-2 bg-primary text-on-primary w-10 h-10 rounded-full flex items-center justify-center font-bold text-headline-lg-mobile shadow-lg">1</div>
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 animate-bounce">
+<span class="material-symbols-outlined text-primary-fixed-dim text-4xl" style="font-variation-settings: 'FILL' 1;">workspace_premium</span>
+</div>
+</div>
+<div class="podium-gradient-1 w-full h-48 md:h-64 rounded-t-lg flex flex-col items-center justify-center p-md text-white shadow-[0_10px_50px_rgba(26,11,46,0.3)] transition-transform hover:-translate-y-2">
+<span class="font-headline-lg-mobile text-center">Sarah Chen</span>
+<span class="text-label-sm opacity-80 uppercase tracking-widest mt-1">Gems processed</span>
+<div class="flex items-center gap-1 mt-1 font-black text-headline-lg">
+<span class="material-symbols-outlined text-primary-fixed">diamond</span>
+                            28.5k
+                        </div>
+</div>
+</div>
+<!-- Rank 3 -->
+<div class="flex flex-col items-center group w-32 md:w-48">
+<div class="relative mb-4">
+<div class="w-16 h-16 md:w-24 md:h-24 rounded-full border-4 border-tertiary-fixed overflow-hidden shadow-xl">
+<img alt="Super Agent 3" data-alt="A portrait of a cheerful, energetic professional in a minimalist setting. The character is illuminated by soft, multi-colored neon light—specifically deep purple and magenta—creating a vibrant and forward-thinking look. The image captures a sense of achievement and creativity within a modern, digital-first environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAs6XvfG2zJnV1z3tDhxPMCsVi2kRB57qI0pMwcDFTLcrTKM7u0VT1mT5TXi7etgk8LLQ_gmRXwbnNaoIhfQsl5F9a5I8pYPVW4GCcX-7zADXeHXRAj94w-lDgUq0DtbaxL6mKkKFdMMsc_3UTg7SRhZu-HHLMVfSfR2Y7ZxMehwGpR_CAfWielSVCuQe0SShYlM2lb1NLLnQZqzXKAhEF5ZYbdMNMhTLMgi3mFgJgQ7FwOtHWzNiaOdTezpg2w7LqYv0pF0bqlFoY"/>
+</div>
+<div class="absolute -bottom-2 -right-2 bg-tertiary text-on-tertiary w-8 h-8 rounded-full flex items-center justify-center font-bold shadow-lg">3</div>
+</div>
+<div class="podium-gradient-3 w-full h-24 md:h-32 rounded-t-lg flex flex-col items-center justify-center p-md text-white shadow-2xl transition-transform hover:-translate-y-1">
+<span class="font-title-md text-center text-tertiary-fixed">Marcus Thorne</span>
+<span class="text-label-sm opacity-80 uppercase tracking-widest mt-1">Gems processed</span>
+<div class="flex items-center gap-1 mt-1 font-bold text-headline-lg-mobile">
+<span class="material-symbols-outlined text-tertiary-fixed">diamond</span>
+                            9.8k
+                        </div>
+</div>
+</div>
+</div>
+<!-- List View Ranking -->
+<div class="max-w-5xl mx-auto">
+<div class="flex items-center justify-between mb-gutter px-6 text-label-sm text-on-surface-variant font-bold uppercase tracking-widest">
+<div class="flex items-center gap-12">
+<span class="w-8">Rank</span>
+<span>Administrator</span>
+</div>
+<div class="hidden md:flex gap-xl text-right">
+<span class="w-32">Team Size</span>
+<span class="w-40 text-primary">Commission</span>
+</div>
+</div>
+<div class="space-y-4">
+<!-- Rank 4 -->
+<div class="bg-surface-container-lowest p-gutter rounded-lg shadow-[0_4px_30px_0_rgba(26,11,46,0.08)] flex items-center justify-between hover:shadow-xl transition-all border border-transparent hover:border-primary/20">
+<div class="flex items-center gap-gutter">
+<span class="w-8 font-black text-on-surface-variant">04</span>
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 rounded-full overflow-hidden">
+<img alt="Jordan Smith" data-alt="Close up avatar of a professional male super agent with a warm smile. Background is a sleek, minimalist tech office with indigo and cyan light accents. High contrast photography style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBs_HbTQyISr9f4MUXm2dBhe8EWwlyYBSEksgWw41xGfqWYCsHAPAWRtbDjmd2xCU2D7V0yHHKjXF7QBczCDNpQi_4FLXwJFMnZouxFi_CQBYg86uQvQYGa9sGzjOHPF7AiKqx06PVZ-cHciN17oAflmhlaFxAjOQ0gEfaF82DFFEokCHqxbzQO2r32sHTOyptv99_fgYghTkon7wv_SUohqZqkIKaZ6c7g3a9yhmk-cikAuU0-GHdKC4M2t5xFgSqHvnk2KcOz_zc"/>
+</div>
+<div>
+<h4 class="font-title-md text-on-surface">Jordan Smith</h4>
+<div class="flex items-center gap-1 text-label-sm text-secondary">
+<span class="material-symbols-outlined text-[14px]">trending_up</span>
+<span>+12.4% growth</span>
+</div>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-xl">
+<div class="hidden md:flex flex-col items-end w-32">
+<span class="font-bold text-on-surface">12 Moderators</span>
+<span class="text-label-sm text-on-surface-variant">Global Team</span>
+</div>
+<div class="flex flex-col items-end w-40">
+<span class="text-primary font-black text-title-md">$4,280.00</span>
+<span class="text-label-sm text-on-surface-variant">30% Share</span>
+</div>
+</div>
+</div>
+<!-- Rank 5 -->
+<div class="bg-surface-container-lowest p-gutter rounded-lg shadow-[0_4px_30px_0_rgba(26,11,46,0.08)] flex items-center justify-between hover:shadow-xl transition-all border border-transparent hover:border-primary/20">
+<div class="flex items-center gap-gutter">
+<span class="w-8 font-black text-on-surface-variant">05</span>
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 rounded-full overflow-hidden">
+<img alt="Luna Adams" data-alt="Creative female administrator with bright magenta lighting accents, professional headshot for a modern platform. Clean lighting, high detail, vibrant corporate aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKvJpZ1hWcnndZC7tbmAo3049QgetBuQ67UZ8LY2Frdb4uHMIvfuCMRaAtEA4P2yTx0NZHQqnSFTS_Rez4lKNOdNsTkGyHYfQMrI6S0hteH2ELwMRWgQunw5bEUj9toZ7YrBUzDFsRQ33DNSMQ6ANoZASJosbnQdGBM4L0ZwWBt2Y-jahnIyfuS8CRuByWcjiqiyJ8QdcmmqHmx_f5HGtBMgHnQxx8t6C4iv2bgDP5D_6ojqkDryp9y1WLJpz41scGJIesZTLjKnk"/>
+</div>
+<div>
+<h4 class="font-title-md text-on-surface">Luna Adams</h4>
+<div class="flex items-center gap-1 text-label-sm text-tertiary">
+<span class="material-symbols-outlined text-[14px]">trending_up</span>
+<span>+8.2% growth</span>
+</div>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-xl">
+<div class="hidden md:flex flex-col items-end w-32">
+<span class="font-bold text-on-surface">8 Moderators</span>
+<span class="text-label-sm text-on-surface-variant">Europe Team</span>
+</div>
+<div class="flex flex-col items-end w-40">
+<span class="text-primary font-black text-title-md">$3,950.00</span>
+<span class="text-label-sm text-on-surface-variant">30% Share</span>
+</div>
+</div>
+</div>
+<!-- Rank 6 -->
+<div class="bg-surface-container-lowest p-gutter rounded-lg shadow-[0_4px_30px_0_rgba(26,11,46,0.08)] flex items-center justify-between hover:shadow-xl transition-all border border-transparent hover:border-primary/20">
+<div class="flex items-center gap-gutter">
+<span class="w-8 font-black text-on-surface-variant">06</span>
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 rounded-full overflow-hidden">
+<img alt="David Kim" data-alt="Modern professional male portrait, soft focus office background with electric cyan tones. Corporate brutalist style, high fidelity photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAgBvjyQ-PVpUm4GlCWLNSXD4KFxdjDiLA0POsrFUZT5zGXC4Xs0GW74sKO9HKXFo7AwkpVBWGydjj9U3Uwzdvr2ZMnkqVGc25FbD_RineE5hz2IuLo-Lwjya01M4ip84TBnN3UE1MrF3_Sv95-qXvsst06J3683LKmRmtzx354tCEjsRtr0Av9pi2k7pNBB2Q6ntD0wapfHcpHefSt-SkT_1Iz5b9snk83uBvepj8ZGZGT5SpokHfHrAum1dx1tr-Mgv-3_uUwJPw"/>
+</div>
+<div>
+<h4 class="font-title-md text-on-surface">David Kim</h4>
+<div class="flex items-center gap-1 text-label-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px]">trending_flat</span>
+<span>Stable</span>
+</div>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-xl">
+<div class="hidden md:flex flex-col items-end w-32">
+<span class="font-bold text-on-surface">15 Moderators</span>
+<span class="text-label-sm text-on-surface-variant">Asia-Pac Team</span>
+</div>
+<div class="flex flex-col items-end w-40">
+<span class="text-primary font-black text-title-md">$3,120.00</span>
+<span class="text-label-sm text-on-surface-variant">30% Share</span>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-lg flex justify-center">
+<button class="px-xl py-3 rounded-full border-2 border-primary text-primary font-bold hover:bg-primary-container hover:text-on-primary-container transition-all">Load Full Leaderboard</button>
+</div>
+</div>
+</main>
+</div>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-margin-mobile py-sm md:hidden bg-surface shadow-[0_-4px_30px_0_rgba(26,11,46,0.12)]">
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:opacity-80 transition-transform active:scale-90" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-sm text-label-sm">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:opacity-80 transition-transform active:scale-90" href="#">
+<span class="material-symbols-outlined">account_tree</span>
+<span class="font-label-sm text-label-sm">Network</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-2xl px-4 py-1 transition-transform active:scale-90" href="#">
+<span class="material-symbols-outlined">payments</span>
+<span class="font-label-sm text-label-sm">Diamonds</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:opacity-80 transition-transform active:scale-90" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">person</span>
+<span class="font-label-sm text-label-sm">Account</span>
+</a>
+</nav>
+</body></html>

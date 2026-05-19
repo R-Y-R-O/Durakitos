@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+  </style>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-primary-fixed-variant": "#0040a2",
+            "on-background": "#191b23",
+            "on-secondary": "#ffffff",
+            "surface-variant": "#e1e2ec",
+            "surface-tint": "#0c56d0",
+            "secondary-container": "#d6e3f7",
+            "on-tertiary-fixed": "#002113",
+            "primary": "#003d9b",
+            "tertiary-fixed": "#82f9be",
+            "on-secondary-container": "#596576",
+            "on-secondary-fixed": "#101c2b",
+            "outline-variant": "#c3c6d6",
+            "on-primary-container": "#c4d2ff",
+            "tertiary": "#004e32",
+            "inverse-surface": "#2e3038",
+            "on-error-container": "#93000a",
+            "tertiary-fixed-dim": "#65dca4",
+            "secondary-fixed": "#d6e3f7",
+            "primary-fixed": "#dae2ff",
+            "inverse-primary": "#b2c5ff",
+            "inverse-on-surface": "#f0f0fb",
+            "primary-fixed-dim": "#b2c5ff",
+            "on-tertiary-container": "#72e9af",
+            "surface": "#faf8ff",
+            "surface-bright": "#faf8ff",
+            "surface-container-highest": "#e1e2ec",
+            "surface-dim": "#d9d9e4",
+            "on-surface": "#191b23",
+            "on-tertiary": "#ffffff",
+            "tertiary-container": "#006844",
+            "error-container": "#ffdad6",
+            "on-tertiary-fixed-variant": "#005235",
+            "on-primary-fixed": "#001848",
+            "primary-container": "#0052cc",
+            "on-surface-variant": "#434654",
+            "surface-container": "#ededf8",
+            "on-error": "#ffffff",
+            "surface-container-lowest": "#ffffff",
+            "outline": "#737685",
+            "secondary-fixed-dim": "#bbc7db",
+            "secondary": "#535f70",
+            "on-secondary-fixed-variant": "#3b4858",
+            "on-primary": "#ffffff",
+            "error": "#ba1a1a",
+            "background": "#faf8ff",
+            "surface-container-high": "#e7e7f2",
+            "surface-container-low": "#f3f3fd"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "xl": "64px",
+            "container-max": "1280px",
+            "md": "24px",
+            "lg": "40px",
+            "gutter": "24px",
+            "sm": "12px",
+            "base": "8px",
+            "xs": "4px"
+          },
+          "fontFamily": {
+            "body-md": ["Inter"],
+            "label-md": ["Inter"],
+            "headline-lg": ["Inter"],
+            "headline-md": ["Inter"],
+            "headline-lg-mobile": ["Inter"],
+            "body-lg": ["Inter"],
+            "headline-sm": ["Inter"]
+          },
+          "fontSize": {
+            "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+            "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+            "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+            "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+            "headline-lg-mobile": ["26px", {"lineHeight": "32px", "fontWeight": "600"}],
+            "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+            "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "500"}]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md min-h-screen pb-24 md:pb-0">
+<!-- TopAppBar -->
+<header class="w-full top-0 sticky bg-surface shadow-sm z-40 flex justify-between items-center px-md py-sm">
+<div class="flex items-center gap-base">
+<button class="material-symbols-outlined text-primary p-xs hover:bg-surface-container-high transition-colors rounded-full">menu</button>
+<h1 class="font-headline-sm text-headline-sm font-bold text-primary">Contacts</h1>
+</div>
+<div class="flex items-center gap-md">
+<div class="hidden md:flex items-center gap-md">
+<a class="font-label-md text-on-surface-variant hover:bg-surface-container-high transition-colors px-xs py-xs rounded-lg" href="#">Agenda</a>
+<a class="font-label-md text-on-surface-variant hover:bg-surface-container-high transition-colors px-xs py-xs rounded-lg" href="#">Search</a>
+<a class="font-label-md text-on-surface-variant hover:bg-surface-container-high transition-colors px-xs py-xs rounded-lg" href="#">Requests</a>
+<a class="font-label-md text-primary font-bold px-xs py-xs rounded-lg" href="#">Profile</a>
+</div>
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary-container">
+<img alt="User Profile" data-alt="A professional headshot of a middle-aged man with a friendly expression, wearing a tailored navy suit. The lighting is soft and corporate, set against a blurred modern office background with cool blue tones. The image conveys reliability and professional expertise in a clean, minimalist aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA6WzucuCC5_Z0RzlVl0SSGvGwW94-MPyfCKHT1fAEf6vY4ggt0H1WIzv3HYB-Igz-vLcdWplMPHbIkosIagI78NIFXmHEe0uZ9T6Se8kUNXUXcocHyUovA1zV9Ps4iALyHL-4Rx4bAhL2iRQq4svOew5J8Zgd-Tbi60qySh1yhmh9wtLoRgbgxdBxKgCOBm29_E6kSGXXbKaW0GuM3UAX8AJUNkPqA9Mqe-QkqT1gMAt0HgLZUwVjFewUlFTmpEVIdp7TLySUpH1c"/>
+</div>
+</div>
+</header>
+<main class="max-w-container-max mx-auto px-gutter py-lg flex flex-col gap-lg">
+<!-- Hero Profile Section -->
+<section class="bg-surface-container-lowest rounded-xl shadow-[0_2px_4px_rgba(0,0,0,0.05)] p-lg flex flex-col md:flex-row items-center md:items-end gap-md relative overflow-hidden">
+<div class="absolute top-0 left-0 w-full h-32 bg-gradient-to-r from-primary-container to-tertiary-container opacity-10"></div>
+<div class="relative z-10">
+<div class="w-32 h-32 rounded-full border-4 border-surface shadow-md overflow-hidden bg-surface-container">
+<img alt="Main Avatar" data-alt="A close-up high-resolution portrait of a smiling businessman. He is wearing a crisp white shirt and a modern blazer. The background is a minimalist studio setting with soft daylight and subtle gradients of blue and light gray. The focus is sharp on his friendly face, emphasizing trust and professional character." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtYOGZTmr0zVxQ0uLnx6xdn0oNBFYciwWo4dnsgkiBwhZWxeVulCG97R61tcvLA5ap4hbVL815tlUhqgxqlrbGmXAOdgMYve_locMysWM2aV6EWFzsBVaJrh2z9x1WKm2rG85JKd5u1QEA9PK1fCWhW_TEgCsasLZMJCwiqh9592aiuJsWNmTE5Y3QY5XM64ywIxLU66flynO0z5LC0y2iC-mFpSEoUcRx2ljV55xUGpRPsdMp1AbHKUGJwBM09rIvGNeCUXUsJN4"/>
+</div>
+<button class="absolute bottom-0 right-0 bg-primary text-on-primary p-xs rounded-full shadow-lg hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+</div>
+<div class="flex-grow text-center md:text-left z-10">
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Alexander Sterling</h2>
+<p class="font-body-lg text-on-surface-variant">Senior Relationship Manager • London, UK</p>
+</div>
+<div class="flex gap-sm z-10">
+<button class="bg-primary text-on-primary font-label-md px-md py-sm rounded-lg hover:bg-primary-container transition-colors active:scale-95">Edit Profile</button>
+</div>
+</section>
+<!-- Bento Grid Settings -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Left Column: Contact Info -->
+<div class="md:col-span-8 flex flex-col gap-gutter">
+<!-- My Contact Info Card -->
+<section class="bg-surface-container-lowest rounded-xl p-md shadow-[0_2px_4px_rgba(0,0,0,0.05)]">
+<div class="flex justify-between items-center mb-md">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">My Contact Info</h3>
+<span class="material-symbols-outlined text-outline">info</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<div class="flex flex-col gap-xs">
+<label class="font-label-md text-on-surface-variant">Email Address</label>
+<div class="relative">
+<input class="w-full bg-surface-container-low border border-outline-variant rounded-lg px-md py-sm text-body-md focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" type="email" value="alexander.sterling@corporate.com"/>
+<span class="material-symbols-outlined absolute right-3 top-2.5 text-outline text-[18px]">verified</span>
+</div>
+</div>
+<div class="flex flex-col gap-xs">
+<label class="font-label-md text-on-surface-variant">Phone Number</label>
+<input class="w-full bg-surface-container-low border border-outline-variant rounded-lg px-md py-sm text-body-md focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" type="tel" value="+44 20 7946 0123"/>
+</div>
+<div class="flex flex-col gap-xs">
+<label class="font-label-md text-on-surface-variant">Work Location</label>
+<input class="w-full bg-surface-container-low border border-outline-variant rounded-lg px-md py-sm text-body-md focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" type="text" value="London, Canary Wharf"/>
+</div>
+<div class="flex flex-col gap-xs">
+<label class="font-label-md text-on-surface-variant">LinkedIn Profile</label>
+<input class="w-full bg-surface-container-low border border-outline-variant rounded-lg px-md py-sm text-body-md focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" type="text" value="linkedin.com/in/alex-sterling"/>
+</div>
+</div>
+<div class="mt-lg pt-md border-t border-outline-variant flex justify-end gap-sm">
+<button class="font-label-md text-primary px-md py-sm hover:bg-surface-container-high rounded-lg transition-colors">Discard Changes</button>
+<button class="bg-secondary-container text-on-secondary-container font-label-md px-md py-sm rounded-lg hover:bg-outline-variant transition-colors">Save Details</button>
+</div>
+</section>
+<!-- Account Preferences Card -->
+<section class="bg-surface-container-lowest rounded-xl p-md shadow-[0_2px_4px_rgba(0,0,0,0.05)]">
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-md">Account Preferences</h3>
+<div class="flex flex-col gap-sm">
+<div class="flex items-center justify-between p-sm hover:bg-surface-container-low rounded-lg transition-colors cursor-pointer group">
+<div class="flex items-center gap-md">
+<div class="bg-primary-container/10 p-sm rounded-full text-primary">
+<span class="material-symbols-outlined">language</span>
+</div>
+<div>
+<p class="font-body-lg text-on-surface">Language &amp; Region</p>
+<p class="font-body-md text-on-surface-variant">English (United Kingdom)</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:translate-x-1 transition-transform">chevron_right</span>
+</div>
+<div class="flex items-center justify-between p-sm hover:bg-surface-container-low rounded-lg transition-colors cursor-pointer group">
+<div class="flex items-center gap-md">
+<div class="bg-tertiary-container/10 p-sm rounded-full text-tertiary">
+<span class="material-symbols-outlined">notifications</span>
+</div>
+<div>
+<p class="font-body-lg text-on-surface">Notification Settings</p>
+<p class="font-body-md text-on-surface-variant">Email and Push enabled</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:translate-x-1 transition-transform">chevron_right</span>
+</div>
+<div class="flex items-center justify-between p-sm hover:bg-surface-container-low rounded-lg transition-colors cursor-pointer group">
+<div class="flex items-center gap-md">
+<div class="bg-secondary-container/20 p-sm rounded-full text-secondary">
+<span class="material-symbols-outlined">dark_mode</span>
+</div>
+<div>
+<p class="font-body-lg text-on-surface">Appearance</p>
+<p class="font-body-md text-on-surface-variant">System default (Light)</p>
+</div>
+</div>
+<div class="w-12 h-6 bg-surface-container-highest rounded-full relative p-xs border border-outline-variant">
+<div class="w-4 h-4 bg-primary rounded-full shadow-sm"></div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Right Column: Privacy & Log Out -->
+<div class="md:col-span-4 flex flex-col gap-gutter">
+<!-- Privacy Settings Card -->
+<section class="bg-surface-container-lowest rounded-xl p-md shadow-[0_2px_4px_rgba(0,0,0,0.05)] border-l-4 border-tertiary">
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-md">Privacy Settings</h3>
+<div class="flex flex-col gap-md">
+<div class="flex items-start gap-sm">
+<input checked="" class="mt-1 rounded text-primary focus:ring-primary h-5 w-5 border-outline-variant" type="checkbox"/>
+<div>
+<p class="font-body-md font-semibold text-on-surface">Profile Visibility</p>
+<p class="font-label-md text-on-surface-variant">Allow coworkers to find your professional profile.</p>
+</div>
+</div>
+<div class="flex items-start gap-sm">
+<input checked="" class="mt-1 rounded text-primary focus:ring-primary h-5 w-5 border-outline-variant" type="checkbox"/>
+<div>
+<p class="font-body-md font-semibold text-on-surface">Contact Sharing</p>
+<p class="font-label-md text-on-surface-variant">Sync contacts across all company-approved devices.</p>
+</div>
+</div>
+<div class="flex items-start gap-sm">
+<input class="mt-1 rounded text-primary focus:ring-primary h-5 w-5 border-outline-variant" type="checkbox"/>
+<div>
+<p class="font-body-md font-semibold text-on-surface">Data Analytics</p>
+<p class="font-label-md text-on-surface-variant">Help us improve by sharing anonymous usage data.</p>
+</div>
+</div>
+<button class="mt-md font-label-md text-tertiary font-bold hover:underline self-start">Manage Third-Party Access</button>
+</div>
+</section>
+<!-- Stats/Engagement Card -->
+<section class="bg-primary text-on-primary rounded-xl p-md shadow-lg overflow-hidden relative">
+<div class="absolute -right-8 -bottom-8 w-32 h-32 bg-on-primary opacity-10 rounded-full"></div>
+<div class="relative z-10">
+<p class="font-label-md text-primary-fixed uppercase tracking-wider mb-xs">Network Score</p>
+<h4 class="font-headline-lg text-headline-lg mb-md">92%</h4>
+<p class="font-body-md opacity-90 mb-md">Your profile is highly optimized for network visibility. Keep up the great work!</p>
+<div class="w-full bg-on-primary/20 h-2 rounded-full overflow-hidden">
+<div class="bg-tertiary-fixed h-full w-[92%]"></div>
+</div>
+</div>
+</section>
+<!-- Action Area -->
+<div class="flex flex-col gap-sm mt-auto">
+<button class="flex items-center justify-center gap-sm w-full py-md rounded-xl bg-surface-container-high text-on-surface-variant font-label-md hover:bg-error-container hover:text-on-error-container transition-all group">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-error">logout</span>
+            Log Out of Session
+          </button>
+<button class="w-full py-sm text-error font-label-md hover:underline">Deactivate Account</button>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Mobile only) -->
+<nav class="md:hidden fixed bottom-0 w-full z-50 bg-surface flex justify-around items-center h-16 px-gutter pb-safe border-t border-outline-variant">
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:text-on-surface transition-all active:scale-90 duration-150">
+<span class="material-symbols-outlined">contacts</span>
+<span class="font-label-md text-label-md">Agenda</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:text-on-surface transition-all active:scale-90 duration-150">
+<span class="material-symbols-outlined">search</span>
+<span class="font-label-md text-label-md">Search</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:text-on-surface transition-all active:scale-90 duration-150">
+<span class="material-symbols-outlined">group_add</span>
+<span class="font-label-md text-label-md">Requests</span>
+</button>
+<button class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-full px-4 py-1 transition-all active:scale-90 duration-150">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-md text-label-md">Profile</span>
+</button>
+</nav>
+</body></html>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ConnectPro - Protege tus contactos</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-variant": "#e0e2ea",
+                        "on-error-container": "#93000a",
+                        "on-primary-fixed-variant": "#5f00bf",
+                        "tertiary-container": "#b000a4",
+                        "tertiary": "#87007e",
+                        "on-tertiary-fixed-variant": "#83007a",
+                        "surface-bright": "#f8f9ff",
+                        "on-background": "#181c21",
+                        "on-error": "#ffffff",
+                        "inverse-surface": "#2d3136",
+                        "outline-variant": "#cdc2d8",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-fixed-variant": "#004f53",
+                        "on-primary-fixed": "#280057",
+                        "error-container": "#ffdad6",
+                        "error": "#ba1a1a",
+                        "primary": "#6200c5",
+                        "surface-container": "#ebeef5",
+                        "outline": "#7c7387",
+                        "surface-dim": "#d7dae1",
+                        "secondary-container": "#5ff4fc",
+                        "surface-container-highest": "#e0e2ea",
+                        "secondary-fixed-dim": "#3cdae2",
+                        "on-tertiary-fixed": "#390035",
+                        "primary-fixed": "#ecdcff",
+                        "tertiary-fixed-dim": "#ffacec",
+                        "surface": "#f8f9ff",
+                        "primary-fixed-dim": "#d6baff",
+                        "surface-tint": "#7b26e6",
+                        "inverse-primary": "#d6baff",
+                        "secondary": "#00696e",
+                        "on-secondary-fixed": "#002021",
+                        "on-secondary-container": "#006e72",
+                        "tertiary-fixed": "#ffd7f2",
+                        "on-primary-container": "#e7d5ff",
+                        "on-surface-variant": "#4b4455",
+                        "background": "#f8f9ff",
+                        "surface-container-low": "#f1f3fb",
+                        "on-surface": "#181c21",
+                        "on-primary": "#ffffff",
+                        "inverse-on-surface": "#eef1f8",
+                        "surface-container-high": "#e5e8ef",
+                        "on-tertiary-container": "#ffcef0",
+                        "primary-container": "#7d2ae8",
+                        "secondary-fixed": "#63f7ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xs": "4px",
+                        "lg": "40px",
+                        "base": "8px",
+                        "sm": "12px",
+                        "xl": "64px",
+                        "gutter": "16px",
+                        "margin-mobile": "20px",
+                        "md": "24px",
+                        "margin-desktop": "48px"
+                    },
+                    "fontFamily": {
+                        "title-md": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "display-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "title-md": ["18px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "label-sm": ["12px", {"lineHeight": "1", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                        "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "800"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .gradient-mesh {
+            background-color: #f8f9ff;
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(98, 0, 197, 0.15) 0px, transparent 50%),
+                radial-gradient(at 100% 0%, rgba(0, 105, 110, 0.1) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(135, 0, 126, 0.1) 0px, transparent 50%),
+                radial-gradient(at 0% 100%, rgba(125, 42, 232, 0.15) 0px, transparent 50%);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen flex flex-col items-center gradient-mesh">
+<!-- Main Content Canvas -->
+<main class="flex-grow w-full max-w-4xl px-margin-mobile md:px-margin-desktop py-xl flex flex-col items-center">
+<!-- Hero Illustration Area -->
+<div class="relative w-full aspect-video md:aspect-[21/9] rounded-xl overflow-hidden shadow-2xl mb-lg">
+<img alt="Collaboration and protection" class="w-full h-full object-cover" data-alt="A vibrant and playful 3D digital illustration showing a friendly interface with floating shields and sparkling contact icons in a high-contrast Power Purple and Electric Cyan color palette. The lighting is soft and optimistic, emphasizing a bright light-mode aesthetic with clean white surfaces. Geometric shapes like spheres and rings float in the background to create a dynamic, Canva-like modernist professional environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHIabznieuP3vMHrGTuS7FvKvTelv0QRS2uzY_JPkPAxPaGOiVVvTcD4VIshdU7PvZWG0QeFuGIB6y8FTWbAbIU21a_ItAT1TZt-sK6kJiAUGf4C1vOFp6lxEAjvQ-FInueLjlCOy2PRtKjJKnCpNynjdS-JkLsAuyxJgCYHckWe7CNlUpvazRK0LIyWG3-R2rexJNQq6IqZqc6HQmx41LOPsu3z6jQlWWMCyZtwC3L7ZLlChpzGoa5a8tIwM1qaZPD1r_VFqvQyM"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+</div>
+<!-- Typography Header -->
+<div class="text-center mb-xl space-y-sm">
+<h1 class="text-display-lg font-display-lg text-primary tracking-tight">Protege tus contactos</h1>
+<p class="text-title-md font-title-md text-on-surface-variant max-w-lg mx-auto">Asegura tu red profesional centralizando tus conexiones en una cuenta de Google segura.</p>
+</div>
+<!-- Benefits Section (Bento-style Grid) -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter w-full mb-xl">
+<!-- Benefit 1 -->
+<div class="bg-surface-container-low p-md rounded-lg shadow-sm border border-outline/10 flex flex-col items-center text-center hover:scale-105 transition-transform duration-300">
+<div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mb-md shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined text-on-primary text-[32px]">sync</span>
+</div>
+<h3 class="text-title-md font-title-md mb-xs">Recuperación fácil</h3>
+<p class="text-body-md font-body-md text-on-surface-variant">Tus datos siempre a salvo y listos para restaurar en cualquier dispositivo.</p>
+</div>
+<!-- Benefit 2 -->
+<div class="bg-surface-container-low p-md rounded-lg shadow-sm border border-outline/10 flex flex-col items-center text-center hover:scale-105 transition-transform duration-300">
+<div class="w-16 h-16 bg-secondary rounded-full flex items-center justify-center mb-md shadow-lg shadow-secondary/20">
+<span class="material-symbols-outlined text-on-secondary text-[32px]">hub</span>
+</div>
+<h3 class="text-title-md font-title-md mb-xs">Manejo centralizado</h3>
+<p class="text-body-md font-body-md text-on-surface-variant">Organiza toda tu red de contactos desde un único panel inteligente.</p>
+</div>
+<!-- Benefit 3 -->
+<div class="bg-surface-container-low p-md rounded-lg shadow-sm border border-outline/10 flex flex-col items-center text-center hover:scale-105 transition-transform duration-300">
+<div class="w-16 h-16 bg-tertiary rounded-full flex items-center justify-center mb-md shadow-lg shadow-tertiary/20">
+<span class="material-symbols-outlined text-on-tertiary text-[32px]">verified_user</span>
+</div>
+<h3 class="text-title-md font-title-md mb-xs">Seguridad total</h3>
+<p class="text-body-md font-body-md text-on-surface-variant">Protección avanzada de Google para evitar accesos no autorizados.</p>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="flex flex-col items-center gap-md w-full max-w-sm">
+<button class="w-full bg-primary text-on-primary py-4 rounded-full font-title-md shadow-xl shadow-primary/30 hover:scale-105 active:scale-95 transition-all duration-200">
+                Entendido, vamos allá
+            </button>
+<button class="text-primary font-title-md hover:underline decoration-2 underline-offset-4 transition-all">
+                Omitir por ahora
+            </button>
+</div>
+</main>
+<!-- Footer Identity Anchor -->
+<footer class="w-full py-md flex justify-center items-center gap-xs">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">shield</span>
+<span class="text-label-sm font-label-sm text-on-surface-variant tracking-widest uppercase">Powered by ConnectPro Enterprise</span>
+</footer>
+</body></html>

@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 48;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 24px;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "tertiary-fixed": "#ffd7f2",
+                      "surface-dim": "#d7dae1",
+                      "secondary-fixed": "#63f7ff",
+                      "on-tertiary-container": "#ffcef0",
+                      "on-secondary-fixed-variant": "#004f53",
+                      "on-primary-fixed-variant": "#5f00bf",
+                      "surface-tint": "#7b26e6",
+                      "on-surface-variant": "#4b4455",
+                      "error": "#ba1a1a",
+                      "on-tertiary-fixed-variant": "#83007a",
+                      "on-secondary-fixed": "#002021",
+                      "on-primary-fixed": "#280057",
+                      "on-secondary": "#ffffff",
+                      "surface-bright": "#f8f9ff",
+                      "primary-container": "#7d2ae8",
+                      "primary": "#6200c5",
+                      "inverse-surface": "#2d3136",
+                      "on-secondary-container": "#006e72",
+                      "surface-container-low": "#f1f3fb",
+                      "on-primary-container": "#e7d5ff",
+                      "tertiary-fixed-dim": "#ffacec",
+                      "surface": "#f8f9ff",
+                      "on-error-container": "#93000a",
+                      "on-background": "#181c21",
+                      "inverse-primary": "#d6baff",
+                      "on-error": "#ffffff",
+                      "surface-container-lowest": "#ffffff",
+                      "tertiary": "#87007e",
+                      "primary-fixed-dim": "#d6baff",
+                      "surface-variant": "#e0e2ea",
+                      "primary-fixed": "#ecdcff",
+                      "outline-variant": "#cdc2d8",
+                      "secondary": "#00696e",
+                      "tertiary-container": "#b000a4",
+                      "on-primary": "#ffffff",
+                      "secondary-fixed-dim": "#3cdae2",
+                      "background": "#f8f9ff",
+                      "on-tertiary-fixed": "#390035",
+                      "inverse-on-surface": "#eef1f8",
+                      "surface-container-high": "#e5e8ef",
+                      "secondary-container": "#5ff4fc",
+                      "on-tertiary": "#ffffff",
+                      "surface-container": "#ebeef5",
+                      "error-container": "#ffdad6",
+                      "outline": "#7c7387",
+                      "on-surface": "#181c21",
+                      "surface-container-highest": "#e0e2ea"
+              },
+              "borderRadius": {
+                      "DEFAULT": "1rem",
+                      "lg": "2rem",
+                      "xl": "3rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "lg": "40px",
+                      "xs": "4px",
+                      "md": "24px",
+                      "margin-desktop": "48px",
+                      "xl": "64px",
+                      "base": "8px",
+                      "gutter": "16px",
+                      "sm": "12px",
+                      "margin-mobile": "20px"
+              },
+              "fontFamily": {
+                      "label-sm": ["Inter"],
+                      "body-md": ["Inter"],
+                      "display-lg": ["Inter"],
+                      "headline-lg-mobile": ["Inter"],
+                      "title-md": ["Inter"],
+                      "headline-lg": ["Inter"]
+              },
+              "fontSize": {
+                      "label-sm": ["12px", {"lineHeight": "1", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                      "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                      "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                      "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                      "title-md": ["18px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                      "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-background min-h-screen">
+<!-- Top Navigation -->
+<header class="w-full top-0 sticky z-40 bg-surface shadow-md flex justify-between items-center px-margin-desktop py-md w-full">
+<div class="flex items-center gap-base">
+<span class="material-symbols-outlined text-primary" style="font-size: 32px;">Clock</span>
+<h1 class="font-headline-lg text-headline-lg font-black text-primary">Velocity Admin</h1>
+</div>
+<div class="flex items-center gap-md">
+<div class="hidden md:flex gap-gutter">
+<a class="text-primary font-bold font-title-md text-title-md" href="#">Dashboard</a>
+<a class="text-on-surface-variant font-medium font-title-md text-title-md hover:text-primary transition-colors" href="#">Analytics</a>
+<a class="text-on-surface-variant font-medium font-title-md text-title-md hover:text-primary transition-colors" href="#">Network</a>
+</div>
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center overflow-hidden border-2 border-primary">
+<img alt="Profile" class="w-full h-full object-cover" data-alt="A professional high-resolution headshot of a modern tech executive with a friendly expression. The lighting is bright and airy with a soft blue gradient background that complements the brand's purple and cyan color palette. The image conveys leadership, expertise, and a digital-first creator persona." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVsDjuMLKXcDhJ4EidFC6a-vLrCWhzXIVL5r3AEkANedUtQth1MYDfHkvSWfvqkL2mIJhBx52I87PQ1IlILYeDAmp5yEtpHvyzvUHKnRELZ_7ryMM-DbNvHMJ-7pDtN4hZYIVbX8R3HDvaBZ6iEBHZBWTMh7WoSQMJUZQK9FED8B0QjB5o8c94pw_Atbf2XCqf4r4-N_ImqYIlYQ9WZKkwsxt3cW8B9nyPpSUlNw7muX2DV6N5V5qMepLV4TaobAWstqCXm8h1HE0"/>
+</div>
+</div>
+</header>
+<div class="flex">
+<!-- Sidebar -->
+<aside class="hidden md:flex flex-col p-md gap-base h-screen w-80 sticky top-[80px] bg-surface-container-lowest shadow-xl">
+<div class="flex flex-col gap-xs mb-lg px-sm">
+<span class="text-primary font-black font-headline-lg text-headline-lg">Creator Panel</span>
+<span class="text-on-surface-variant font-body-md text-body-md">System Owner (Level 1)</span>
+</div>
+<nav class="flex flex-col gap-base">
+<a class="flex items-center gap-sm px-md py-sm bg-primary-container text-on-primary-container rounded-full transition-all duration-300" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-title-md text-title-md">Dashboard</span>
+</a>
+<a class="flex items-center gap-sm px-md py-sm text-on-surface-variant hover:bg-surface-container-high rounded-full transition-all duration-300" href="#">
+<span class="material-symbols-outlined">share</span>
+<span class="font-title-md text-title-md">Referrals</span>
+</a>
+<a class="flex items-center gap-sm px-md py-sm text-on-surface-variant hover:bg-surface-container-high rounded-full transition-all duration-300" href="#">
+<span class="material-symbols-outlined">diamond</span>
+<span class="font-title-md text-title-md">Diamond Requests</span>
+</a>
+<a class="flex items-center gap-sm px-md py-sm text-on-surface-variant hover:bg-surface-container-high rounded-full transition-all duration-300" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="font-title-md text-title-md">Team Members</span>
+</a>
+<a class="flex items-center gap-sm px-md py-sm text-on-surface-variant hover:bg-surface-container-high rounded-full transition-all duration-300" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-title-md text-title-md">Settings</span>
+</a>
+</nav>
+<div class="mt-auto p-md bg-secondary-container rounded-lg shadow-inner">
+<p class="font-label-sm text-label-sm text-on-secondary-container uppercase mb-xs">Network Health</p>
+<div class="h-2 w-full bg-on-secondary-container/20 rounded-full overflow-hidden">
+<div class="h-full bg-on-secondary-container w-[92%]"></div>
+</div>
+<p class="mt-base text-on-secondary-container font-title-md text-title-md font-bold">92.4% Active</p>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 p-margin-mobile md:p-margin-desktop pb-24 md:pb-margin-desktop">
+<!-- Hero Data Grid -->
+<section class="mb-xl">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-md">
+<!-- Revenue Card -->
+<div class="bg-surface-container-lowest p-md rounded-lg shadow-[0_30px_50px_-12px_rgba(26,11,46,0.08)] flex flex-col justify-between min-h-[180px] border-b-4 border-primary">
+<div>
+<span class="text-on-surface-variant font-label-sm text-label-sm uppercase">Total Earnings (30% Commission)</span><p class="text-[10px] text-on-surface-variant/80 italic mt-0.5">Earn 3 GEMs for every 10 GEM registration in your network.</p>
+<div class="flex items-baseline gap-xs mt-xs">
+<h2 class="font-display-lg text-display-lg text-primary">$4,280,000</h2>
+<span class="text-secondary font-bold font-title-md">+12%</span>
+</div>
+</div>
+<div class="flex gap-xs items-center text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px]">trending_up</span>
+<span class="font-body-md text-body-md">Vs last month earnings: $3.8M</span>
+</div>
+</div>
+<!-- Diamonds Card -->
+<div class="bg-primary p-md rounded-lg shadow-[0_30px_50px_-12px_rgba(26,11,46,0.12)] flex flex-col justify-between min-h-[180px] text-white">
+<div>
+<span class="text-primary-fixed-dim font-label-sm text-label-sm uppercase">Diamonds in Circulation</span>
+<div class="flex items-center gap-md mt-xs">
+<h2 class="font-display-lg text-display-lg">1.8M</h2>
+<span class="material-symbols-outlined" style="font-size: 40px; font-variation-settings: 'FILL' 1;">diamond</span>
+</div>
+</div>
+<div class="flex justify-between items-center bg-on-primary-fixed/20 p-sm rounded-lg">
+<span class="font-label-sm text-label-sm">System Capacity</span>
+<span class="font-label-sm text-label-sm font-bold">82% Used</span>
+</div>
+</div>
+<!-- Actions Card -->
+<div class="bg-secondary p-md rounded-lg shadow-[0_30px_50px_-12px_rgba(26,11,46,0.12)] flex flex-col gap-base">
+<span class="text-secondary-fixed font-label-sm text-label-sm uppercase">Quick Management</span>
+<button class="w-full py-sm bg-white text-secondary font-bold rounded-full hover:bg-secondary-fixed transition-colors flex items-center justify-center gap-base">
+<span class="material-symbols-outlined">person_add</span> Appoint New Admin
+                        </button>
+<button class="w-full py-sm bg-secondary-container text-on-secondary-container font-bold rounded-full hover:opacity-90 transition-opacity flex items-center justify-center gap-base">
+<span class="material-symbols-outlined">campaign</span> Global Broadcast
+                        </button>
+</div>
+</div>
+</section>
+<!-- Network Overview -->
+<section class="bento-grid">
+<!-- Performance Chart (Simulated) -->
+<div class="col-span-12 lg:col-span-8 bg-surface-container-lowest p-md md:p-lg rounded-lg shadow-[0_30px_50px_-12px_rgba(26,11,46,0.08)]">
+<div class="flex justify-between items-end mb-xl">
+<div>
+<h3 class="font-headline-lg text-headline-lg text-on-surface">Network Growth</h3>
+<p class="text-on-surface-variant font-body-md text-body-md">New moderators vs new referrals growth trend</p>
+</div>
+<select class="bg-surface-container text-on-surface-variant border-none rounded-full px-md py-sm font-label-sm outline-none">
+<option>Last 30 Days</option>
+<option>Last 6 Months</option>
+</select>
+</div>
+<div class="h-64 w-full flex items-end gap-md md:gap-lg px-md">
+<div class="flex-1 bg-surface-container relative group">
+<div class="absolute bottom-0 w-full bg-primary rounded-t-lg transition-all duration-500" style="height: 60%"></div>
+<div class="absolute bottom-0 w-1/2 left-1/4 bg-secondary-fixed-dim rounded-t-lg transition-all duration-500" style="height: 40%"></div>
+</div>
+<div class="flex-1 bg-surface-container relative group">
+<div class="absolute bottom-0 w-full bg-primary rounded-t-lg transition-all duration-500" style="height: 80%"></div>
+<div class="absolute bottom-0 w-1/2 left-1/4 bg-secondary-fixed-dim rounded-t-lg transition-all duration-500" style="height: 55%"></div>
+</div>
+<div class="flex-1 bg-surface-container relative group">
+<div class="absolute bottom-0 w-full bg-primary rounded-t-lg transition-all duration-500" style="height: 45%"></div>
+<div class="absolute bottom-0 w-1/2 left-1/4 bg-secondary-fixed-dim rounded-t-lg transition-all duration-500" style="height: 30%"></div>
+</div>
+<div class="flex-1 bg-surface-container relative group">
+<div class="absolute bottom-0 w-full bg-primary rounded-t-lg transition-all duration-500" style="height: 95%"></div>
+<div class="absolute bottom-0 w-1/2 left-1/4 bg-secondary-fixed-dim rounded-t-lg transition-all duration-500" style="height: 70%"></div>
+</div>
+<div class="flex-1 bg-surface-container relative group">
+<div class="absolute bottom-0 w-full bg-primary rounded-t-lg transition-all duration-500" style="height: 70%"></div>
+<div class="absolute bottom-0 w-1/2 left-1/4 bg-secondary-fixed-dim rounded-t-lg transition-all duration-500" style="height: 50%"></div>
+</div>
+<div class="flex-1 bg-surface-container relative group">
+<div class="absolute bottom-0 w-full bg-primary rounded-t-lg transition-all duration-500" style="height: 85%"></div>
+<div class="absolute bottom-0 w-1/2 left-1/4 bg-secondary-fixed-dim rounded-t-lg transition-all duration-500" style="height: 65%"></div>
+</div>
+</div>
+<div class="flex justify-between mt-md px-md">
+<div class="flex items-center gap-xs">
+<span class="w-3 h-3 rounded-full bg-primary"></span>
+<span class="text-on-surface-variant font-label-sm text-label-sm">Referrals</span>
+</div>
+<div class="flex items-center gap-xs">
+<span class="w-3 h-3 rounded-full bg-secondary-fixed-dim"></span>
+<span class="text-on-surface-variant font-label-sm text-label-sm">Moderators</span>
+</div>
+</div>
+</div>
+<!-- Circular Stats Card -->
+<div class="col-span-12 lg:col-span-4 bg-tertiary p-md md:p-lg rounded-lg shadow-[0_30px_50px_-12px_rgba(131,0,122,0.15)] flex flex-col items-center justify-center text-white relative overflow-hidden">
+<div class="relative z-10 text-center">
+<div class="w-32 h-32 rounded-full border-[10px] border-tertiary-fixed-dim/30 border-t-tertiary-fixed-dim flex items-center justify-center mb-md mx-auto">
+<span class="font-display-lg text-[32px]">74%</span>
+</div>
+<h4 class="font-headline-lg text-headline-lg mb-xs">Level Velocity</h4>
+<p class="text-tertiary-fixed font-body-md text-body-md">Advancement to Creator Level 2</p>
+</div>
+<!-- Background Accent -->
+<div class="absolute -bottom-10 -right-10 w-40 h-40 bg-white/5 rounded-full blur-3xl"></div>
+</div>
+<!-- Admin Management List -->
+<div class="col-span-12 bg-surface-container-lowest p-md md:p-lg rounded-lg shadow-[0_30px_50px_-12px_rgba(26,11,46,0.08)] overflow-x-auto">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-md mb-xl">
+<div>
+<h3 class="font-headline-lg text-headline-lg text-on-surface">Top Performing Admins</h3>
+<p class="text-on-surface-variant font-body-md text-body-md">Super Agents leading your network hierarchy</p>
+</div>
+<button class="bg-primary text-white font-bold px-md py-base rounded-full hover:shadow-lg transition-all">View All Teams</button>
+</div>
+<table class="w-full border-separate border-spacing-y-base">
+<thead>
+<tr class="text-left text-on-surface-variant font-label-sm text-label-sm uppercase">
+<th class="pb-sm px-md">Admin Profile</th>
+<th class="pb-sm">Team Size</th>
+<th class="pb-sm">Active Referrals</th>
+<th class="pb-sm">Network Value</th>
+<th class="pb-sm text-right">Actions</th>
+</tr>
+</thead>
+<tbody>
+<tr class="bg-surface-container-low hover:bg-surface-container-high transition-colors">
+<td class="py-md px-md rounded-l-lg">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 bg-secondary-fixed rounded-full flex items-center justify-center font-bold text-secondary">AM</div>
+<div>
+<p class="font-title-md text-title-md text-on-surface">Alex Mercer</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Super Agent • Region North</p>
+</div>
+</div>
+</td>
+<td>
+<div class="flex flex-col">
+<span class="font-title-md text-title-md text-on-surface">142</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Moderators</span>
+</div>
+</td>
+<td>
+<div class="flex flex-col">
+<span class="font-title-md text-title-md text-on-surface">12,402</span>
+<span class="text-secondary font-bold text-[12px]">+480 this week</span>
+</div>
+</td>
+<td>
+<span class="font-title-md text-title-md text-primary">$842,000</span>
+</td>
+<td class="pr-md rounded-r-lg text-right">
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors">more_vert</button>
+</td>
+</tr>
+<tr class="bg-surface-container-low hover:bg-surface-container-high transition-colors">
+<td class="py-md px-md rounded-l-lg">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 bg-tertiary-fixed rounded-full flex items-center justify-center font-bold text-tertiary">SK</div>
+<div>
+<p class="font-title-md text-title-md text-on-surface">Sarah K.</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Super Agent • Global Hub</p>
+</div>
+</div>
+</td>
+<td>
+<div class="flex flex-col">
+<span class="font-title-md text-title-md text-on-surface">98</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Moderators</span>
+</div>
+</td>
+<td>
+<div class="flex flex-col">
+<span class="font-title-md text-title-md text-on-surface">8,911</span>
+<span class="text-secondary font-bold text-[12px]">+122 this week</span>
+</div>
+</td>
+<td>
+<span class="font-title-md text-title-md text-primary">$610,400</span>
+</td>
+<td class="pr-md rounded-r-lg text-right">
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors">more_vert</button>
+</td>
+</tr>
+<tr class="bg-surface-container-low hover:bg-surface-container-high transition-colors">
+<td class="py-md px-md rounded-l-lg">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 bg-primary-fixed rounded-full flex items-center justify-center font-bold text-primary">DJ</div>
+<div>
+<p class="font-title-md text-title-md text-on-surface">David Jones</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Super Agent • Region South</p>
+</div>
+</div>
+</td>
+<td>
+<div class="flex flex-col">
+<span class="font-title-md text-title-md text-on-surface">215</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Moderators</span>
+</div>
+</td>
+<td>
+<div class="flex flex-col">
+<span class="font-title-md text-title-md text-on-surface">24,550</span>
+<span class="text-secondary font-bold text-[12px]">+1.2k this week</span>
+</div>
+</td>
+<td>
+<span class="font-title-md text-title-md text-primary">$1,120,000</span>
+</td>
+<td class="pr-md rounded-r-lg text-right">
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors">more_vert</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</main>
+</div>
+<!-- Bottom Navigation (Mobile Only) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-margin-mobile py-sm md:hidden bg-surface shadow-[0_-4px_30px_0_rgba(26,11,46,0.12)] rounded-t-lg">
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-2xl px-4 py-1" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-sm text-label-sm">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:opacity-80 transition-transform active:scale-90" href="#">
+<span class="material-symbols-outlined">account_tree</span>
+<span class="font-label-sm text-label-sm">Network</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:opacity-80 transition-transform active:scale-90" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">payments</span>
+<span class="font-label-sm text-label-sm">Diamonds</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:opacity-80 transition-transform active:scale-90" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">person_filled</span>
+<span class="font-label-sm text-label-sm">Account</span>
+</a>
+</nav>
+<!-- FAB for Quick Search (Contextual) -->
+<button class="md:hidden fixed bottom-24 right-margin-mobile w-14 h-14 bg-primary text-white rounded-full shadow-lg flex items-center justify-center z-50 hover:scale-110 active:scale-95 transition-transform">
+<span class="material-symbols-outlined">search</span>
+</button>
+</body></html>

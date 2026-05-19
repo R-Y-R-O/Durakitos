@@ -1,0 +1,32 @@
+# Proyecto de Gestión de Contactos - Especificaciones Detalladas
+
+## Flujo de Usuario y Tutorial
+- **Recomendación Inicial**: Sugerir creación de cuenta Google nueva para centralizar contactos y facilitar recuperación/borrado masivo.
+
+## Registro y Onboarding
+- **Métodos**: Google, Facebook, Instagram.
+- **Datos (Cuba)**: Nombre/Apellidos, Fecha de Nacimiento, Teléfono, Provincia, Municipio, Sexo, Código de Referido.
+- **Validación**: Uso de códigos de verificación otorgados por Moderadores/Administradores.
+
+## Jerarquía de Roles
+1. **Creador (Dueño)**: Control total, asigna Administradores.
+2. **Administradores**: Controlan flujo de registros, gestionan Moderadores, ven estadísticas, chats grupales con su equipo.
+3. **Moderadores**: Ayudan a nuevos usuarios, entregan códigos de verificación.
+
+## Monetización y VIP
+- **Planes**: 1 Mes ($300), 3 Meses ($850), 6 Meses ($1600), 1 Año ($3000).
+- **VIP**: 
+    - Bonus x3 en diamantes.
+    - Canal de difusión (100 archivos max).
+    - Insignia de cuenta verificada.
+    - Multiplicadores por referidos.
+    - Etiquetas de categoría (Modelo, Cantante, etc.).
+
+## Funciones de Contacto
+- **Sincronización**: Al aceptar amistad, se crea el contacto en la cuenta de Google del teléfono.
+- **Gestión**: Cancelar solicitudes, eliminar amigos (borra contacto).
+- **Búsqueda**: Filtros avanzados por ubicación, sexo, categoría, popularidad.
+- **Integración**: Enlaces a Instagram, Facebook, YouTube en el perfil.
+
+## Sistema de Diamantes
+- Bonus diario (5), Recomendaciones (20), Compras.

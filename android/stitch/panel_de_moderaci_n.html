@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 48;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f9ff;
+        }
+        /* Glassmorphism utility */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-fixed-dim": "#ffacec",
+                    "primary-fixed-dim": "#d6baff",
+                    "on-primary": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "error": "#ba1a1a",
+                    "outline": "#7c7387",
+                    "surface-dim": "#d7dae1",
+                    "primary": "#6200c5",
+                    "on-error": "#ffffff",
+                    "tertiary": "#87007e",
+                    "on-tertiary-fixed": "#390035",
+                    "on-surface": "#181c21",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container-highest": "#e0e2ea",
+                    "secondary-fixed": "#63f7ff",
+                    "tertiary-container": "#b000a4",
+                    "on-secondary-container": "#006e72",
+                    "background": "#f8f9ff",
+                    "on-primary-fixed": "#280057",
+                    "surface-tint": "#7b26e6",
+                    "inverse-surface": "#2d3136",
+                    "on-primary-fixed-variant": "#5f00bf",
+                    "on-secondary-fixed": "#002021",
+                    "secondary": "#00696e",
+                    "primary-fixed": "#ecdcff",
+                    "inverse-primary": "#d6baff",
+                    "on-error-container": "#93000a",
+                    "on-tertiary": "#ffffff",
+                    "on-secondary-fixed-variant": "#004f53",
+                    "on-primary-container": "#e7d5ff",
+                    "surface-variant": "#e0e2ea",
+                    "inverse-on-surface": "#eef1f8",
+                    "surface-container-low": "#f1f3fb",
+                    "surface": "#f8f9ff",
+                    "secondary-container": "#5ff4fc",
+                    "outline-variant": "#cdc2d8",
+                    "on-tertiary-fixed-variant": "#83007a",
+                    "surface-bright": "#f8f9ff",
+                    "tertiary-fixed": "#ffd7f2",
+                    "on-background": "#181c21",
+                    "on-tertiary-container": "#ffcef0",
+                    "surface-container-high": "#e5e8ef",
+                    "primary-container": "#7d2ae8",
+                    "surface-container": "#ebeef5",
+                    "secondary-fixed-dim": "#3cdae2",
+                    "on-surface-variant": "#4b4455",
+                    "on-secondary": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "1rem",
+                    "lg": "2rem",
+                    "xl": "3rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-desktop": "48px",
+                    "md": "24px",
+                    "xs": "4px",
+                    "lg": "40px",
+                    "margin-mobile": "20px",
+                    "base": "8px",
+                    "sm": "12px",
+                    "xl": "64px",
+                    "gutter": "16px"
+            },
+            "fontFamily": {
+                    "headline-lg-mobile": ["Inter"],
+                    "title-md": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "body-md": ["Inter"],
+                    "display-lg": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "title-md": ["18px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "label-sm": ["12px", {"lineHeight": "1", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "800"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen pb-24 md:pb-0 md:pl-80">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface dark:bg-inverse-surface shadow-md">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop h-16 w-full max-w-7xl mx-auto">
+<div class="flex items-center gap-base">
+<span class="material-symbols-outlined text-primary" data-icon="diamond">diamond</span>
+<h1 class="text-title-md font-display-lg text-primary dark:text-primary-fixed-dim tracking-tight">VIP Cuba</h1>
+</div>
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer" data-icon="notifications">notifications</span>
+<div class="w-10 h-10 rounded-full bg-primary-container overflow-hidden border-2 border-primary">
+<img alt="Administrador Principal" data-alt="A professional close-up portrait of a corporate executive with a friendly expression, set against a blurred modern office background. The lighting is soft and natural, emphasizing a high-end light-mode aesthetic. The color palette is dominated by clean whites and subtle purples, reflecting a professional yet creative leadership mood." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbjJXP2v2UweUlSHdrAPtU7r1LFLSRp_dDpcaM3coSe4KbuBuspex4k_fFK3amg5ObNQ78d4ofxnNFhSWyKGuyy5AE0Dmb1pmiUSx4rrUyq6eLCX2YLFisXB5iiO9ZzHVPeOxPCtiUbwRUvxGvqC0Jyp0PIvh5njjZ-pDTjTs735gWvU_5cc6u7RrvVmaysOxUjbuUqh6oh51oPz2RgyMP5bKOj88tS2Qw-843CTf5vTX59bOhwPmvUKZ65A7Z2cVExW8x0a2SLec"/>
+</div>
+</div>
+</div>
+</header>
+<!-- NavigationDrawer (Web) -->
+<aside class="fixed inset-y-0 left-0 z-[60] flex flex-col h-full w-80 rounded-r-lg bg-surface-container-lowest dark:bg-inverse-surface shadow-2xl hidden md:flex">
+<div class="p-lg flex flex-col gap-md">
+<div class="flex items-center gap-md px-2">
+<div class="w-12 h-12 rounded-lg bg-primary flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-headline-lg" data-icon="gavel">gavel</span>
+</div>
+<div>
+<p class="font-display-lg text-primary text-title-md">Admin VIP</p>
+<p class="text-body-md text-on-surface-variant">Nivel 5 • En línea</p>
+</div>
+</div>
+<nav class="mt-xl flex flex-col gap-xs">
+<a class="text-on-surface-variant hover:bg-surface-variant rounded-full mx-2 px-4 py-3 flex items-center gap-md transition-all duration-300 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-icon="verified">verified</span>
+<span class="font-body-md">Directorio VIP</span>
+</a>
+<a class="text-on-surface-variant hover:bg-surface-variant rounded-full mx-2 px-4 py-3 flex items-center gap-md transition-all duration-300 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+<span class="font-body-md">Bóveda de Diamantes</span>
+</a>
+<a class="bg-primary-container text-on-primary-container font-bold rounded-full mx-2 px-4 py-3 flex items-center gap-md transition-all duration-300 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-icon="gavel">gavel</span>
+<span class="font-body-md">Moderación</span>
+</a>
+<a class="text-on-surface-variant hover:bg-surface-variant rounded-full mx-2 px-4 py-3 flex items-center gap-md transition-all duration-300 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-icon="groups">groups</span>
+<span class="font-body-md">Estatus de Equipo</span>
+</a>
+<a class="text-on-surface-variant hover:bg-surface-variant rounded-full mx-2 px-4 py-3 flex items-center gap-md transition-all duration-300 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-body-md">Ajustes</span>
+</a>
+</nav>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="pt-24 px-margin-mobile md:px-margin-desktop max-w-7xl mx-auto space-y-lg">
+<!-- Hero Activity Summary (Bento Style) -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-md">
+<div class="bg-primary-fixed text-on-primary-fixed p-lg rounded-lg shadow-[0_30px_50px_-12px_rgba(26,11,46,0.12)] flex flex-col justify-between min-h-[160px]">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-4xl" data-icon="person_search">person_search</span>
+<span class="bg-primary-container text-on-primary-container text-label-sm px-3 py-1 rounded-full">Pendiente</span>
+</div>
+<div>
+<h3 class="font-display-lg text-display-lg">24</h3>
+<p class="font-title-md">Cuentas por verificar</p>
+</div>
+</div>
+<div class="bg-tertiary-fixed text-on-tertiary-fixed p-lg rounded-lg shadow-[0_30px_50px_-12px_rgba(26,11,46,0.12)] flex flex-col justify-between min-h-[160px]">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-4xl" data-icon="report">report</span>
+<span class="bg-tertiary-container text-on-tertiary-container text-label-sm px-3 py-1 rounded-full">Urgente</span>
+</div>
+<div>
+<h3 class="font-display-lg text-display-lg">08</h3>
+<p class="font-title-md">Reportes abiertos</p>
+</div>
+</div>
+<div class="bg-secondary-fixed text-on-secondary-fixed p-lg rounded-lg shadow-[0_30px_50px_-12px_rgba(26,11,46,0.12)] flex flex-col justify-between min-h-[160px]">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-4xl" data-icon="key">key</span>
+<span class="bg-secondary-container text-on-secondary-container text-label-sm px-3 py-1 rounded-full">Hoy</span>
+</div>
+<div>
+<h3 class="font-display-lg text-display-lg">156</h3>
+<p class="font-title-md">Códigos generados</p>
+</div>
+</div>
+</section>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-lg">
+<!-- Verification Code Management -->
+<section class="lg:col-span-8 space-y-md">
+<div class="flex items-center justify-between">
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Gestión de Códigos</h2>
+<button class="bg-primary text-on-primary font-bold px-md py-sm rounded-full flex items-center gap-sm hover:opacity-80 transition-opacity active:scale-95 duration-200 shadow-md">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+                        Generar Nuevo
+                    </button>
+</div>
+<div class="bg-surface-container-lowest rounded-lg shadow-lg overflow-hidden border border-outline-variant">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container text-on-surface-variant font-label-sm">
+<th class="px-md py-sm">CÓDIGO</th>
+<th class="px-md py-sm">ESTADO</th>
+<th class="px-md py-sm">FECHA</th>
+<th class="px-md py-sm">ACCIONES</th>
+</tr>
+</thead>
+<tbody class="text-body-md">
+<tr class="border-b border-surface-container-high">
+<td class="px-md py-md font-bold text-primary">VIP-8829-X</td>
+<td class="px-md py-md"><span class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full text-label-sm">ACTIVO</span></td>
+<td class="px-md py-md text-on-surface-variant">Hace 10 min</td>
+<td class="px-md py-md">
+<button class="material-symbols-outlined text-outline hover:text-primary transition-colors" data-icon="content_copy">content_copy</button>
+</td>
+</tr>
+<tr class="border-b border-surface-container-high">
+<td class="px-md py-md font-bold text-primary">VIP-1102-Y</td>
+<td class="px-md py-md"><span class="bg-surface-variant text-on-surface-variant px-3 py-1 rounded-full text-label-sm">USADO</span></td>
+<td class="px-md py-md text-on-surface-variant">Hace 2 horas</td>
+<td class="px-md py-md">
+<button class="material-symbols-outlined text-outline" data-icon="history">history</button>
+</td>
+</tr>
+<tr class="border-b border-surface-container-high">
+<td class="px-md py-md font-bold text-primary">VIP-0043-Z</td>
+<td class="px-md py-md"><span class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full text-label-sm">ACTIVO</span></td>
+<td class="px-md py-md text-on-surface-variant">Ayer</td>
+<td class="px-md py-md">
+<button class="material-symbols-outlined text-outline hover:text-primary transition-colors" data-icon="content_copy">content_copy</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<!-- User Reports Sidebar -->
+<section class="lg:col-span-4 space-y-md">
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Incidencias</h2>
+<div class="space-y-md">
+<div class="bg-surface-container-low p-md rounded-lg border-l-4 border-error shadow-sm flex gap-md">
+<div class="flex-shrink-0 text-error">
+<span class="material-symbols-outlined" data-icon="warning">warning</span>
+</div>
+<div>
+<p class="font-title-md text-on-surface">@usuario_premium</p>
+<p class="text-body-md text-on-surface-variant line-clamp-2">Comportamiento inapropiado en el chat público de la bóveda.</p>
+<div class="mt-sm flex gap-sm">
+<button class="text-primary font-bold text-label-sm hover:underline">Revisar</button>
+<button class="text-error font-bold text-label-sm hover:underline">Descartar</button>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-low p-md rounded-lg border-l-4 border-tertiary shadow-sm flex gap-md">
+<div class="flex-shrink-0 text-tertiary">
+<span class="material-symbols-outlined" data-icon="flag">flag</span>
+</div>
+<div>
+<p class="font-title-md text-on-surface">@comprador_vip</p>
+<p class="text-body-md text-on-surface-variant line-clamp-2">Sospecha de duplicación de códigos de referido.</p>
+<div class="mt-sm flex gap-sm">
+<button class="text-primary font-bold text-label-sm hover:underline">Revisar</button>
+<button class="text-error font-bold text-label-sm hover:underline">Descartar</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Registration Requests Section -->
+<section class="space-y-md">
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Solicitudes de Registro</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-md">
+<!-- Request Card -->
+<div class="bg-surface-container-lowest p-md rounded-lg shadow-[0_10px_40px_rgba(26,11,46,0.08)] flex flex-col gap-md border border-outline-variant hover:shadow-xl transition-shadow">
+<div class="flex items-center gap-md">
+<div class="w-16 h-16 rounded-full bg-secondary-fixed flex items-center justify-center">
+<img alt="Avatar de Solicitante" class="w-full h-full object-cover rounded-full" data-alt="A high-resolution professional headshot of a young entrepreneur in a stylish denim shirt. The lighting is bright and airy, with a soft focus on a modern architectural background. The overall aesthetic is clean and high-contrast, fitting a premium digital directory." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDNO4wopGBWvuaAPHWTWBFapg00mTVtCulbENJotfnfojHs1tDt0_tM3LWa9PwqB8UktkKJYK6euS_dOfhQMR3as18hMQ4ko3soyvJADpOoLt1DmJgvNpme4XVRJH1TpdWonChFQGvlM0A3e8az8wOSMXPhEIQ_ObVDdZCXE4fHy2CjumlGlz-tfuGZZ9tpI8k0c9jG3MVtOqY6DEM3yoQQDPwRRQh8NKhSUkAJLRpM9NRtP3O0dYd-dpbcGEpMOPBRCTJrOpm9mTE"/>
+</div>
+<div>
+<p class="font-display-lg text-title-md">Carlos Mendoza</p>
+<p class="text-body-md text-on-surface-variant">Referido por: @el_lider</p>
+</div>
+</div>
+<div class="bg-surface-container p-sm rounded text-body-md italic text-on-surface-variant">
+                        "Deseo unirme para expandir mi red de contactos en la región de occidente."
+                    </div>
+<div class="grid grid-cols-2 gap-sm pt-base">
+<button class="bg-primary text-on-primary font-bold py-sm rounded-full active:scale-95 duration-150">Aprobar</button>
+<button class="bg-surface-variant text-on-surface-variant font-bold py-sm rounded-full active:scale-95 duration-150">Rechazar</button>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-md rounded-lg shadow-[0_10px_40px_rgba(26,11,46,0.08)] flex flex-col gap-md border border-outline-variant hover:shadow-xl transition-shadow">
+<div class="flex items-center gap-md">
+<div class="w-16 h-16 rounded-full bg-tertiary-fixed flex items-center justify-center">
+<img alt="Avatar de Solicitante" class="w-full h-full object-cover rounded-full" data-alt="Close-up portrait of a confident woman with curly hair and a vibrant smile, wearing a modern business-casual outfit. The image is set in a high-key studio environment with soft purple ambient lighting. The style is modern, professional, and visually engaging for a high-end application." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRYkqAGNpOG9I1ySzJQGTU-P9hur438Y6eT-5rWO9RoMMhy7KfyATQeMr_UWwyUOtHWmxwC5kSYmVdHG6DMSxH79cRD63GpMsmaKISGfIiFbmQXKby7jtcRZDgJ4MfRhki7KaDTfLsNAsVbxD7eNlA68UIgm9GIWQMX2_ltSM8zBpB9DCrxqo5gtuz23V6qMQzvbwqDNBlHkw3x6Vuyl8vxC5tm17plOziboAuH8LBwDyv42sGB3UL7um_7aB-p1CT8eP4iUGQcnI"/>
+</div>
+<div>
+<p class="font-display-lg text-title-md">Elena Rodríguez</p>
+<p class="text-body-md text-on-surface-variant">Referido por: @vip_admin</p>
+</div>
+</div>
+<div class="bg-surface-container p-sm rounded text-body-md italic text-on-surface-variant">
+                        "Empresaria interesada en el sistema de intercambio de diamantes."
+                    </div>
+<div class="grid grid-cols-2 gap-sm pt-base">
+<button class="bg-primary text-on-primary font-bold py-sm rounded-full active:scale-95 duration-150">Aprobar</button>
+<button class="bg-surface-variant text-on-surface-variant font-bold py-sm rounded-full active:scale-95 duration-150">Rechazar</button>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-md rounded-lg shadow-[0_10px_40px_rgba(26,11,46,0.08)] flex flex-col gap-md border border-outline-variant hover:shadow-xl transition-shadow">
+<div class="flex items-center gap-md">
+<div class="w-16 h-16 rounded-full bg-primary-fixed flex items-center justify-center">
+<img alt="Avatar de Solicitante" class="w-full h-full object-cover rounded-full" data-alt="A portrait of a male professional with glasses, looking directly at the camera with a calm and intellectual expression. The background is a sleek, minimalist tech office with clean lines and soft blue tones. The visual quality is cinematic and crisp, fitting the modern aesthetic of a curated VIP network." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZhML8dIIYWWCo-lLTXTnVL34sqF2KsiXnQGjaQ1d0hQs6WJ42KhIMC6C02AZRlRwWj-yjqOkLc1I0mKKSzfheGZEtKvJl4nUndLIOj_8cCvBcj0tUlvfueSM97Ye4ksrIBEHX2z8haAhwEy-FE4Q1EXcuzAEs8Vv7cYNFVwssSBejTEik2q-r9M8zzwrUaDyH86Zc4NUchzDT_K2JSH7oQDnEbYg4Qwy-JRO73mP8F2DN0c6BNPdrrq8evNtAlnNRz5xo3al9QWQ"/>
+</div>
+<div>
+<p class="font-display-lg text-title-md">Marcos Valle</p>
+<p class="text-body-md text-on-surface-variant">Referido por: @diamante_azul</p>
+</div>
+</div>
+<div class="bg-surface-container p-sm rounded text-body-md italic text-on-surface-variant">
+                        "Solicito acceso para gestionar la cuenta de mi organización benéfica."
+                    </div>
+<div class="grid grid-cols-2 gap-sm pt-base">
+<button class="bg-primary text-on-primary font-bold py-sm rounded-full active:scale-95 duration-150">Aprobar</button>
+<button class="bg-surface-variant text-on-surface-variant font-bold py-sm rounded-full active:scale-95 duration-150">Rechazar</button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar (Mobile) -->
+<nav class="fixed bottom-0 left-0 w-full h-20 flex justify-around items-center px-4 pb-safe bg-surface dark:bg-inverse-surface shadow-[0_-10px_40px_rgba(26,11,46,0.08)] rounded-t-lg md:hidden z-50">
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant" href="#">
+<span class="material-symbols-outlined" data-icon="contact_page">contact_page</span>
+<span class="font-label-sm text-label-sm">Contactos</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant" href="#">
+<span class="material-symbols-outlined" data-icon="public">public</span>
+<span class="font-label-sm text-label-sm">Red</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant" href="#">
+<span class="material-symbols-outlined" data-icon="token">token</span>
+<span class="font-label-sm text-label-sm">Diamantes</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-2xl px-4 py-1.5" href="#">
+<span class="material-symbols-outlined" data-icon="admin_panel_settings">admin_panel_settings</span>
+<span class="font-label-sm text-label-sm">Moderación</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant" href="#">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+<span class="font-label-sm text-label-sm">Perfil</span>
+</a>
+</nav>
+</body></html>

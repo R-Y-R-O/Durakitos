@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Velocity Admin - Registration</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts: Inter -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-background": "#181c21",
+                    "primary-container": "#7d2ae8",
+                    "surface-container": "#ebeef5",
+                    "secondary-fixed-dim": "#3cdae2",
+                    "on-surface-variant": "#4b4455",
+                    "on-secondary": "#ffffff",
+                    "on-tertiary-container": "#ffcef0",
+                    "surface-container-high": "#e5e8ef",
+                    "surface-container-low": "#f1f3fb",
+                    "surface": "#f8f9ff",
+                    "secondary-container": "#5ff4fc",
+                    "on-primary-container": "#e7d5ff",
+                    "surface-variant": "#e0e2ea",
+                    "inverse-on-surface": "#eef1f8",
+                    "on-tertiary-fixed-variant": "#83007a",
+                    "surface-bright": "#f8f9ff",
+                    "tertiary-fixed": "#ffd7f2",
+                    "outline-variant": "#cdc2d8",
+                    "on-primary-fixed": "#280057",
+                    "surface-tint": "#7b26e6",
+                    "inverse-surface": "#2d3136",
+                    "secondary-fixed": "#63f7ff",
+                    "tertiary-container": "#b000a4",
+                    "on-secondary-container": "#006e72",
+                    "background": "#f8f9ff",
+                    "secondary": "#00696e",
+                    "primary-fixed": "#ecdcff",
+                    "inverse-primary": "#d6baff",
+                    "on-error-container": "#93000a",
+                    "on-tertiary": "#ffffff",
+                    "on-secondary-fixed-variant": "#004f53",
+                    "on-primary-fixed-variant": "#5f00bf",
+                    "on-secondary-fixed": "#002021",
+                    "on-primary": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "error": "#ba1a1a",
+                    "outline": "#7c7387",
+                    "surface-dim": "#d7dae1",
+                    "primary": "#6200c5",
+                    "tertiary-fixed-dim": "#ffacec",
+                    "primary-fixed-dim": "#d6baff",
+                    "on-surface": "#181c21",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container-highest": "#e0e2ea",
+                    "on-error": "#ffffff",
+                    "tertiary": "#87007e",
+                    "on-tertiary-fixed": "#390035"
+            },
+            "borderRadius": {
+                    "DEFAULT": "1rem",
+                    "lg": "2rem",
+                    "xl": "3rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-desktop": "48px",
+                    "md": "24px",
+                    "xs": "4px",
+                    "lg": "40px",
+                    "margin-mobile": "20px",
+                    "sm": "12px",
+                    "base": "8px",
+                    "xl": "64px",
+                    "gutter": "16px"
+            },
+            "fontFamily": {
+                    "title-md": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "headline-lg-mobile": ["Inter"],
+                    "display-lg": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "body-md": ["Inter"]
+            },
+            "fontSize": {
+                    "title-md": ["18px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                    "label-sm": ["12px", {"lineHeight": "1", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .ambient-shadow {
+            box-shadow: 0 30px 50px -12px rgba(26, 11, 46, 0.12);
+        }
+        body {
+            background: linear-gradient(135deg, #f8f9ff 0%, #ecdcff 100%);
+            min-height: 100vh;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-body-md text-on-surface antialiased">
+<main class="flex min-h-screen items-center justify-center px-margin-mobile py-xl md:px-margin-desktop">
+<div class="grid w-full max-w-6xl grid-cols-1 overflow-hidden bg-surface-container-lowest rounded-lg ambient-shadow lg:grid-cols-12">
+<!-- Left Side: Branding/Visual (Asymmetric Layout) -->
+<div class="relative hidden flex-col justify-between bg-primary p-xl lg:col-span-5 lg:flex">
+<div class="z-10">
+<h1 class="font-display-lg text-display-lg text-on-primary mb-base">Velocity Admin</h1>
+<p class="font-title-md text-title-md text-primary-fixed-dim opacity-90 max-w-xs">
+                        Join the elite circle of creators and scale your digital empire.
+                    </p>
+</div>
+<div class="z-10">
+<div class="flex items-center gap-sm bg-primary-container/20 p-md rounded-lg backdrop-blur-md border border-white/10">
+<span class="material-symbols-outlined text-secondary-fixed text-[40px]">rocket_launch</span>
+<div>
+<p class="font-label-sm text-label-sm text-secondary-fixed uppercase tracking-wider">Level Up</p>
+<p class="font-title-md text-title-md text-white">Scale your vision instantly</p>
+</div>
+</div>
+</div>
+<!-- Abstract Decorative Circles -->
+<div class="absolute -top-20 -left-20 h-64 w-64 rounded-full bg-primary-container blur-3xl opacity-50"></div>
+<div class="absolute -bottom-20 -right-20 h-96 w-96 rounded-full bg-secondary blur-3xl opacity-30"></div>
+<img alt="Tech environment" class="absolute inset-0 h-full w-full object-cover mix-blend-overlay opacity-40" data-alt="A futuristic and high-tech workspace environment with glowing purple neon lights and advanced digital hardware interfaces. The scene is captured in a professional cinematic style with soft bokeh and shallow depth of field. The overall aesthetic is clean, modern, and corporate-tech, perfectly aligning with a premium Power Purple and Electric Cyan brand palette." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7hoNYRETuu4m0kzuEPzRGiUhTE2t3Car3_4gnPnacaZRflYx4oeB_lC1RM74iZvsc7XlUr-JK13fTzIRwGvFXdD5UiOZ8AHrDhvjl1O3Y5MHsgaCZ3v7vbthG7rCCtlzT8AJlYnLNwvcqdcP9FTkIAycnp96Rq7RmbJadmGHb4GmQRyQT5dHfFQUAjoD9kS1APcLVfQz2S_m8PG6Kb09cSJzifpbfSW0VJ36p8VxS5bI-vDmW328PTWCGRRjS29k6d534lIxKWkA"/>
+</div>
+<!-- Right Side: Registration Form -->
+<div class="flex flex-col p-md md:p-xl lg:col-span-7">
+<div class="mb-lg">
+<div class="flex items-center justify-between mb-sm lg:hidden">
+<span class="font-headline-lg text-headline-lg text-primary">Velocity</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Personal Details</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-xs">Let's start with the basics of who you are.</p>
+</div>
+<form class="space-y-md">
+<!-- Full Name -->
+<div class="group">
+<label class="font-label-sm text-label-sm text-on-surface-variant mb-base block px-sm" for="full_name">Full Name</label>
+<div class="relative">
+<input class="w-full h-[48px] px-md rounded-lg border-surface-variant bg-surface-container-lowest focus:border-primary focus:ring-primary ambient-shadow transition-all font-body-md text-body-md" id="full_name" name="full_name" placeholder="Enter your legal name" type="text"/>
+<span class="material-symbols-outlined absolute right-md top-1/2 -translate-y-1/2 text-on-surface-variant">person</span>
+</div>
+</div>
+<!-- Date of Birth & Phone Row -->
+<div class="grid grid-cols-1 gap-md md:grid-cols-2">
+<div class="group">
+<label class="font-label-sm text-label-sm text-on-surface-variant mb-base block px-sm" for="dob">Date of Birth</label>
+<div class="relative">
+<input class="w-full h-[48px] px-md rounded-lg border-surface-variant bg-surface-container-lowest focus:border-primary focus:ring-primary ambient-shadow transition-all font-body-md text-body-md" id="dob" name="dob" type="date"/>
+</div>
+</div>
+<div class="group">
+<label class="font-label-sm text-label-sm text-on-surface-variant mb-base block px-sm" for="phone">Phone Number</label>
+<div class="relative">
+<input class="w-full h-[48px] px-md rounded-lg border-surface-variant bg-surface-container-lowest focus:border-primary focus:ring-primary ambient-shadow transition-all font-body-md text-body-md" id="phone" name="phone" placeholder="+1 (555) 000-0000" type="tel"/>
+<span class="material-symbols-outlined absolute right-md top-1/2 -translate-y-1/2 text-on-surface-variant">call</span>
+</div>
+</div>
+</div>
+<!-- Province & Municipality Row -->
+<div class="grid grid-cols-1 gap-md md:grid-cols-2">
+<div class="group">
+<label class="font-label-sm text-label-sm text-on-surface-variant mb-base block px-sm" for="province">Province</label>
+<div class="relative">
+<select class="w-full h-[48px] px-md pr-xl rounded-lg border-surface-variant bg-surface-container-lowest focus:border-primary focus:ring-primary ambient-shadow appearance-none transition-all font-body-md text-body-md" id="province" name="province">
+<option disabled="" selected="" value="">Select Province</option>
+<option value="p1">Ontario</option>
+<option value="p2">Quebec</option>
+<option value="p3">British Columbia</option>
+</select>
+<span class="material-symbols-outlined absolute right-md top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none">expand_more</span>
+</div>
+</div>
+<div class="group">
+<label class="font-label-sm text-label-sm text-on-surface-variant mb-base block px-sm" for="municipality">Municipality</label>
+<div class="relative">
+<input class="w-full h-[48px] px-md rounded-lg border-surface-variant bg-surface-container-lowest focus:border-primary focus:ring-primary ambient-shadow transition-all font-body-md text-body-md" id="municipality" name="municipality" placeholder="Your City" type="text"/>
+<span class="material-symbols-outlined absolute right-md top-1/2 -translate-y-1/2 text-on-surface-variant">location_on</span>
+</div>
+</div>
+</div>
+<!-- Gender Selection -->
+<div class="group">
+<label class="font-label-sm text-label-sm text-on-surface-variant mb-base block px-sm">Gender</label>
+<div class="flex flex-wrap gap-base">
+<label class="flex-1 min-w-[100px]">
+<input class="peer hidden" name="gender" type="radio" value="male"/>
+<div class="flex h-[48px] cursor-pointer items-center justify-center gap-xs rounded-lg border border-surface-variant bg-surface-container-lowest transition-all peer-checked:border-primary peer-checked:bg-primary-fixed peer-checked:text-primary-fixed-variant">
+<span class="material-symbols-outlined text-[20px]">male</span>
+<span class="font-label-sm">Male</span>
+</div>
+</label>
+<label class="flex-1 min-w-[100px]">
+<input class="peer hidden" name="gender" type="radio" value="female"/>
+<div class="flex h-[48px] cursor-pointer items-center justify-center gap-xs rounded-lg border border-surface-variant bg-surface-container-lowest transition-all peer-checked:border-primary peer-checked:bg-primary-fixed peer-checked:text-primary-fixed-variant">
+<span class="material-symbols-outlined text-[20px]">female</span>
+<span class="font-label-sm">Female</span>
+</div>
+</label>
+<label class="flex-1 min-w-[100px]">
+<input class="peer hidden" name="gender" type="radio" value="other"/>
+<div class="flex h-[48px] cursor-pointer items-center justify-center gap-xs rounded-lg border border-surface-variant bg-surface-container-lowest transition-all peer-checked:border-primary peer-checked:bg-primary-fixed peer-checked:text-primary-fixed-variant">
+<span class="material-symbols-outlined text-[20px]">transgender</span>
+<span class="font-label-sm">Other</span>
+</div>
+</label>
+</div>
+</div>
+<!-- Submit Button -->
+<div class="pt-md">
+<button class="group relative flex w-full h-[48px] items-center justify-center gap-base overflow-hidden rounded-lg bg-primary text-on-primary font-title-md transition-all active:scale-95" type="submit">
+<span>Next Step</span>
+<span class="material-symbols-outlined transition-transform group-hover:translate-x-1">arrow_forward</span>
+<div class="absolute inset-0 bg-white/10 opacity-0 transition-opacity group-hover:opacity-100"></div>
+</button>
+</div>
+<!-- Progress Indicator -->
+<div class="mt-xl flex items-center justify-center gap-base">
+<div class="h-1.5 w-12 rounded-full bg-primary"></div>
+<div class="h-1.5 w-base rounded-full bg-surface-variant"></div>
+<div class="h-1.5 w-base rounded-full bg-surface-variant"></div>
+</div>
+</form>
+<p class="mt-lg text-center font-label-sm text-label-sm text-on-surface-variant">
+                    Already have an account? <a class="text-primary hover:underline" href="#">Log in here</a>
+</p>
+</div>
+</div>
+</main>
+</body></html>

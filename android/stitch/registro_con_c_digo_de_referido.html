@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Join Velocity Admin - Exclusive Access</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background: linear-gradient(135deg, #6200c5 0%, #87007e 100%);
+            min-height: 100vh;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "tertiary-fixed": "#ffd7f2",
+                      "surface-dim": "#d7dae1",
+                      "secondary-fixed": "#63f7ff",
+                      "on-tertiary-container": "#ffcef0",
+                      "on-secondary-fixed-variant": "#004f53",
+                      "on-primary-fixed-variant": "#5f00bf",
+                      "surface-tint": "#7b26e6",
+                      "on-surface-variant": "#4b4455",
+                      "error": "#ba1a1a",
+                      "on-tertiary-fixed-variant": "#83007a",
+                      "on-secondary-fixed": "#002021",
+                      "on-primary-fixed": "#280057",
+                      "on-secondary": "#ffffff",
+                      "surface-bright": "#f8f9ff",
+                      "primary-container": "#7d2ae8",
+                      "primary": "#6200c5",
+                      "inverse-surface": "#2d3136",
+                      "on-secondary-container": "#006e72",
+                      "surface-container-low": "#f1f3fb",
+                      "on-primary-container": "#e7d5ff",
+                      "tertiary-fixed-dim": "#ffacec",
+                      "surface": "#f8f9ff",
+                      "on-error-container": "#93000a",
+                      "on-background": "#181c21",
+                      "inverse-primary": "#d6baff",
+                      "on-error": "#ffffff",
+                      "surface-container-lowest": "#ffffff",
+                      "tertiary": "#87007e",
+                      "primary-fixed-dim": "#d6baff",
+                      "surface-variant": "#e0e2ea",
+                      "primary-fixed": "#ecdcff",
+                      "outline-variant": "#cdc2d8",
+                      "secondary": "#00696e",
+                      "tertiary-container": "#b000a4",
+                      "on-primary": "#ffffff",
+                      "secondary-fixed-dim": "#3cdae2",
+                      "background": "#f8f9ff",
+                      "on-tertiary-fixed": "#390035",
+                      "inverse-on-surface": "#eef1f8",
+                      "surface-container-high": "#e5e8ef",
+                      "secondary-container": "#5ff4fc",
+                      "on-tertiary": "#ffffff",
+                      "surface-container": "#ebeef5",
+                      "error-container": "#ffdad6",
+                      "outline": "#7c7387",
+                      "on-surface": "#181c21",
+                      "surface-container-highest": "#e0e2ea"
+              },
+              "borderRadius": {
+                      "DEFAULT": "1rem",
+                      "lg": "2rem",
+                      "xl": "3rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "lg": "40px",
+                      "xs": "4px",
+                      "md": "24px",
+                      "margin-desktop": "48px",
+                      "xl": "64px",
+                      "base": "8px",
+                      "gutter": "16px",
+                      "sm": "12px",
+                      "margin-mobile": "20px"
+              },
+              "fontFamily": {
+                      "label-sm": ["Inter"],
+                      "body-md": ["Inter"],
+                      "display-lg": ["Inter"],
+                      "headline-lg-mobile": ["Inter"],
+                      "title-md": ["Inter"],
+                      "headline-lg": ["Inter"]
+              },
+              "fontSize": {
+                      "label-sm": ["12px", {"lineHeight": "1", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                      "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                      "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                      "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                      "title-md": ["18px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                      "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+              }
+            },
+          },
+        }
+      </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="flex items-center justify-center p-margin-mobile md:p-margin-desktop">
+<!-- Auth Container -->
+<main class="w-full max-w-[1200px] grid grid-cols-1 lg:grid-cols-2 bg-surface-container-lowest rounded-xl shadow-[0_30px_60px_-15px_rgba(26,11,46,0.3)] overflow-hidden">
+<!-- Branding Section (Visible on Desktop) -->
+<section class="hidden lg:flex flex-col justify-between p-xl bg-primary text-on-primary relative overflow-hidden">
+<div class="z-10">
+<h1 class="font-headline-lg text-headline-lg font-black mb-md">Velocity Admin</h1>
+<p class="font-display-lg text-display-lg max-w-xs">Elevate Your Network Presence.</p>
+</div>
+<div class="z-10">
+<p class="font-body-md text-body-md opacity-80 max-w-sm">Join an exclusive ecosystem designed for high-performing creators and system owners. Registration requires a verified entry code.</p>
+</div>
+<!-- Aesthetic Background Element -->
+<div class="absolute -bottom-20 -right-20 w-80 h-80 bg-secondary rounded-full mix-blend-screen filter blur-3xl opacity-30"></div>
+<div class="absolute top-40 -left-10 w-64 h-64 bg-tertiary-container rounded-full mix-blend-screen filter blur-3xl opacity-20"></div>
+</section>
+<!-- Form Section -->
+<section class="flex flex-col p-md md:p-xl justify-center">
+<div class="max-w-md mx-auto w-full">
+<!-- Header -->
+<header class="mb-lg">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-xs">Create Account</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Welcome! Please enter your exclusive referral details to continue.</p>
+</header>
+<!-- Referral Section -->
+<div class="mb-lg p-md bg-surface-container-low rounded-lg border border-outline-variant/30">
+<div class="flex items-center gap-sm mb-sm text-primary">
+<span class="material-symbols-outlined" data-icon="verified_user">verified_user</span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest">Entry Requirement</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface mb-md">
+                        This platform is invite-only. You must provide a valid code issued by an authorized <strong class="text-primary">Moderator</strong> or <strong class="text-primary">Administrator</strong>.
+                    </p>
+<div class="relative">
+<input class="w-full h-12 px-md font-body-md text-body-md border-outline border-2 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all placeholder:text-outline-variant" placeholder="Enter Referral Code" type="text"/>
+<div class="absolute right-3 top-1/2 -translate-y-1/2">
+<span class="material-symbols-outlined text-outline" data-icon="key">key</span>
+</div>
+</div>
+</div>
+<!-- Action Button -->
+<button class="w-full h-12 bg-primary text-on-primary font-title-md text-title-md rounded-lg shadow-md hover:bg-primary-container active:scale-95 transition-all mb-lg flex items-center justify-center gap-sm">
+                    Verify Code
+                    <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</button>
+<!-- Divider -->
+<div class="relative flex items-center mb-lg">
+<div class="flex-grow border-t border-outline-variant"></div>
+<span class="flex-shrink mx-4 font-label-sm text-label-sm text-on-surface-variant">OR SIGN UP WITH</span>
+<div class="flex-grow border-t border-outline-variant"></div>
+</div>
+<!-- Social Logins -->
+<div class="grid grid-cols-3 gap-gutter mb-xl">
+<button class="flex items-center justify-center h-12 border border-outline-variant rounded-lg hover:bg-surface-container-high transition-colors" title="Google">
+<img class="w-6 h-6 object-contain" data-alt="The official Google logo showing the vibrant multi-colored G icon in a high-contrast minimalist presentation. The lighting is clean and professional against a soft white background, reflecting a modern corporate aesthetic with high-fidelity digital rendering and sharp edges." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDbI2Msb7qwUqWuuYSeAfc4Sajyr8BxPseuYwfFo69yJbH5eIAu0E9K2xK5pGJMGnU_PcROcOMn1s9srOMcPLacge8CEiq1C7SfcfP0gD38ftW540BCkJBtkrCZ-dLyMG90WchEeakqZg1zTLXJzLBYy_4cWjRteTfsPXIiLtCx0Fcx8Y0LEcO9u7pcKA_7XnidLW9uMgXVJ-jcUQw0XijsPIr_Fa5EBkZrUtNBKjun-PmY3P7bbeuZeLvM3MnzhL9f1DOp4ia7DK4"/>
+</button>
+<button class="flex items-center justify-center h-12 border border-outline-variant rounded-lg hover:bg-surface-container-high transition-colors" title="Instagram">
+<span class="material-symbols-outlined text-[#E4405F]" data-icon="camera">camera</span>
+</button>
+<button class="flex items-center justify-center h-12 border border-outline-variant rounded-lg hover:bg-surface-container-high transition-colors" title="Facebook">
+<span class="material-symbols-outlined text-[#1877F2]" data-icon="facebook">social_leaderboard</span>
+</button>
+</div>
+<!-- Footer Link -->
+<footer class="text-center">
+<p class="font-body-md text-body-md text-on-surface-variant">
+                        Already have an account? 
+                        <a class="text-primary font-bold hover:underline" href="#">Log In</a>
+</p>
+</footer>
+</div>
+</section>
+</main>
+<!-- Support Badge -->
+<div class="fixed bottom-gutter right-gutter hidden md:flex items-center gap-sm bg-tertiary-fixed text-on-tertiary-fixed p-sm rounded-full shadow-lg">
+<span class="bg-tertiary text-on-tertiary text-[10px] font-bold px-2 py-0.5 rounded-full">PRO</span>
+<span class="font-label-sm text-label-sm">Need a code? Contact Admin</span>
+<span class="material-symbols-outlined text-sm" data-icon="help_outline">help_outline</span>
+</div>
+</body></html>
