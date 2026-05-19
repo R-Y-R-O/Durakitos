@@ -1,18 +1,26 @@
 name: Flutter Build APK
-on: [push] # Se ejecuta cada vez que subes código
+on: [push]
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
+      
       - uses: subosito/flutter-action@v2
         with:
           channel: 'stable'
-      - run: flutter pub get
-      - run: flutter build apk --split-per-abi # Crea el instalador APK
-      - name: Guardar APK
-        uses: actions/upload-artifact@v3
+          
+      - name: Install dependencies
+        run: flutter pub get
+        working-directory: myapp # <--- ESTO ES LO IMPORTANTE
+
+      - name: Build APK
+        run: flutter build apk --debug --split-per-abi
+        working-directory: myapp # <--- Y ESTO TAMBIÉN
+
+      - name: upload-artifact
+        uses: actions/upload-artifact@v4
         with:
           name: app-release
-          path: build/app/outputs/flutter-apk/app-release.apk
+          path: myapp/build/app/outputs/flutter-apk/*.apk # <--- RUTA ACTUALIZADA
