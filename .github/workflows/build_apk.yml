@@ -12,15 +12,17 @@ jobs:
           channel: 'stable'
           
       - name: Install dependencies
-        run: flutter pub get
-        working-directory: myapp # <--- ESTO ES LO IMPORTANTE
-
+        run: |
+          cd $(find . -name pubspec.yaml -exec dirname {} \;)
+          flutter pub get
+          
       - name: Build APK
-        run: flutter build apk --debug --split-per-abi
-        working-directory: myapp # <--- Y ESTO TAMBIÉN
+        run: |
+          cd $(find . -name pubspec.yaml -exec dirname {} \;)
+          flutter build apk --debug --split-per-abi
 
       - name: upload-artifact
         uses: actions/upload-artifact@v4
         with:
           name: app-release
-          path: myapp/build/app/outputs/flutter-apk/*.apk # <--- RUTA ACTUALIZADA
+          path: "**/build/app/outputs/flutter-apk/*.apk"
