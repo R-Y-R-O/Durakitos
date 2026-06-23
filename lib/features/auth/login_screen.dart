@@ -13,7 +13,6 @@ class LoginScreen extends StatefulWidget {
 class _LoginScreenState extends State<LoginScreen> {
   final AuthService _authService = AuthService();
   bool _isLoading = false;
-
   void _handleGoogleSignIn() async {
     setState(() => _isLoading = true);
     try {
@@ -21,11 +20,12 @@ class _LoginScreenState extends State<LoginScreen> {
       if (userCredential == null && mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(content: Text('Inicio de sesión cancelado.')),
-        );      }
+        );
+      }
     } catch (e) {
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('Error: $e')),
+          SnackBar(content: Text('Error: \$e')),
         );
       }
     } finally {
@@ -37,7 +37,6 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final size = MediaQuery.of(context).size;
-
     return Scaffold(
       body: Container(
         width: double.infinity,
@@ -63,14 +62,14 @@ class _LoginScreenState extends State<LoginScreen> {
                   // Logo / Brand
                   Container(
                     width: 80,
-                    height: 80,
-                    decoration: BoxDecoration(
+                    height: 80,                    decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(20),
                       boxShadow: [
                         BoxShadow(
                           color: Colors.black.withOpacity(0.2),
-                          blurRadius: 20,                          offset: const Offset(0, 10),
+                          blurRadius: 20,
+                          offset: const Offset(0, 10),
                         ),
                       ],
                     ),
@@ -81,7 +80,6 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                   ),
                   const SizedBox(height: 24),
-                  
                   // Título
                   Text(
                     'Durakitos',
@@ -103,7 +101,6 @@ class _LoginScreenState extends State<LoginScreen> {
                     textAlign: TextAlign.center,
                   ),
                   const SizedBox(height: 48),
-
                   // Card de Login
                   Container(
                     width: double.infinity,
@@ -114,12 +111,12 @@ class _LoginScreenState extends State<LoginScreen> {
                       borderRadius: BorderRadius.circular(24),
                       boxShadow: [
                         BoxShadow(
-                          color: const Color(0xFF1A0B2E).withOpacity(0.15),
-                          blurRadius: 40,
+                          color: const Color(0xFF1A0B2E).withOpacity(0.15),                          blurRadius: 40,
                           offset: const Offset(0, 20),
                         ),
                       ],
-                    ),                    child: Column(
+                    ),
+                    child: Column(
                       crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: [
                         Text(
@@ -139,7 +136,6 @@ class _LoginScreenState extends State<LoginScreen> {
                           ),
                         ),
                         const SizedBox(height: 28),
-
                         // Botones sociales
                         Row(
                           children: [
@@ -162,13 +158,11 @@ class _LoginScreenState extends State<LoginScreen> {
                             ),
                           ],
                         ),
-
                         const SizedBox(height: 24),
-                        
                         // Divider
-                        Row(
-                          children: [
-                            Expanded(child: Divider(color: Colors.grey.shade300)),                            Padding(
+                        Row(                          children: [
+                            Expanded(child: Divider(color: Colors.grey.shade300)),
+                            Padding(
                               padding: const EdgeInsets.symmetric(horizontal: 12),
                               child: Text(
                                 'O CONTINÚA CON EMAIL',
@@ -184,7 +178,6 @@ class _LoginScreenState extends State<LoginScreen> {
                           ],
                         ),
                         const SizedBox(height: 24),
-
                         // Email field
                         TextField(
                           keyboardType: TextInputType.emailAddress,
@@ -212,7 +205,6 @@ class _LoginScreenState extends State<LoginScreen> {
                           ),
                         ),
                         const SizedBox(height: 16),
-
                         // Password field
                         TextField(
                           obscureText: true,
@@ -239,7 +231,6 @@ class _LoginScreenState extends State<LoginScreen> {
                           ),
                         ),
                         const SizedBox(height: 12),
-
                         Align(
                           alignment: Alignment.centerRight,
                           child: TextButton(
@@ -255,7 +246,6 @@ class _LoginScreenState extends State<LoginScreen> {
                           ),
                         ),
                         const SizedBox(height: 8),
-
                         // Sign In Button
                         SizedBox(
                           height: 52,
@@ -266,9 +256,9 @@ class _LoginScreenState extends State<LoginScreen> {
                               foregroundColor: Colors.white,
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(16),
-                              ),                              elevation: 8,
-                              shadowColor: const Color(0xFF6200C5).withOpacity(0.4),
-                            ),
+                              ),
+                              elevation: 8,
+                              shadowColor: const Color(0xFF6200C5).withOpacity(0.4),                            ),
                             child: _isLoading
                                 ? const SizedBox(
                                     width: 24,
@@ -288,7 +278,6 @@ class _LoginScreenState extends State<LoginScreen> {
                           ),
                         ),
                         const SizedBox(height: 20),
-
                         // Register CTA
                         Container(
                           padding: const EdgeInsets.all(16),
@@ -315,10 +304,10 @@ class _LoginScreenState extends State<LoginScreen> {
                                     ),
                                     Text(
                                       'Regístrate con código',
-                                      style: GoogleFonts.inter(                                        fontSize: 16,
+                                      style: GoogleFonts.inter(
+                                        fontSize: 16,
                                         color: const Color(0xFF181C21),
-                                        fontWeight: FontWeight.w700,
-                                      ),
+                                        fontWeight: FontWeight.w700,                                      ),
                                     ),
                                   ],
                                 ),
@@ -351,7 +340,6 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                   ),
                   const SizedBox(height: 24),
-
                   // Features
                   Wrap(
                     spacing: 12,
@@ -364,15 +352,14 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                       _FeatureChip(
                         icon: Icons.sync,
-                        label: 'Sync en tiempo real',                      ),
+                        label: 'Sync en tiempo real',
+                      ),
                       _FeatureChip(
                         icon: Icons.diamond,
-                        label: 'Red exclusiva',
-                      ),
+                        label: 'Red exclusiva',                      ),
                     ],
                   ),
                   const SizedBox(height: 24),
-
                   Text(
                     '© 2026 Durakitos. Todos los derechos reservados.',
                     style: GoogleFonts.inter(
@@ -413,12 +400,12 @@ class _SocialButton extends StatelessWidget {
             height: 52,
             decoration: BoxDecoration(
               border: Border.all(color: Colors.grey.shade300),
-              borderRadius: BorderRadius.circular(16),            ),
+              borderRadius: BorderRadius.circular(16),
+            ),
             child: FaIcon(icon, color: color, size: 22),
           ),
         ),
-      ),
-    );
+      ),    );
   }
 }
 

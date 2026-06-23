@@ -81,7 +81,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
       if (currentUserProfile == null) throw ('User profile not found');
 
       final updatedUser = UserModel(
-        uid: currentUserProfile.uid,
+        id: currentUserProfile.id,
         email: currentUserProfile.email,
         displayName: currentUserProfile.displayName,
         firstName: _firstNameController.text,

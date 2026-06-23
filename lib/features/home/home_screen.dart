@@ -423,7 +423,7 @@ class _ProfileTab extends StatelessWidget {
           const SizedBox(height: 12),
           TextButton.icon(
             onPressed: () async {
-              await Provider.of<UserProvider>(context, listen: false).clearUser();
+              await await Provider.of<UserProvider>(context, listen: false).clearUser();
               await AuthService().signOut();
             },
             icon: const Icon(Icons.logout, color: Colors.red),

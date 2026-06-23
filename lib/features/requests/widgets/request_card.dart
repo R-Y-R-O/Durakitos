@@ -68,7 +68,7 @@ class _RequestCardState extends State<RequestCard> {
           children: [
             Row(
               children: [
-                CircleAvatar(radius: 25, backgroundImage: NetworkImage('https://i.pravatar.cc/150?u=${widget.sender.uid}')),
+                CircleAvatar(radius: 25, backgroundImage: NetworkImage('https://i.pravatar.cc/150?u=${widget.sender.id}')),
                 const SizedBox(width: 16),
                 Expanded(
                   child: Column(

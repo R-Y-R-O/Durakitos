@@ -292,8 +292,8 @@ class _AdminScreenState extends State<AdminScreen> {
                     return Card(
                       margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 6),
                       child: ListTile(
-                        leading: CircleAvatar(child: Text(subordinate.displayName.substring(0, 1).toUpperCase())),
-                        title: Text(subordinate.displayName),
+                        leading: CircleAvatar(child: Text(subordinate.displayName?.substring(0, 1).toUpperCase() ?? "U")),
+                        title: Text(subordinate.displayName ?? "Usuario"),
                         subtitle: Text('Rol: ${subordinate.role.name} - Diamantes: ${subordinate.diamonds}'),
                         trailing: Row(
                           mainAxisSize: MainAxisSize.min,
@@ -325,7 +325,7 @@ class _AdminScreenState extends State<AdminScreen> {
       padding: const EdgeInsets.all(16.0),
       child: Column(
         children: [
-          Text(user.displayName, style: Theme.of(context).textTheme.headlineMedium),
+          Text(user.displayName ?? "Usuario", style: Theme.of(context).textTheme.headlineMedium),
           const SizedBox(height: 8),
           Text('Mis Diamantes: ${user.diamonds}', style: Theme.of(context).textTheme.titleLarge?.copyWith(color: Theme.of(context).colorScheme.primary)),
         ],

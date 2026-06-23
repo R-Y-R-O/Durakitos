@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:durakitos/services/friendship_service.dart';
 import 'package:durakitos/services/user_service.dart';
 import 'package:durakitos/models/user_model.dart';
+import 'package:durakitos/models/friend_request_model.dart';
 import 'widgets/request_card.dart';
 
 class RequestsScreen extends StatefulWidget {
