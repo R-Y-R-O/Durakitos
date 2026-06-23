@@ -1,0 +1,167 @@
+================================================================================
+PROYECTO: Durakitos
+FECHA DE EXPORTACIÓN: 2026-06-23 12:49:06
+================================================================================
+
+ESTRUCTURA DE CARPETAS:
+--------------------------------------------------------------------------------
+.
+├── GEMINI.md
+├── README.md
+├── analysis_options.yaml
+├── android
+│   ├── app
+│   │   ├── build.gradle.kts
+│   │   ├── google-services.json
+│   │   └── src
+│   │       ├── debug
+│   │       ├── main
+│   │       └── profile
+│   ├── build.gradle.kts
+│   ├── gradle
+│   │   └── wrapper
+│   │       └── gradle-wrapper.properties
+│   ├── gradle.properties
+│   ├── myapp_android.iml
+│   ├── settings.gradle.kts
+│   └── stitch
+│       ├── DESIGN.md
+│       ├── DESIGN1.md
+│       ├── agenda_de_contactos.html
+│       ├── ajustes_de_comisi_n_por_admin.html
+│       ├── b_squeda_avanzada.html
+│       ├── b_squeda_y_solicitudes.html
+│       ├── bienvenida_e_inicio_de_sesi_n.html
+│       ├── chat_de_administradores.html
+│       ├── datos_de_registro.html
+│       ├── especificaciones_del_proyecto_de_contactos.txt
+│       ├── estad_sticas_de_moderadores_con_filtro_de_fecha_1.html
+│       ├── estad_sticas_de_moderadores_con_filtro_de_fecha_2.html
+│       ├── estad_sticas_de_moderadores_por_admin_1.html
+│       ├── estad_sticas_de_moderadores_por_admin_2.html
+│       ├── formulario_de_registro_optimizado.html
+│       ├── historial_completo_de_transacciones.html
+│       ├── panel_de_administraci_n.html
+│       ├── panel_de_administrador_super_agente_1.html
+│       ├── panel_de_administrador_super_agente_2.html
+│       ├── panel_de_control_del_creador_1.html
+│       ├── panel_de_control_del_creador_2.html
+│       ├── panel_de_control_del_creador_3.html
+│       ├── panel_de_control_del_creador_con_filtros_temporales_1.html
+│       ├── panel_de_control_del_creador_con_filtros_temporales_2.html
+│       ├── panel_de_moderaci_n.html
+│       ├── panel_de_moderador_agente_1.html
+│       ├── panel_de_moderador_agente_2.html
+│       ├── perfil_de_admin_con_filtros_de_rendimiento_1.html
+│       ├── perfil_de_admin_con_filtros_de_rendimiento_2.html
+│       ├── perfil_de_administrador_actualizado.html
+│       ├── perfil_de_administrador_con_gesti_n_de_equipo.html
+│       ├── perfil_de_usuario.html
+│       ├── perfil_vip_verificado.html
+│       ├── ranking_de_administradores.html
+│       ├── recomendaci_n_de_seguridad.html
+│       ├── registro_completo_cuba.html
+│       ├── registro_con_c_digo_de_referido.html
+│       ├── registro_exitoso_y_bienvenida.html
+│       ├── registro_y_onboarding.html
+│       ├── reporte_de_ingresos_por_administrador_1.html
+│       ├── reporte_de_ingresos_por_administrador_2.html
+│       ├── tienda_de_diamantes.html
+│       ├── validaci_n_de_c_digo_de_invitaci_n_1.html
+│       └── validaci_n_de_c_digo_de_invitaci_n_2.html
+├── blueprint.md
+├── exportar_proyecto.sh
+├── firebase.json
+├── functions
+│   ├── index.js
+│   ├── package-lock.json
+│   ├── package.json
+│   ├── src
+│   │   └── index.ts
+│   └── tsconfig.json
+├── lib
+│   ├── app_theme.dart
+│   ├── features
+│   │   ├── admin
+│   │   │   ├── admin_screen.dart
+│   │   │   └── reports_screen.dart
+│   │   ├── auth
+│   │   │   ├── login_screen.dart
+│   │   │   └── splash_screen.dart
+│   │   ├── chat
+│   │   │   ├── chat_list_screen.dart
+│   │   │   ├── chat_screen.dart
+│   │   │   └── conversations_screen.dart
+│   │   ├── contacts
+│   │   │   └── contacts_screen.dart
+│   │   ├── home
+│   │   │   ├── home_screen.dart
+│   │   │   └── widgets
+│   │   ├── onboarding
+│   │   │   └── onboarding_screen.dart
+│   │   ├── profile
+│   │   │   └── profile_screen.dart
+│   │   ├── reports
+│   │   │   └── reports_screen.dart
+│   │   └── requests
+│   │       ├── requests_screen.dart
+│   │       └── widgets
+│   ├── firebase_options.dart
+│   ├── main.dart
+│   ├── models
+│   │   ├── chat_message_model.dart
+│   │   ├── chat_room_model.dart
+│   │   ├── conversation_model.dart
+│   │   ├── friend_request_model.dart
+│   │   ├── transaction_model.dart
+│   │   └── user_model.dart
+│   ├── navigation
+│   │   └── app_router.dart
+│   ├── providers
+│   │   ├── theme_provider.dart
+│   │   └── user_provider.dart
+│   ├── router
+│   │   └── app_router.dart
+│   ├── router.dart
+│   ├── screens
+│   │   ├── auth_gate.dart
+│   │   ├── home_screen.dart
+│   │   └── login_screen.dart
+│   ├── services
+│   │   ├── auth_service.dart
+│   │   ├── chat_service.dart
+│   │   ├── friend_service.dart
+│   │   ├── friendship_service.dart
+│   │   ├── notification_service.dart
+│   │   └── user_service.dart
+│   └── theme
+│       └── app_theme.dart
+├── myapp.iml
+├── proyecto_completo.txt
+├── pubspec.lock
+├── pubspec.yaml
+├── test
+│   └── widget_test.dart
+└── web
+    ├── favicon.png
+    ├── icons
+    │   ├── Icon-192.png
+    │   ├── Icon-512.png
+    │   ├── Icon-maskable-192.png
+    │   └── Icon-maskable-512.png
+    ├── index.html
+    └── manifest.json
+
+35 directories, 111 files
+
+================================================================================
+CONTENIDO DE ARCHIVOS: ================================================================================
+
+
+================================================================================
+📊 RESUMEN DE EXPORTACIÓN
+================================================================================
+Total de archivos exportados: 0
+Tamaño del archivo generado: 6797 bytes ( MB)
+Fecha de finalización: 2026-06-23 12:49:06
+================================================================================

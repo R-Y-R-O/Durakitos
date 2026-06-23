@@ -3,17 +3,16 @@
     "platforms": {
       "android": {
         "default": {
-          "projectId": "studio-c0cbi",
-          "appId": "1:29173297520:android:e3692c5de82f1e6af79fb5",
+          "projectId": "durakitos-durakos",
+          "appId": "1:265085603046:android:cbb10cf704655701747f27",
           "fileOutput": "android/app/google-services.json"
         }
       },
       "dart": {
         "lib/firebase_options.dart": {
-          "projectId": "studio-c0cbi",
+          "projectId": "durakitos-durakos",
           "configurations": {
-            "android": "1:29173297520:android:e3692c5de82f1e6af79fb5",
-            "web": "1:29173297520:web:ac405cf8d972d51bf79fb5"
+            "android": "1:265085603046:android:cbb10cf704655701747f27"
           }
         }
       }
@@ -32,22 +31,7 @@
         "*.local"
       ],
       "predeploy": [
-        "npm --prefix \"$RESOURCE_DIR\" run lint"
-      ]
+        "npm --prefix \"$RESOURCE_DIR\" run lint"      ]
     }
-  ],
-  "hosting": {
-    "public": "build/web",
-    "ignore": [
-      "firebase.json",
-      "**/.*",
-      "**/node_modules/**"
-    ],
-    "rewrites": [
-      {
-        "source": "**",
-        "destination": "/index.html"
-      }
-    ]
-  }
+  ]
 }
