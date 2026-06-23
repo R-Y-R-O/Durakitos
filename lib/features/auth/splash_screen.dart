@@ -1,10 +1,8 @@
-
-import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:provider/provider.dart'; // 1. Importar Provider
-import 'package:conecta/services/auth_service.dart';
-import 'package:conecta/providers/user_provider.dart'; // 2. Importar UserProvider
+import 'package:provider/provider.dart';
+import '../../services/auth_service.dart';
+import '../../providers/user_provider.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -23,32 +21,69 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   Future<void> _checkLoginStatus() async {
-    // Pequeña demora para que la splash screen sea visible
     await Future.delayed(const Duration(seconds: 2));
-
+    
     final isLoggedIn = await _authService.isUserLoggedIn();
-
     if (!mounted) return;
 
     if (isLoggedIn) {
-      // 3. Si está logueado, CARGAR los datos del usuario
       await Provider.of<UserProvider>(context, listen: false).loadUser();
-
       if (mounted) {
-        // Una vez cargados, ir a la home screen
         GoRouter.of(context).go('/home');
+      }    } else {
+      if (mounted) {
+        GoRouter.of(context).go('/login');
       }
-    } else {
-      // 4. Si no, ir a la pantalla de login
-      GoRouter.of(context).go('/login');
     }
   }
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
-        child: CircularProgressIndicator(),
+    return Scaffold(
+      body: Container(
+        width: double.infinity,
+        height: double.infinity,
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+            colors: [
+              Color(0xFF6200C5),
+              Color(0xFF7D2AE8),
+              Color(0xFFB000A4),
+            ],
+          ),
+        ),
+        child: const Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Icon(
+                Icons.diamond,
+                size: 80,
+                color: Colors.white,
+              ),
+              SizedBox(height: 24),
+              Text(
+                'Durakitos',
+                style: TextStyle(
+                  fontSize: 42,
+                  fontWeight: FontWeight.w900,
+                  color: Colors.white,
+                  letterSpacing: -1.5,
+                ),
+              ),
+              SizedBox(height: 48),
+              SizedBox(
+                width: 32,
+                height: 32,
+                child: CircularProgressIndicator(
+                  strokeWidth: 3,
+                  color: Colors.white,                ),
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }

@@ -1,68 +1,53 @@
-
-import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
-import 'package:myapp/features/auth/login_screen.dart';
-import 'package:myapp/features/home/home_screen.dart';
-import 'package:myapp/services/auth_service.dart';
-import 'package:myapp/features/chat/chat_screen.dart';
-import 'package:myapp/features/contacts/contacts_screen.dart';
-import 'package:myapp/features/admin/admin_screen.dart';
-import 'package:myapp/features/admin/reports_screen.dart'; // 1. Importar la pantalla de reportes
+import 'package:flutter/material.dart';import 'package:go_router/go_router.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import '../features/auth/login_screen.dart';
+import '../features/auth/splash_screen.dart';
+import '../features/home/home_screen.dart';
+import '../features/admin/admin_screen.dart';
+import '../features/admin/reports_screen.dart';
+import '../features/onboarding/onboarding_screen.dart';
 
 class AppRouter {
-  final AuthService _authService = AuthService();
-
-  late final GoRouter router = GoRouter(
-    debugLogDiagnostics: true,
-    routes: <GoRoute>[
+  static final GoRouter router = GoRouter(
+    initialLocation: '/',
+    routes: [
       GoRoute(
         path: '/',
-        name: 'home',
-        builder: (BuildContext context, GoRouterState state) => const HomeScreen(),
+        builder: (context, state) => const SplashScreen(),
       ),
       GoRoute(
         path: '/login',
-        name: 'login',
-        builder: (BuildContext context, GoRouterState state) => const LoginScreen(),
+        builder: (context, state) => const LoginScreen(),
       ),
       GoRoute(
-        path: '/chat/:userId',
-        name: 'chat',
-        builder: (BuildContext context, GoRouterState state) {
-          final userId = state.pathParameters['userId']!;
-          final userName = state.extra as String? ?? 'Chat';
-          return ChatScreen(receiverId: userId, receiverName: userName);
-        },
+        path: '/home',
+        builder: (context, state) => const HomeScreen(),
       ),
       GoRoute(
-        path: '/contacts',
-        name: 'contacts',
-        builder: (BuildContext context, GoRouterState state) => const ContactsScreen(),
+        path: '/onboarding',
+        builder: (context, state) => const OnboardingScreen(),
       ),
-      // 2. Anidar la ruta de reportes dentro de admin
       GoRoute(
         path: '/admin',
-        name: 'admin',
-        builder: (BuildContext context, GoRouterState state) => const AdminScreen(),
-        routes: <GoRoute>[
+        builder: (context, state) => const AdminScreen(),
+        routes: [
           GoRoute(
-            path: 'reports', // El path es relativo a /admin
-            name: 'reports',
-            builder: (BuildContext context, GoRouterState state) => const ReportsScreen(),
+            path: 'reports',
+            builder: (context, state) => const ReportsScreen(),
           ),
         ],
       ),
     ],
-    redirect: (BuildContext context, GoRouterState state) async {
-      final bool loggedIn = await _authService.isUserLoggedIn();
-      final bool loggingIn = state.matchedLocation == '/login';
+    redirect: (context, state) async {
+      final user = FirebaseAuth.instance.currentUser;
+      final loggingIn = state.matchedLocation == '/login';
+      final isSplash = state.matchedLocation == '/';
 
-      if (!loggedIn) {
+      if (user == null) {
         return loggingIn ? null : '/login';
       }
 
-      if (loggingIn) {
-        return '/';
+      if (isSplash || loggingIn) {        return '/home';
       }
 
       return null;

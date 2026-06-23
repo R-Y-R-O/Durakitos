@@ -2,8 +2,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:myapp/models/transaction_model.dart';
-import 'package:myapp/providers/user_provider.dart';
+import '../../models/transaction_model.dart';
+import '../../providers/user_provider.dart';
 import 'package:intl/intl.dart'; // Para formatear fechas
 
 enum TimeRange { today, week, month, all }
