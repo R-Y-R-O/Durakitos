@@ -1,8 +1,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:myapp/models/user_model.dart';
-import 'package:myapp/services/friendship_service.dart';
+import 'package:durakitos/models/user_model.dart';
+import 'package:durakitos/services/friendship_service.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 class RequestsTab extends StatefulWidget {

@@ -1,8 +1,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:myapp/models/conversation_model.dart';
-import 'package:myapp/services/chat_service.dart';
+import 'package:durakitos/models/conversation_model.dart';
+import 'package:durakitos/services/chat_service.dart';
 import 'package:timeago/timeago.dart' as timeago;
 
 class ConversationsScreen extends StatefulWidget {

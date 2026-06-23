@@ -1,5 +1,5 @@
 
-import 'package:myapp/models/user_model.dart';
+import 'package:durakitos/models/user_model.dart';
 
 class Conversation {
   final String chatId; // El ID del documento de chat (ej: uid1_uid2)

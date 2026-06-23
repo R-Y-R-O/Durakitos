@@ -1,8 +1,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:myapp/models/user_model.dart';
-import 'package:myapp/services/friendship_service.dart';
+import 'package:durakitos/models/user_model.dart';
+import 'package:durakitos/services/friendship_service.dart';
 
 class UserCard extends StatelessWidget {
   final UserModel user;

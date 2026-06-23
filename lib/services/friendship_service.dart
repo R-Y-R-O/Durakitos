@@ -1,8 +1,8 @@
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:myapp/models/user_model.dart'; 
-import 'package:myapp/models/friend_request_model.dart';
+import 'package:durakitos/models/user_model.dart'; 
+import 'package:durakitos/models/friend_request_model.dart';
 
 class FriendshipService {
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;

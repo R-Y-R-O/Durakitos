@@ -1,7 +1,7 @@
 
 import 'package:flutter/material.dart';
-import 'package:myapp/models/user_model.dart';
-import 'package:myapp/services/auth_service.dart';
+import 'package:durakitos/models/user_model.dart';
+import 'package:durakitos/services/auth_service.dart';
 
 class UserProvider with ChangeNotifier {
   final AuthService _authService = AuthService();
