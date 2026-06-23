@@ -31,10 +31,10 @@ class AuthService {
         return UserModel.fromFirestore(doc.data() as Map<String, dynamic>, doc.id);
       } else {
         developer.log('User document does not exist', name: 'auth_service', level: 900);
-        return null;      }
+        return null;
+      }
     } catch (e, stackTrace) {
-      developer.log(
-        'Error loading user model',
+      developer.log(        'Error loading user model',
         name: 'auth_service',
         level: 1000,
         error: e,
@@ -80,10 +80,10 @@ class AuthService {
         name: 'auth_service',
         level: 900,
         error: e,
-      );      String errorMessage;
+      );
+      String errorMessage;
       switch (e.code) {
-        case 'account-exists-with-different-credential':
-          errorMessage = 'Esta cuenta existe con diferente método de login';
+        case 'account-exists-with-different-credential':          errorMessage = 'Esta cuenta existe con diferente método de login';
           break;
         case 'invalid-credential':
           errorMessage = 'Credenciales inválidas';
@@ -130,18 +130,23 @@ class AuthService {
     try {
       final userRef = _firestore.collection('users').doc(user.uid);
       final doc = await userRef.get();
+
       if (!doc.exists) {
+        // Calcular trialEndDate (7 días desde ahora)        final trialEndDate = DateTime.now().add(const Duration(days: 7));
+
         final newUser = UserModel(
-          uid: user.uid,
+          id: user.uid,
           email: user.email ?? '',
-          name: user.displayName ?? 'Usuario',
-          profileImageUrl: user.photoURL ?? '',
+          displayName: user.displayName ?? 'Usuario',
+          avatarUrl: user.photoURL ?? '',
+          role: Role.user,
+          diamonds: 0,
+          totalRequestsUsed: 0,
+          isLocked: false,
+          trialEndDate: trialEndDate,
           createdAt: DateTime.now(),
         );
-        await userRef.set(
-          newUser.toFirestore(),
-          SetOptions(merge: true),
-        );
+        await userRef.set(newUser.toFirestore());
         developer.log('New user created in Firestore: ${user.uid}', name: 'auth_service');
       } else {
         await userRef.update({

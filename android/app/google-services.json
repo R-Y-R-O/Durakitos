@@ -1,21 +1,21 @@
 {
   "project_info": {
-    "project_number": "29173297520",
-    "project_id": "studio-c0cbi",
-    "storage_bucket": "studio-c0cbi.firebasestorage.app"
+    "project_number": "265085603046",
+    "project_id": "durakitos-durakos",
+    "storage_bucket": "durakitos-durakos.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:29173297520:android:e3692c5de82f1e6af79fb5",
+        "mobilesdk_app_id": "1:265085603046:android:cbb10cf704655701747f27",
         "android_client_info": {
-          "package_name": "com.example.myapp"
+          "package_name": "com.x1futurobillo.durakitos"
         }
       },
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyCiJkqI3cXWm4kBkTK6YtOS8VSHB2FO0nk"
+          "current_key": "AIzaSyDknX86TX0ueOWQHvQph-QU951foi0azFw"
         }
       ],
       "services": {

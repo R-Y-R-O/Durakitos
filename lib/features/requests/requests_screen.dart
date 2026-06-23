@@ -1,8 +1,8 @@
 
 import 'package:flutter/material.dart';
-import 'package:conecta/services/friendship_service.dart';
-import 'package:conecta/services/user_service.dart';
-import 'package:conecta/models/user_model.dart';
+import 'package:durakitos/services/friendship_service.dart';
+import 'package:durakitos/services/user_service.dart';
+import 'package:durakitos/models/user_model.dart';
 import 'widgets/request_card.dart';
 
 class RequestsScreen extends StatefulWidget {

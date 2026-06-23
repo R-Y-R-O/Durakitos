@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:provider/provider.dart';
-import 'package:conecta/providers/user_provider.dart';
+import 'package:durakitos/providers/user_provider.dart';
 
 // Enum para definir los rangos de tiempo de los reportes
 enum ReportRange {

@@ -3,14 +3,14 @@ import * as admin from "firebase-admin";
 
 export const acceptConnectionRequest = functions.https.onCall(async (data, context) => {
   if (!context.auth) {
-    throw new functions.https.HttpsError("unauthenticated", "No autenticado");
+    throw new functions.https.HttpsError("unauthenticated", "Debe estar autenticado");
   }
 
   const receiverId = context.auth.uid;
   const { requestId } = data;
 
   if (!requestId) {
-    throw new functions.https.HttpsError("invalid-argument", "requestId requerido");
+    throw new functions.https.HttpsError("invalid-argument", "requestId es requerido");
   }
 
   const db = admin.firestore();
@@ -28,18 +28,16 @@ export const acceptConnectionRequest = functions.https.onCall(async (data, conte
     }
 
     if (requestData.status !== "pending") {
-      throw new functions.https.HttpsError("failed-precondition", "Ya procesada");
-    }
+      throw new functions.https.HttpsError("failed-precondition", "Ya procesada");    }
 
     const senderId = requestData.from;
 
-    // Actualizar solicitud a aceptada
     await requestRef.update({
       status: "accepted",
       updatedAt: admin.firestore.FieldValue.serverTimestamp(),
     });
 
-    // Crear contactos mutuos en subcolección    const batch = db.batch();
+    const batch = db.batch();
 
     batch.set(
       db.collection("users").doc(senderId).collection("contacts").doc(receiverId),
@@ -53,15 +51,12 @@ export const acceptConnectionRequest = functions.https.onCall(async (data, conte
 
     await batch.commit();
 
-    // TODO: Aquí se llamará a Google Contacts API desde el cliente
-    // para crear los contactos en la agenda de Google de ambos usuarios
-
     functions.logger.info(`Solicitud aceptada: ${senderId} <-> ${receiverId}`);
 
     return { success: true, message: "Contactos creados" };
   } catch (error) {
     if (error instanceof functions.https.HttpsError) throw error;
-    functions.logger.error("Error:", error);
+    functions.logger.error("Error al aceptar solicitud:", error);
     throw new functions.https.HttpsError("internal", "Error interno");
   }
 });
